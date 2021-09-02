@@ -1,0 +1,153 @@
+﻿
+@{
+    ViewBag.Title = "NewModuleForm";
+    Layout = "~/Views/Shared/_ProjectAdminPannelLayout.cshtml";
+}
+
+
+@{
+    Layout = "~/Views/Shared/_ProjectAdminPannelLayout.cshtml";
+}
+
+<div class="app-content  my-3 my-md-5">
+    <div class="side-app">
+        <div class="page-header">
+            <h4 class="page-title">Admin </h4>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Admin side</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Admin side</li>
+            </ol>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card m-b-20">
+
+                    <div class="card-body">
+
+                        <form>
+                            
+
+                            <div class="form-row">
+                                <div class="form-group col-md-4">
+                                    <div class="form-group">
+                                        <label class="form-label" for="exampleInputEmail1">Title</label>
+                                        <select id="inputState" class="form-control">
+                                            <option>---!---</option>
+                                            <option>Pending</option>
+                                            <option>Progress</option>
+                                            <option>Fail</option>
+                                            <option>success</option>
+
+                                        </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        <div class="form-group">
+                                            <label class="form-label" for="exampleInputEmail1">Budget of Project</label>
+                                            <input type="text" class="form-control" id="name2" placeholder="Last Name">
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        <div class="form-group">
+                                            <label class="form-label" for="exampleInputEmail1">Awarded Date</label>
+
+                                            <div class="input-group">
+                                                <div class="input-group-prepend">
+                                                    <div class="input-group-text">
+                                                        <i class="fa fa-calendar tx-16 lh-0 op-6"></i>
+                                                    </div>
+                                                </div><input class="form-control fc-datepicker" placeholder="MM/DD/YYYY" type="text">
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        <div class="form-group">
+                                            <label class="form-label" for="exampleInputEmail1">Start Date</label>
+
+                                            <div class="input-group">
+                                                <div class="input-group-prepend">
+                                                    <div class="input-group-text">
+                                                        <i class="fa fa-calendar tx-16 lh-0 op-6"></i>
+                                                    </div>
+                                                </div><input class="form-control fc-datepicker" placeholder="MM/DD/YYYY" type="text">
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group col-md-4">
+                                        <div class="form-group">
+                                            <label class="form-label" for="exampleInputEmail1">Expected End Date</label>
+
+                                            <div class="input-group">
+                                                <div class="input-group-prepend">
+                                                    <div class="input-group-text">
+                                                        <i class="fa fa-calendar tx-16 lh-0 op-6"></i>
+                                                    </div>
+                                                </div><input class="form-control fc-datepicker" placeholder="MM/DD/YYYY" type="text">
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group col-md-4">
+                                        <div class="form-group">
+                                            <label class="form-label" for="exampleInputEmail1">Actual Complete Date</label>
+
+                                            <div class="input-group">
+                                                <div class="input-group-prepend">
+                                                    <div class="input-group-text">
+                                                        <i class="fa fa-calendar tx-16 lh-0 op-6"></i>
+                                                    </div>
+                                                </div><input class="form-control fc-datepicker" placeholder="MM/DD/YYYY" type="text">
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group col-md-4">
+                                        <label for="inputState" class="col-form-label">Assign</label>
+                                        <select id="inputState" class="form-control">
+                                            <option>---!---</option>
+                                            <option>usama</option>
+                                            <option>iqra</option>
+                                            <option>talha</option>
+                                            <option>adrees</option>
+
+                                        </select>
+                                    </div>
+
+                                    <div class="form-group col-md-4">
+                                        <label for="inputState" class="col-form-label">Status</label>
+                                        <select id="inputState" class="form-control">
+                                            <option>---!---</option>
+                                            <option>Pending</option>
+                                            <option>Progress</option>
+                                            <option>Fail</option>
+                                            <option>success</option>
+
+                                        </select>
+                                    </div>
+                                </div>
+                            <div class="form-group">
+                                <label class="col-form-label">Discription</label>
+                                <textarea class="form-control" name="example-textarea-input" rows="4" placeholder="Discription"></textarea>
+                            </div>
+
+
+                            <button type="submit" class="btn btn-primary ">Save</button>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+</div>
+
+

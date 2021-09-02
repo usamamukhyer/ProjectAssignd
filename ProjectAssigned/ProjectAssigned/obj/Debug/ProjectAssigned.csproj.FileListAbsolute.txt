@@ -1,0 +1,323 @@
+C:\Users\Ahsan\source\repos\ProjectAssigned\ProjectAssigned\bin\ProjectAssigned.dll.config
+C:\Users\Ahsan\source\repos\ProjectAssigned\ProjectAssigned\bin\ProjectAssigned.dll
+C:\Users\Ahsan\source\repos\ProjectAssigned\ProjectAssigned\bin\ProjectAssigned.pdb
+C:\Users\Ahsan\source\repos\ProjectAssigned\ProjectAssigned\bin\roslyn\csc.exe
+C:\Users\Ahsan\source\repos\ProjectAssigned\ProjectAssigned\bin\roslyn\csc.exe.config
+C:\Users\Ahsan\source\repos\ProjectAssigned\ProjectAssigned\bin\roslyn\csc.rsp
+C:\Users\Ahsan\source\repos\ProjectAssigned\ProjectAssigned\bin\roslyn\csi.exe
+C:\Users\Ahsan\source\repos\ProjectAssigned\ProjectAssigned\bin\roslyn\csi.exe.config
+C:\Users\Ahsan\source\repos\ProjectAssigned\ProjectAssigned\bin\roslyn\csi.rsp
+C:\Users\Ahsan\source\repos\ProjectAssigned\ProjectAssigned\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Ahsan\source\repos\ProjectAssigned\ProjectAssigned\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Ahsan\source\repos\ProjectAssigned\ProjectAssigned\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\Ahsan\source\repos\ProjectAssigned\ProjectAssigned\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Ahsan\source\repos\ProjectAssigned\ProjectAssigned\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\Ahsan\source\repos\ProjectAssigned\ProjectAssigned\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Ahsan\source\repos\ProjectAssigned\ProjectAssigned\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Ahsan\source\repos\ProjectAssigned\ProjectAssigned\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\Ahsan\source\repos\ProjectAssigned\ProjectAssigned\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\Ahsan\source\repos\ProjectAssigned\ProjectAssigned\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\Ahsan\source\repos\ProjectAssigned\ProjectAssigned\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Ahsan\source\repos\ProjectAssigned\ProjectAssigned\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\Users\Ahsan\source\repos\ProjectAssigned\ProjectAssigned\bin\roslyn\System.AppContext.dll
+C:\Users\Ahsan\source\repos\ProjectAssigned\ProjectAssigned\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Ahsan\source\repos\ProjectAssigned\ProjectAssigned\bin\roslyn\System.Console.dll
+C:\Users\Ahsan\source\repos\ProjectAssigned\ProjectAssigned\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+C:\Users\Ahsan\source\repos\ProjectAssigned\ProjectAssigned\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\Ahsan\source\repos\ProjectAssigned\ProjectAssigned\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\Ahsan\source\repos\ProjectAssigned\ProjectAssigned\bin\roslyn\System.Globalization.Calendars.dll
+C:\Users\Ahsan\source\repos\ProjectAssigned\ProjectAssigned\bin\roslyn\System.IO.Compression.dll
+C:\Users\Ahsan\source\repos\ProjectAssigned\ProjectAssigned\bin\roslyn\System.IO.Compression.ZipFile.dll
+C:\Users\Ahsan\source\repos\ProjectAssigned\ProjectAssigned\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\Ahsan\source\repos\ProjectAssigned\ProjectAssigned\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\Ahsan\source\repos\ProjectAssigned\ProjectAssigned\bin\roslyn\System.Net.Http.dll
+C:\Users\Ahsan\source\repos\ProjectAssigned\ProjectAssigned\bin\roslyn\System.Net.Sockets.dll
+C:\Users\Ahsan\source\repos\ProjectAssigned\ProjectAssigned\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Ahsan\source\repos\ProjectAssigned\ProjectAssigned\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Users\Ahsan\source\repos\ProjectAssigned\ProjectAssigned\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\Ahsan\source\repos\ProjectAssigned\ProjectAssigned\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\Ahsan\source\repos\ProjectAssigned\ProjectAssigned\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\Ahsan\source\repos\ProjectAssigned\ProjectAssigned\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\Ahsan\source\repos\ProjectAssigned\ProjectAssigned\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\Ahsan\source\repos\ProjectAssigned\ProjectAssigned\bin\roslyn\System.Threading.Tasks.Extensions.dll
+C:\Users\Ahsan\source\repos\ProjectAssigned\ProjectAssigned\bin\roslyn\System.ValueTuple.dll
+C:\Users\Ahsan\source\repos\ProjectAssigned\ProjectAssigned\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\Ahsan\source\repos\ProjectAssigned\ProjectAssigned\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\Ahsan\source\repos\ProjectAssigned\ProjectAssigned\bin\roslyn\System.Xml.XPath.dll
+C:\Users\Ahsan\source\repos\ProjectAssigned\ProjectAssigned\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\Ahsan\source\repos\ProjectAssigned\ProjectAssigned\bin\roslyn\vbc.exe
+C:\Users\Ahsan\source\repos\ProjectAssigned\ProjectAssigned\bin\roslyn\vbc.exe.config
+C:\Users\Ahsan\source\repos\ProjectAssigned\ProjectAssigned\bin\roslyn\vbc.rsp
+C:\Users\Ahsan\source\repos\ProjectAssigned\ProjectAssigned\bin\roslyn\VBCSCompiler.exe
+C:\Users\Ahsan\source\repos\ProjectAssigned\ProjectAssigned\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Ahsan\source\repos\ProjectAssigned\ProjectAssigned\bin\Antlr3.Runtime.dll
+C:\Users\Ahsan\source\repos\ProjectAssigned\ProjectAssigned\bin\EntityFramework.dll
+C:\Users\Ahsan\source\repos\ProjectAssigned\ProjectAssigned\bin\EntityFramework.SqlServer.dll
+C:\Users\Ahsan\source\repos\ProjectAssigned\ProjectAssigned\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Ahsan\source\repos\ProjectAssigned\ProjectAssigned\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Ahsan\source\repos\ProjectAssigned\ProjectAssigned\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\Ahsan\source\repos\ProjectAssigned\ProjectAssigned\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Ahsan\source\repos\ProjectAssigned\ProjectAssigned\bin\Microsoft.Owin.dll
+C:\Users\Ahsan\source\repos\ProjectAssigned\ProjectAssigned\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\Ahsan\source\repos\ProjectAssigned\ProjectAssigned\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\Ahsan\source\repos\ProjectAssigned\ProjectAssigned\bin\Microsoft.Owin.Security.dll
+C:\Users\Ahsan\source\repos\ProjectAssigned\ProjectAssigned\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\Ahsan\source\repos\ProjectAssigned\ProjectAssigned\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\Ahsan\source\repos\ProjectAssigned\ProjectAssigned\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\Ahsan\source\repos\ProjectAssigned\ProjectAssigned\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\Ahsan\source\repos\ProjectAssigned\ProjectAssigned\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\Ahsan\source\repos\ProjectAssigned\ProjectAssigned\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Ahsan\source\repos\ProjectAssigned\ProjectAssigned\bin\Newtonsoft.Json.dll
+C:\Users\Ahsan\source\repos\ProjectAssigned\ProjectAssigned\bin\Owin.dll
+C:\Users\Ahsan\source\repos\ProjectAssigned\ProjectAssigned\bin\System.Web.Helpers.dll
+C:\Users\Ahsan\source\repos\ProjectAssigned\ProjectAssigned\bin\System.Web.Mvc.dll
+C:\Users\Ahsan\source\repos\ProjectAssigned\ProjectAssigned\bin\System.Web.Optimization.dll
+C:\Users\Ahsan\source\repos\ProjectAssigned\ProjectAssigned\bin\System.Web.Razor.dll
+C:\Users\Ahsan\source\repos\ProjectAssigned\ProjectAssigned\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Ahsan\source\repos\ProjectAssigned\ProjectAssigned\bin\System.Web.WebPages.dll
+C:\Users\Ahsan\source\repos\ProjectAssigned\ProjectAssigned\bin\System.Web.WebPages.Razor.dll
+C:\Users\Ahsan\source\repos\ProjectAssigned\ProjectAssigned\bin\WebGrease.dll
+C:\Users\Ahsan\source\repos\ProjectAssigned\ProjectAssigned\bin\System.Web.Helpers.xml
+C:\Users\Ahsan\source\repos\ProjectAssigned\ProjectAssigned\bin\System.Web.Mvc.xml
+C:\Users\Ahsan\source\repos\ProjectAssigned\ProjectAssigned\bin\System.Web.Optimization.xml
+C:\Users\Ahsan\source\repos\ProjectAssigned\ProjectAssigned\bin\System.Web.Razor.xml
+C:\Users\Ahsan\source\repos\ProjectAssigned\ProjectAssigned\bin\System.Web.WebPages.xml
+C:\Users\Ahsan\source\repos\ProjectAssigned\ProjectAssigned\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Ahsan\source\repos\ProjectAssigned\ProjectAssigned\bin\System.Web.WebPages.Razor.xml
+C:\Users\Ahsan\source\repos\ProjectAssigned\ProjectAssigned\bin\Newtonsoft.Json.xml
+C:\Users\Ahsan\source\repos\ProjectAssigned\ProjectAssigned\bin\Antlr3.Runtime.pdb
+C:\Users\Ahsan\source\repos\ProjectAssigned\ProjectAssigned\bin\EntityFramework.xml
+C:\Users\Ahsan\source\repos\ProjectAssigned\ProjectAssigned\bin\EntityFramework.SqlServer.xml
+C:\Users\Ahsan\source\repos\ProjectAssigned\ProjectAssigned\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Ahsan\source\repos\ProjectAssigned\ProjectAssigned\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\Ahsan\source\repos\ProjectAssigned\ProjectAssigned\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\Ahsan\source\repos\ProjectAssigned\ProjectAssigned\bin\Microsoft.Owin.xml
+C:\Users\Ahsan\source\repos\ProjectAssigned\ProjectAssigned\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\Ahsan\source\repos\ProjectAssigned\ProjectAssigned\bin\Microsoft.Owin.Security.xml
+C:\Users\Ahsan\source\repos\ProjectAssigned\ProjectAssigned\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\Ahsan\source\repos\ProjectAssigned\ProjectAssigned\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\Ahsan\source\repos\ProjectAssigned\ProjectAssigned\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\Ahsan\source\repos\ProjectAssigned\ProjectAssigned\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\Ahsan\source\repos\ProjectAssigned\ProjectAssigned\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\Ahsan\source\repos\ProjectAssigned\ProjectAssigned\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\Ahsan\source\repos\ProjectAssigned\ProjectAssigned\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Ahsan\source\repos\ProjectAssigned\ProjectAssigned\obj\Debug\ProjectAssigned.csprojAssemblyReference.cache
+C:\Users\Ahsan\source\repos\ProjectAssigned\ProjectAssigned\obj\Debug\ProjectAssigned.csproj.CoreCompileInputs.cache
+C:\Users\Ahsan\source\repos\ProjectAssigned\ProjectAssigned\obj\Debug\ProjectAssigned.csproj.CopyComplete
+C:\Users\Ahsan\source\repos\ProjectAssigned\ProjectAssigned\obj\Debug\ProjectAssigned.dll
+C:\Users\Ahsan\source\repos\ProjectAssigned\ProjectAssigned\obj\Debug\ProjectAssigned.pdb
+C:\Users\Ahsan\Desktop\Usama\Developer assign project\ProjectAssigned\ProjectAssigned\bin\ProjectAssigned.dll.config
+C:\Users\Ahsan\Desktop\Usama\Developer assign project\ProjectAssigned\ProjectAssigned\bin\ProjectAssigned.dll
+C:\Users\Ahsan\Desktop\Usama\Developer assign project\ProjectAssigned\ProjectAssigned\bin\ProjectAssigned.pdb
+C:\Users\Ahsan\Desktop\Usama\Developer assign project\ProjectAssigned\ProjectAssigned\bin\roslyn\csc.exe
+C:\Users\Ahsan\Desktop\Usama\Developer assign project\ProjectAssigned\ProjectAssigned\bin\roslyn\csc.exe.config
+C:\Users\Ahsan\Desktop\Usama\Developer assign project\ProjectAssigned\ProjectAssigned\bin\roslyn\csc.rsp
+C:\Users\Ahsan\Desktop\Usama\Developer assign project\ProjectAssigned\ProjectAssigned\bin\roslyn\csi.exe
+C:\Users\Ahsan\Desktop\Usama\Developer assign project\ProjectAssigned\ProjectAssigned\bin\roslyn\csi.exe.config
+C:\Users\Ahsan\Desktop\Usama\Developer assign project\ProjectAssigned\ProjectAssigned\bin\roslyn\csi.rsp
+C:\Users\Ahsan\Desktop\Usama\Developer assign project\ProjectAssigned\ProjectAssigned\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Ahsan\Desktop\Usama\Developer assign project\ProjectAssigned\ProjectAssigned\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Ahsan\Desktop\Usama\Developer assign project\ProjectAssigned\ProjectAssigned\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\Ahsan\Desktop\Usama\Developer assign project\ProjectAssigned\ProjectAssigned\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Ahsan\Desktop\Usama\Developer assign project\ProjectAssigned\ProjectAssigned\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\Ahsan\Desktop\Usama\Developer assign project\ProjectAssigned\ProjectAssigned\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Ahsan\Desktop\Usama\Developer assign project\ProjectAssigned\ProjectAssigned\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Ahsan\Desktop\Usama\Developer assign project\ProjectAssigned\ProjectAssigned\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\Ahsan\Desktop\Usama\Developer assign project\ProjectAssigned\ProjectAssigned\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\Ahsan\Desktop\Usama\Developer assign project\ProjectAssigned\ProjectAssigned\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\Ahsan\Desktop\Usama\Developer assign project\ProjectAssigned\ProjectAssigned\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Ahsan\Desktop\Usama\Developer assign project\ProjectAssigned\ProjectAssigned\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\Users\Ahsan\Desktop\Usama\Developer assign project\ProjectAssigned\ProjectAssigned\bin\roslyn\System.AppContext.dll
+C:\Users\Ahsan\Desktop\Usama\Developer assign project\ProjectAssigned\ProjectAssigned\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Ahsan\Desktop\Usama\Developer assign project\ProjectAssigned\ProjectAssigned\bin\roslyn\System.Console.dll
+C:\Users\Ahsan\Desktop\Usama\Developer assign project\ProjectAssigned\ProjectAssigned\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+C:\Users\Ahsan\Desktop\Usama\Developer assign project\ProjectAssigned\ProjectAssigned\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\Ahsan\Desktop\Usama\Developer assign project\ProjectAssigned\ProjectAssigned\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\Ahsan\Desktop\Usama\Developer assign project\ProjectAssigned\ProjectAssigned\bin\roslyn\System.Globalization.Calendars.dll
+C:\Users\Ahsan\Desktop\Usama\Developer assign project\ProjectAssigned\ProjectAssigned\bin\roslyn\System.IO.Compression.dll
+C:\Users\Ahsan\Desktop\Usama\Developer assign project\ProjectAssigned\ProjectAssigned\bin\roslyn\System.IO.Compression.ZipFile.dll
+C:\Users\Ahsan\Desktop\Usama\Developer assign project\ProjectAssigned\ProjectAssigned\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\Ahsan\Desktop\Usama\Developer assign project\ProjectAssigned\ProjectAssigned\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\Ahsan\Desktop\Usama\Developer assign project\ProjectAssigned\ProjectAssigned\bin\roslyn\System.Net.Http.dll
+C:\Users\Ahsan\Desktop\Usama\Developer assign project\ProjectAssigned\ProjectAssigned\bin\roslyn\System.Net.Sockets.dll
+C:\Users\Ahsan\Desktop\Usama\Developer assign project\ProjectAssigned\ProjectAssigned\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Ahsan\Desktop\Usama\Developer assign project\ProjectAssigned\ProjectAssigned\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Users\Ahsan\Desktop\Usama\Developer assign project\ProjectAssigned\ProjectAssigned\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\Ahsan\Desktop\Usama\Developer assign project\ProjectAssigned\ProjectAssigned\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\Ahsan\Desktop\Usama\Developer assign project\ProjectAssigned\ProjectAssigned\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\Ahsan\Desktop\Usama\Developer assign project\ProjectAssigned\ProjectAssigned\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\Ahsan\Desktop\Usama\Developer assign project\ProjectAssigned\ProjectAssigned\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\Ahsan\Desktop\Usama\Developer assign project\ProjectAssigned\ProjectAssigned\bin\roslyn\System.Threading.Tasks.Extensions.dll
+C:\Users\Ahsan\Desktop\Usama\Developer assign project\ProjectAssigned\ProjectAssigned\bin\roslyn\System.ValueTuple.dll
+C:\Users\Ahsan\Desktop\Usama\Developer assign project\ProjectAssigned\ProjectAssigned\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\Ahsan\Desktop\Usama\Developer assign project\ProjectAssigned\ProjectAssigned\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\Ahsan\Desktop\Usama\Developer assign project\ProjectAssigned\ProjectAssigned\bin\roslyn\System.Xml.XPath.dll
+C:\Users\Ahsan\Desktop\Usama\Developer assign project\ProjectAssigned\ProjectAssigned\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\Ahsan\Desktop\Usama\Developer assign project\ProjectAssigned\ProjectAssigned\bin\roslyn\vbc.exe
+C:\Users\Ahsan\Desktop\Usama\Developer assign project\ProjectAssigned\ProjectAssigned\bin\roslyn\vbc.exe.config
+C:\Users\Ahsan\Desktop\Usama\Developer assign project\ProjectAssigned\ProjectAssigned\bin\roslyn\vbc.rsp
+C:\Users\Ahsan\Desktop\Usama\Developer assign project\ProjectAssigned\ProjectAssigned\bin\roslyn\VBCSCompiler.exe
+C:\Users\Ahsan\Desktop\Usama\Developer assign project\ProjectAssigned\ProjectAssigned\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Ahsan\Desktop\Usama\Developer assign project\ProjectAssigned\ProjectAssigned\bin\Antlr3.Runtime.dll
+C:\Users\Ahsan\Desktop\Usama\Developer assign project\ProjectAssigned\ProjectAssigned\bin\EntityFramework.dll
+C:\Users\Ahsan\Desktop\Usama\Developer assign project\ProjectAssigned\ProjectAssigned\bin\EntityFramework.SqlServer.dll
+C:\Users\Ahsan\Desktop\Usama\Developer assign project\ProjectAssigned\ProjectAssigned\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Ahsan\Desktop\Usama\Developer assign project\ProjectAssigned\ProjectAssigned\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Ahsan\Desktop\Usama\Developer assign project\ProjectAssigned\ProjectAssigned\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\Ahsan\Desktop\Usama\Developer assign project\ProjectAssigned\ProjectAssigned\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Ahsan\Desktop\Usama\Developer assign project\ProjectAssigned\ProjectAssigned\bin\Microsoft.Owin.dll
+C:\Users\Ahsan\Desktop\Usama\Developer assign project\ProjectAssigned\ProjectAssigned\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\Ahsan\Desktop\Usama\Developer assign project\ProjectAssigned\ProjectAssigned\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\Ahsan\Desktop\Usama\Developer assign project\ProjectAssigned\ProjectAssigned\bin\Microsoft.Owin.Security.dll
+C:\Users\Ahsan\Desktop\Usama\Developer assign project\ProjectAssigned\ProjectAssigned\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\Ahsan\Desktop\Usama\Developer assign project\ProjectAssigned\ProjectAssigned\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\Ahsan\Desktop\Usama\Developer assign project\ProjectAssigned\ProjectAssigned\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\Ahsan\Desktop\Usama\Developer assign project\ProjectAssigned\ProjectAssigned\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\Ahsan\Desktop\Usama\Developer assign project\ProjectAssigned\ProjectAssigned\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\Ahsan\Desktop\Usama\Developer assign project\ProjectAssigned\ProjectAssigned\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Ahsan\Desktop\Usama\Developer assign project\ProjectAssigned\ProjectAssigned\bin\Newtonsoft.Json.dll
+C:\Users\Ahsan\Desktop\Usama\Developer assign project\ProjectAssigned\ProjectAssigned\bin\Owin.dll
+C:\Users\Ahsan\Desktop\Usama\Developer assign project\ProjectAssigned\ProjectAssigned\bin\System.Web.Helpers.dll
+C:\Users\Ahsan\Desktop\Usama\Developer assign project\ProjectAssigned\ProjectAssigned\bin\System.Web.Mvc.dll
+C:\Users\Ahsan\Desktop\Usama\Developer assign project\ProjectAssigned\ProjectAssigned\bin\System.Web.Optimization.dll
+C:\Users\Ahsan\Desktop\Usama\Developer assign project\ProjectAssigned\ProjectAssigned\bin\System.Web.Razor.dll
+C:\Users\Ahsan\Desktop\Usama\Developer assign project\ProjectAssigned\ProjectAssigned\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Ahsan\Desktop\Usama\Developer assign project\ProjectAssigned\ProjectAssigned\bin\System.Web.WebPages.dll
+C:\Users\Ahsan\Desktop\Usama\Developer assign project\ProjectAssigned\ProjectAssigned\bin\System.Web.WebPages.Razor.dll
+C:\Users\Ahsan\Desktop\Usama\Developer assign project\ProjectAssigned\ProjectAssigned\bin\WebGrease.dll
+C:\Users\Ahsan\Desktop\Usama\Developer assign project\ProjectAssigned\ProjectAssigned\bin\System.Web.Helpers.xml
+C:\Users\Ahsan\Desktop\Usama\Developer assign project\ProjectAssigned\ProjectAssigned\bin\System.Web.Mvc.xml
+C:\Users\Ahsan\Desktop\Usama\Developer assign project\ProjectAssigned\ProjectAssigned\bin\System.Web.Optimization.xml
+C:\Users\Ahsan\Desktop\Usama\Developer assign project\ProjectAssigned\ProjectAssigned\bin\System.Web.Razor.xml
+C:\Users\Ahsan\Desktop\Usama\Developer assign project\ProjectAssigned\ProjectAssigned\bin\System.Web.WebPages.xml
+C:\Users\Ahsan\Desktop\Usama\Developer assign project\ProjectAssigned\ProjectAssigned\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Ahsan\Desktop\Usama\Developer assign project\ProjectAssigned\ProjectAssigned\bin\System.Web.WebPages.Razor.xml
+C:\Users\Ahsan\Desktop\Usama\Developer assign project\ProjectAssigned\ProjectAssigned\bin\Newtonsoft.Json.xml
+C:\Users\Ahsan\Desktop\Usama\Developer assign project\ProjectAssigned\ProjectAssigned\bin\Antlr3.Runtime.pdb
+C:\Users\Ahsan\Desktop\Usama\Developer assign project\ProjectAssigned\ProjectAssigned\bin\EntityFramework.xml
+C:\Users\Ahsan\Desktop\Usama\Developer assign project\ProjectAssigned\ProjectAssigned\bin\EntityFramework.SqlServer.xml
+C:\Users\Ahsan\Desktop\Usama\Developer assign project\ProjectAssigned\ProjectAssigned\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Ahsan\Desktop\Usama\Developer assign project\ProjectAssigned\ProjectAssigned\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\Ahsan\Desktop\Usama\Developer assign project\ProjectAssigned\ProjectAssigned\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\Ahsan\Desktop\Usama\Developer assign project\ProjectAssigned\ProjectAssigned\bin\Microsoft.Owin.xml
+C:\Users\Ahsan\Desktop\Usama\Developer assign project\ProjectAssigned\ProjectAssigned\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\Ahsan\Desktop\Usama\Developer assign project\ProjectAssigned\ProjectAssigned\bin\Microsoft.Owin.Security.xml
+C:\Users\Ahsan\Desktop\Usama\Developer assign project\ProjectAssigned\ProjectAssigned\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\Ahsan\Desktop\Usama\Developer assign project\ProjectAssigned\ProjectAssigned\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\Ahsan\Desktop\Usama\Developer assign project\ProjectAssigned\ProjectAssigned\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\Ahsan\Desktop\Usama\Developer assign project\ProjectAssigned\ProjectAssigned\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\Ahsan\Desktop\Usama\Developer assign project\ProjectAssigned\ProjectAssigned\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\Ahsan\Desktop\Usama\Developer assign project\ProjectAssigned\ProjectAssigned\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\Ahsan\Desktop\Usama\Developer assign project\ProjectAssigned\ProjectAssigned\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Ahsan\Desktop\Usama\Developer assign project\ProjectAssigned\ProjectAssigned\obj\Debug\ProjectAssigned.csproj.CoreCompileInputs.cache
+C:\Users\Ahsan\Desktop\Usama\Developer assign project\ProjectAssigned\ProjectAssigned\obj\Debug\ProjectAssigned.csproj.CopyComplete
+C:\Users\Ahsan\Desktop\Usama\Developer assign project\ProjectAssigned\ProjectAssigned\obj\Debug\ProjectAssigned.dll
+C:\Users\Ahsan\Desktop\Usama\Developer assign project\ProjectAssigned\ProjectAssigned\obj\Debug\ProjectAssigned.pdb
+C:\Users\User\Desktop\My Office Work\My Internship Project\ProjectAssigned\ProjectAssigned\bin\ProjectAssigned.dll.config
+C:\Users\User\Desktop\My Office Work\My Internship Project\ProjectAssigned\ProjectAssigned\bin\ProjectAssigned.dll
+C:\Users\User\Desktop\My Office Work\My Internship Project\ProjectAssigned\ProjectAssigned\bin\ProjectAssigned.pdb
+C:\Users\User\Desktop\My Office Work\My Internship Project\ProjectAssigned\ProjectAssigned\bin\roslyn\csc.exe
+C:\Users\User\Desktop\My Office Work\My Internship Project\ProjectAssigned\ProjectAssigned\bin\roslyn\csc.exe.config
+C:\Users\User\Desktop\My Office Work\My Internship Project\ProjectAssigned\ProjectAssigned\bin\roslyn\csc.rsp
+C:\Users\User\Desktop\My Office Work\My Internship Project\ProjectAssigned\ProjectAssigned\bin\roslyn\csi.exe
+C:\Users\User\Desktop\My Office Work\My Internship Project\ProjectAssigned\ProjectAssigned\bin\roslyn\csi.exe.config
+C:\Users\User\Desktop\My Office Work\My Internship Project\ProjectAssigned\ProjectAssigned\bin\roslyn\csi.rsp
+C:\Users\User\Desktop\My Office Work\My Internship Project\ProjectAssigned\ProjectAssigned\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\User\Desktop\My Office Work\My Internship Project\ProjectAssigned\ProjectAssigned\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\User\Desktop\My Office Work\My Internship Project\ProjectAssigned\ProjectAssigned\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\User\Desktop\My Office Work\My Internship Project\ProjectAssigned\ProjectAssigned\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\User\Desktop\My Office Work\My Internship Project\ProjectAssigned\ProjectAssigned\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\User\Desktop\My Office Work\My Internship Project\ProjectAssigned\ProjectAssigned\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\User\Desktop\My Office Work\My Internship Project\ProjectAssigned\ProjectAssigned\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\User\Desktop\My Office Work\My Internship Project\ProjectAssigned\ProjectAssigned\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\User\Desktop\My Office Work\My Internship Project\ProjectAssigned\ProjectAssigned\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\User\Desktop\My Office Work\My Internship Project\ProjectAssigned\ProjectAssigned\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\User\Desktop\My Office Work\My Internship Project\ProjectAssigned\ProjectAssigned\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\User\Desktop\My Office Work\My Internship Project\ProjectAssigned\ProjectAssigned\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\Users\User\Desktop\My Office Work\My Internship Project\ProjectAssigned\ProjectAssigned\bin\roslyn\System.AppContext.dll
+C:\Users\User\Desktop\My Office Work\My Internship Project\ProjectAssigned\ProjectAssigned\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\User\Desktop\My Office Work\My Internship Project\ProjectAssigned\ProjectAssigned\bin\roslyn\System.Console.dll
+C:\Users\User\Desktop\My Office Work\My Internship Project\ProjectAssigned\ProjectAssigned\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+C:\Users\User\Desktop\My Office Work\My Internship Project\ProjectAssigned\ProjectAssigned\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\User\Desktop\My Office Work\My Internship Project\ProjectAssigned\ProjectAssigned\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\User\Desktop\My Office Work\My Internship Project\ProjectAssigned\ProjectAssigned\bin\roslyn\System.Globalization.Calendars.dll
+C:\Users\User\Desktop\My Office Work\My Internship Project\ProjectAssigned\ProjectAssigned\bin\roslyn\System.IO.Compression.dll
+C:\Users\User\Desktop\My Office Work\My Internship Project\ProjectAssigned\ProjectAssigned\bin\roslyn\System.IO.Compression.ZipFile.dll
+C:\Users\User\Desktop\My Office Work\My Internship Project\ProjectAssigned\ProjectAssigned\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\User\Desktop\My Office Work\My Internship Project\ProjectAssigned\ProjectAssigned\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\User\Desktop\My Office Work\My Internship Project\ProjectAssigned\ProjectAssigned\bin\roslyn\System.Net.Http.dll
+C:\Users\User\Desktop\My Office Work\My Internship Project\ProjectAssigned\ProjectAssigned\bin\roslyn\System.Net.Sockets.dll
+C:\Users\User\Desktop\My Office Work\My Internship Project\ProjectAssigned\ProjectAssigned\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\User\Desktop\My Office Work\My Internship Project\ProjectAssigned\ProjectAssigned\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Users\User\Desktop\My Office Work\My Internship Project\ProjectAssigned\ProjectAssigned\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\User\Desktop\My Office Work\My Internship Project\ProjectAssigned\ProjectAssigned\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\User\Desktop\My Office Work\My Internship Project\ProjectAssigned\ProjectAssigned\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\User\Desktop\My Office Work\My Internship Project\ProjectAssigned\ProjectAssigned\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\User\Desktop\My Office Work\My Internship Project\ProjectAssigned\ProjectAssigned\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\User\Desktop\My Office Work\My Internship Project\ProjectAssigned\ProjectAssigned\bin\roslyn\System.Threading.Tasks.Extensions.dll
+C:\Users\User\Desktop\My Office Work\My Internship Project\ProjectAssigned\ProjectAssigned\bin\roslyn\System.ValueTuple.dll
+C:\Users\User\Desktop\My Office Work\My Internship Project\ProjectAssigned\ProjectAssigned\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\User\Desktop\My Office Work\My Internship Project\ProjectAssigned\ProjectAssigned\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\User\Desktop\My Office Work\My Internship Project\ProjectAssigned\ProjectAssigned\bin\roslyn\System.Xml.XPath.dll
+C:\Users\User\Desktop\My Office Work\My Internship Project\ProjectAssigned\ProjectAssigned\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\User\Desktop\My Office Work\My Internship Project\ProjectAssigned\ProjectAssigned\bin\roslyn\vbc.exe
+C:\Users\User\Desktop\My Office Work\My Internship Project\ProjectAssigned\ProjectAssigned\bin\roslyn\vbc.exe.config
+C:\Users\User\Desktop\My Office Work\My Internship Project\ProjectAssigned\ProjectAssigned\bin\roslyn\vbc.rsp
+C:\Users\User\Desktop\My Office Work\My Internship Project\ProjectAssigned\ProjectAssigned\bin\roslyn\VBCSCompiler.exe
+C:\Users\User\Desktop\My Office Work\My Internship Project\ProjectAssigned\ProjectAssigned\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\User\Desktop\My Office Work\My Internship Project\ProjectAssigned\ProjectAssigned\bin\Antlr3.Runtime.dll
+C:\Users\User\Desktop\My Office Work\My Internship Project\ProjectAssigned\ProjectAssigned\bin\EntityFramework.dll
+C:\Users\User\Desktop\My Office Work\My Internship Project\ProjectAssigned\ProjectAssigned\bin\EntityFramework.SqlServer.dll
+C:\Users\User\Desktop\My Office Work\My Internship Project\ProjectAssigned\ProjectAssigned\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\User\Desktop\My Office Work\My Internship Project\ProjectAssigned\ProjectAssigned\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\User\Desktop\My Office Work\My Internship Project\ProjectAssigned\ProjectAssigned\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\User\Desktop\My Office Work\My Internship Project\ProjectAssigned\ProjectAssigned\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\User\Desktop\My Office Work\My Internship Project\ProjectAssigned\ProjectAssigned\bin\Microsoft.Owin.dll
+C:\Users\User\Desktop\My Office Work\My Internship Project\ProjectAssigned\ProjectAssigned\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\User\Desktop\My Office Work\My Internship Project\ProjectAssigned\ProjectAssigned\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\User\Desktop\My Office Work\My Internship Project\ProjectAssigned\ProjectAssigned\bin\Microsoft.Owin.Security.dll
+C:\Users\User\Desktop\My Office Work\My Internship Project\ProjectAssigned\ProjectAssigned\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\User\Desktop\My Office Work\My Internship Project\ProjectAssigned\ProjectAssigned\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\User\Desktop\My Office Work\My Internship Project\ProjectAssigned\ProjectAssigned\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\User\Desktop\My Office Work\My Internship Project\ProjectAssigned\ProjectAssigned\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\User\Desktop\My Office Work\My Internship Project\ProjectAssigned\ProjectAssigned\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\User\Desktop\My Office Work\My Internship Project\ProjectAssigned\ProjectAssigned\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\User\Desktop\My Office Work\My Internship Project\ProjectAssigned\ProjectAssigned\bin\Newtonsoft.Json.dll
+C:\Users\User\Desktop\My Office Work\My Internship Project\ProjectAssigned\ProjectAssigned\bin\Owin.dll
+C:\Users\User\Desktop\My Office Work\My Internship Project\ProjectAssigned\ProjectAssigned\bin\System.Web.Helpers.dll
+C:\Users\User\Desktop\My Office Work\My Internship Project\ProjectAssigned\ProjectAssigned\bin\System.Web.Mvc.dll
+C:\Users\User\Desktop\My Office Work\My Internship Project\ProjectAssigned\ProjectAssigned\bin\System.Web.Optimization.dll
+C:\Users\User\Desktop\My Office Work\My Internship Project\ProjectAssigned\ProjectAssigned\bin\System.Web.Razor.dll
+C:\Users\User\Desktop\My Office Work\My Internship Project\ProjectAssigned\ProjectAssigned\bin\System.Web.WebPages.Deployment.dll
+C:\Users\User\Desktop\My Office Work\My Internship Project\ProjectAssigned\ProjectAssigned\bin\System.Web.WebPages.dll
+C:\Users\User\Desktop\My Office Work\My Internship Project\ProjectAssigned\ProjectAssigned\bin\System.Web.WebPages.Razor.dll
+C:\Users\User\Desktop\My Office Work\My Internship Project\ProjectAssigned\ProjectAssigned\bin\WebGrease.dll
+C:\Users\User\Desktop\My Office Work\My Internship Project\ProjectAssigned\ProjectAssigned\bin\System.Web.Helpers.xml
+C:\Users\User\Desktop\My Office Work\My Internship Project\ProjectAssigned\ProjectAssigned\bin\System.Web.Mvc.xml
+C:\Users\User\Desktop\My Office Work\My Internship Project\ProjectAssigned\ProjectAssigned\bin\System.Web.Optimization.xml
+C:\Users\User\Desktop\My Office Work\My Internship Project\ProjectAssigned\ProjectAssigned\bin\System.Web.Razor.xml
+C:\Users\User\Desktop\My Office Work\My Internship Project\ProjectAssigned\ProjectAssigned\bin\System.Web.WebPages.xml
+C:\Users\User\Desktop\My Office Work\My Internship Project\ProjectAssigned\ProjectAssigned\bin\System.Web.WebPages.Deployment.xml
+C:\Users\User\Desktop\My Office Work\My Internship Project\ProjectAssigned\ProjectAssigned\bin\System.Web.WebPages.Razor.xml
+C:\Users\User\Desktop\My Office Work\My Internship Project\ProjectAssigned\ProjectAssigned\bin\Newtonsoft.Json.xml
+C:\Users\User\Desktop\My Office Work\My Internship Project\ProjectAssigned\ProjectAssigned\bin\Antlr3.Runtime.pdb
+C:\Users\User\Desktop\My Office Work\My Internship Project\ProjectAssigned\ProjectAssigned\bin\EntityFramework.xml
+C:\Users\User\Desktop\My Office Work\My Internship Project\ProjectAssigned\ProjectAssigned\bin\EntityFramework.SqlServer.xml
+C:\Users\User\Desktop\My Office Work\My Internship Project\ProjectAssigned\ProjectAssigned\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\User\Desktop\My Office Work\My Internship Project\ProjectAssigned\ProjectAssigned\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\User\Desktop\My Office Work\My Internship Project\ProjectAssigned\ProjectAssigned\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\User\Desktop\My Office Work\My Internship Project\ProjectAssigned\ProjectAssigned\bin\Microsoft.Owin.xml
+C:\Users\User\Desktop\My Office Work\My Internship Project\ProjectAssigned\ProjectAssigned\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\User\Desktop\My Office Work\My Internship Project\ProjectAssigned\ProjectAssigned\bin\Microsoft.Owin.Security.xml
+C:\Users\User\Desktop\My Office Work\My Internship Project\ProjectAssigned\ProjectAssigned\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\User\Desktop\My Office Work\My Internship Project\ProjectAssigned\ProjectAssigned\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\User\Desktop\My Office Work\My Internship Project\ProjectAssigned\ProjectAssigned\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\User\Desktop\My Office Work\My Internship Project\ProjectAssigned\ProjectAssigned\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\User\Desktop\My Office Work\My Internship Project\ProjectAssigned\ProjectAssigned\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\User\Desktop\My Office Work\My Internship Project\ProjectAssigned\ProjectAssigned\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\User\Desktop\My Office Work\My Internship Project\ProjectAssigned\ProjectAssigned\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\User\Desktop\My Office Work\My Internship Project\ProjectAssigned\ProjectAssigned\obj\Debug\ProjectAssigned.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\My Office Work\My Internship Project\ProjectAssigned\ProjectAssigned\obj\Debug\ProjectAssigned.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\My Office Work\My Internship Project\ProjectAssigned\ProjectAssigned\obj\Debug\ProjectAssigned.csproj.CopyComplete
+C:\Users\User\Desktop\My Office Work\My Internship Project\ProjectAssigned\ProjectAssigned\obj\Debug\ProjectAssigned.dll
+C:\Users\User\Desktop\My Office Work\My Internship Project\ProjectAssigned\ProjectAssigned\obj\Debug\ProjectAssigned.pdb

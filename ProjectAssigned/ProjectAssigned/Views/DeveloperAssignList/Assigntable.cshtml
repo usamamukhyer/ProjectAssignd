@@ -1,0 +1,155 @@
+﻿
+@{
+    ViewBag.Title = "Assigntable";
+    Layout = "~/Views/Shared/_ProjectAdminPannelLayout.cshtml";
+}
+
+<div class="app-content  my-3 my-md-5">
+    <div class="side-app">
+        <div class="page-header">
+            <h4 class="page-title">Data</h4>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Data</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Data</li>
+            </ol>
+
+        </div>
+        <div class="row">
+
+            <div class="col-md-12 col-lg-12">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">Data</div>
+
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table id="example2" class="hover table-bordered border-top-0 border-bottom-0">
+                                <thead>
+                                    <tr>
+                                        <th>Project Title</th>
+                                        <th>Start Date</th>
+                                        <th>Expected End Date</th>
+                                        <th>Start Time </th>
+                                        <th>End Time</th>
+                                        <th>Discription</th>
+                                        <th>developer Comment</th>
+                                        <th>Project Detail</th>
+                                        <th>Developer Work Detail</th>
+                                       
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Tiger Nixon</td>
+                                        <td>System Architect</td>
+                                        <td>Edinburgh</td>
+                                        <td><a href="#" class="btn btn-info fa fa-hourglass-start">Start Time</a></td>
+                                        <td><a href="#" class="btn btn-danger fa fa-hourglass-end">End Time</a></td>
+                                        <td>$320,800</td>
+                                        <td>$320,800</td>
+                                        <td> <a href="@Url.Action("Detail","ProjectDetail")" class="btn btn-link fa fa-eye">View</a></td>
+                                        <td> <a href="@Url.Action("DetailList","EmployeeWorkDetail")" class="btn btn-link fa fa-eye">View</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Tiger Nixon</td>
+                                        <td>System Architect</td>
+                                        <td>Edinburgh</td>
+                                        <td><a href="#" class="btn btn-info fa fa-hourglass-start">Start Time</a></td>
+                                        <td><a href="#" class="btn btn-danger fa fa-hourglass-end">End Time</a></td>
+                                        <td>$320,800</td>
+                                        <td>$320,800</td>
+                                        <td> <a href="@Url.Action("Detail","ProjectDetail")" class="btn btn-link fa fa-eye">View</a></td>
+                                        <td> <a href="@Url.Action("DetailList","EmployeeWorkDetail")" class="btn btn-link fa fa-eye">View</a></td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td>Tiger Nixon</td>
+                                        <td>System Architect</td>
+                                        <td>Edinburgh</td>
+                                        <td><a href="#" class="btn btn-info fa fa-hourglass-start">Start Time</a></td>
+                                        <td><a href="#" class="btn btn-danger fa fa-hourglass-end">End Time</a></td>
+                                        <td>$320,800</td>
+                                        <td>$320,800</td>
+                                        <td> <a href="@Url.Action("Detail","ProjectDetail")" class="btn btn-link fa fa-eye">View</a></td>
+                                        <td> <a href="@Url.Action("DetailList","EmployeeWorkDetail")" class="btn btn-link fa fa-eye">View</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Cedric Kelly</td>
+                                        <td>Senior Javascript Developer</td>
+                                        <td>Edinburgh</td>
+                                        <td><a href="#" class="btn btn-info fa fa-hourglass-start">Start Time</a></td>
+                                        <td><a href="#" class="btn btn-danger fa fa-hourglass-end">End Time</a></td>
+                                        <td>$433,060</td>
+                                        <td>$320,800</td>
+                                        <td> <a href="@Url.Action("Detail","ProjectDetail")" class="btn btn-link fa fa-eye">View</a></td>
+                                        <td> <a href="@Url.Action("DetailList","EmployeeWorkDetail")" class="btn btn-link fa fa-eye">View</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Airi Satou</td>
+                                        <td>Accountant</td>
+                                        <td>Tokyo</td>
+                                        <td><a href="#" class="btn btn-info fa fa-hourglass-start">Start Time</a></td>
+                                        <td><a href="#" class="btn btn-danger fa fa-hourglass-end">End Time</a></td>
+                                        <td>$162,700</td>
+                                        <td>$320,800</td>
+                                        <td> <a href="@Url.Action("Detail","ProjectDetail")" class="btn btn-link fa fa-eye">View</a></td>
+                                        <td> <a href="@Url.Action("DetailList","EmployeeWorkDetail")" class="btn btn-link fa fa-eye">View</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Brielle Williamson</td>
+                                        <td>Integration Specialist</td>
+                                        <td>New York</td>
+                                        <td><a href="#" class="btn btn-info fa fa-hourglass-start">Start Time</a></td>
+                                        <td><a href="#" class="btn btn-danger fa fa-hourglass-end">End Time</a></td>
+                                        <td>$372,000</td>
+                                        <td>$320,800</td>
+                                        <td> <a href="@Url.Action("Detail","ProjectDetail")" class="btn btn-link fa fa-eye">View</a></td>
+                                        <td> <a href="@Url.Action("DetailList","EmployeeWorkDetail")" class="btn btn-link fa fa-eye">View</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Herrod Chandler</td>
+                                        <td>Sales Assistant</td>
+                                        <td>San Francisco</td>
+                                        <td><a href="#" class="btn btn-info fa fa-hourglass-start">Start Time</a></td>
+                                        <td><a href="#" class="btn btn-danger fa fa-hourglass-end">End Time</a></td>
+                                        <td>$137,500</td>
+                                        <td>$320,800</td>
+                                        <td> <a href="@Url.Action("Detail","ProjectDetail")" class="btn btn-link fa fa-eye">View</a></td>
+                                        <td> <a href="@Url.Action("DetailList","EmployeeWorkDetail")" class="btn btn-link fa fa-eye">View</a></td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>Rhona Davidson</td>
+                                        <td>Integration Specialist</td>
+                                        <td>Tokyo</td>
+                                        <td><a href="#" class="btn btn-info fa fa-hourglass-start">Start Time</a></td>
+                                        <td><a href="#" class="btn btn-danger fa fa-hourglass-end">End Time</a></td>
+                                        <td>$327,900</td>
+                                        <td>$320,800</td>
+                                        <td> <a href="@Url.Action("Detail","ProjectDetail")" class="btn btn-link fa fa-eye">View</a></td>
+                                        <td> <a href="@Url.Action("DetailList","EmployeeWorkDetail")" class="btn btn-link fa fa-eye">View</a></td>
+                                    </tr>
+                                   
+                            </table>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section Mysection{
+
+    <!-- Data table css -->
+    <link href="~/Content/assets/plugins/datatable/dataTables.bootstrap4.min.css" rel="stylesheet" />
+    <link href="~/Content/assets/plugins/datatable/jquery.dataTables.min.css" rel="stylesheet" />
+    <!-- Data tables -->
+    <script src="~/Content/assets/plugins/datatable/jquery.dataTables.min.js"></script>
+    <script src="~/Content/assets/plugins/datatable/dataTables.bootstrap4.min.js"></script>
+    <script src="~/Content/assets/js/datatable.js"></script>
+
+}
+
