@@ -40,6 +40,7 @@
                                         <th>@Html.DisplayNameFor(m => m.Address)</th>
                                         <th>@Html.DisplayNameFor(m => m.Joindate)</th>
                                         <th> Edit</th>
+                                        <th> Edit</th>
 
 
                                     </tr>
@@ -66,8 +67,11 @@
                                         <td>
                                             @Html.DisplayFor(mitem => item.Joindate)
                                         </td>
+                                        <td>
+                                            <img  src="@Url.Content(item.Image)" width="50" height="50" />
+                                        </td>
 
-                                     <td> <a href="@Url.Action("Detail","ProjectDetail")" class="btn btn-link fa fa-edit">View</a></td>
+                                        <td> @Html.ActionLink("Edit", "EditDeveloper", new { id = item.Developer_Id })</td>
                                     </tr>
                                   }
                                     

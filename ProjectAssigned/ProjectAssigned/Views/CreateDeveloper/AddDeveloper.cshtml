@@ -35,10 +35,17 @@
              
                     
                     <div class="row">
-                 <div class="col-lg-4 col-sm-4 col-md-4 text-center">
-                    @Html.LabelFor(model=>model.Image)
-                    <input type="file" name="Dp" id="dp"  class="dropify" required  />
-                </div>
+                        <div class="col-lg-4 col-sm-4 col-md-4 text-center">
+                            @Html.LabelFor(model => model.Image)
+                            <input type="file" name="Dp" id="dp" class="dropify" required />
+                            @*<div class="text-danger">
+                                @ViewBag.message
+                            </div>
+
+                            <div class="text-danger">
+                                @ViewBag.Message
+                            </div>*@
+                        </div>
                  @Html.ValidationMessageFor(model => model.Image, "", new { @class = "text-danger" })
             </div>
 
@@ -126,16 +133,26 @@
                                    <div class="form-group">
                                        @Html.LabelFor(m => m.Cv)
                                        <div class="custom-file">
-                                           <input type="file" name="cvdata", id="cvdata" class="custom-file-input" required>
+                                           <input type="file" name="cvdata" , id="cvdata" class="custom-file-input" required>
                                            <label class="custom-file-label">Choose file</label>
+                                          
+                                           
+                                           @*<div class="text-danger">
+                                               @ViewBag.mess
+                                           </div>
+                                           
+                                           <div class="text-danger">
+                                               @ViewBag.Mess
+                                           </div>*@
                                        </div>
+                                     
                                        @Html.ValidationMessageFor(m => m.Cv, "", new { @class = "text-danger" })
                                    </div>
                                </div>
 
                                <div class="col-sm-6 col-md-4">
                                    <div class="form-group">
-                                       @Html.LabelFor(m => m.Username)
+                                       @Html.LabelFor(m => m.hhy )
                                        @Html.TextBoxFor(m => m.Username, new { @class = "form-control", placeholder = "Username", required = "required", })
                                        @Html.ValidationMessageFor(m => m.Username, "", new { @class = "text-danger" })
                                    </div>
