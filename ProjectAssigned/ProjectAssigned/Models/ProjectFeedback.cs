@@ -29,10 +29,10 @@ namespace ProjectAssigned.Models
         public Nullable<int> Developer_Id { get; set; }
         public Nullable<int> ModuleId { get; set; }
     
-        public virtual CreateProject CreateProject { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DeveloperWorkProgress> DeveloperWorkProgresses { get; set; }
         public virtual NewModule NewModule { get; set; }
         public virtual CreateDeveloper CreateDeveloper { get; set; }
+        public virtual CreateProject CreateProject { get; set; }
     }
 }

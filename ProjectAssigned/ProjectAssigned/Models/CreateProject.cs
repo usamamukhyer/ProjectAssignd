@@ -28,19 +28,19 @@ namespace ProjectAssigned.Models
         public System.DateTime AwardDate { get; set; }
         public System.DateTime Startdate { get; set; }
         public System.DateTime Enddate { get; set; }
-        public System.DateTime ActualCompletedate { get; set; }
+        public Nullable<System.DateTime> ActualCompletedate { get; set; }
         public string Status { get; set; }
         public string Statusfeedback { get; set; }
         public string Fileuploads { get; set; }
         public string Discription { get; set; }
         public Nullable<int> Developer_Id { get; set; }
     
+        public virtual CreateDeveloper CreateDeveloper { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DeveloperWorkProgress> DeveloperWorkProgresses { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<NewModule> NewModules { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ProjectFeedback> ProjectFeedbacks { get; set; }
-        public virtual CreateDeveloper CreateDeveloper { get; set; }
     }
 }

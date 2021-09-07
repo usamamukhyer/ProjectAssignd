@@ -17,10 +17,10 @@ namespace ProjectAssigned.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public CreateDeveloper()
         {
-            this.CreateProjects = new HashSet<CreateProject>();
             this.DeveloperWorkProgresses = new HashSet<DeveloperWorkProgress>();
             this.NewModules = new HashSet<NewModule>();
             this.ProjectFeedbacks = new HashSet<ProjectFeedback>();
+            this.CreateProjects = new HashSet<CreateProject>();
         }
     
         public int Developer_Id { get; set; }
@@ -40,12 +40,12 @@ namespace ProjectAssigned.Models
         public string UserPassword { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<CreateProject> CreateProjects { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DeveloperWorkProgress> DeveloperWorkProgresses { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<NewModule> NewModules { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ProjectFeedback> ProjectFeedbacks { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<CreateProject> CreateProjects { get; set; }
     }
 }

@@ -18,6 +18,7 @@ namespace ProjectAssigned.Controllers
         string extension;
         string fileName;
         string uploadUrl;
+        
         // GET: CreateDeveloper
 
         public ActionResult DeveloperList()

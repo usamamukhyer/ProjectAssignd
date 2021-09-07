@@ -60,27 +60,6 @@
     <NavigationProperty Name="AspNetUserLogins" Relationship="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" FromRole="AspNetUsers" ToRole="AspNetUserLogins" />
     <NavigationProperty Name="AspNetRoles" Relationship="Self.AspNetUserRoles" FromRole="AspNetUsers" ToRole="AspNetRoles" />
   </EntityType>
-  <EntityType Name="CreateProject">
-    <Key>
-      <PropertyRef Name="Project_Id" />
-    </Key>
-    <Property Name="Project_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="ProjectTitle" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="Budget" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="AwardDate" Type="DateTime" Nullable="false" Precision="3" />
-    <Property Name="Startdate" Type="DateTime" Nullable="false" Precision="3" />
-    <Property Name="Enddate" Type="DateTime" Nullable="false" Precision="3" />
-    <Property Name="ActualCompletedate" Type="DateTime" Nullable="false" Precision="3" />
-    <Property Name="Status" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="Statusfeedback" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="Fileuploads" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="Discription" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="Developer_Id" Type="Int32" />
-    <NavigationProperty Name="DeveloperWorkProgresses" Relationship="Self.FK_DeveloperWorkProgress_CreateProject" FromRole="CreateProject" ToRole="DeveloperWorkProgress" />
-    <NavigationProperty Name="NewModules" Relationship="Self.FK_NewModule_CreateProject" FromRole="CreateProject" ToRole="NewModule" />
-    <NavigationProperty Name="ProjectFeedbacks" Relationship="Self.FK_ProjectFeedback_CreateProject" FromRole="CreateProject" ToRole="ProjectFeedback" />
-    <NavigationProperty Name="CreateDeveloper" Relationship="ProjectAssignedModel.FK_CreateProject_CreateDeveloper" FromRole="CreateProject" ToRole="CreateDeveloper" />
-  </EntityType>
   <EntityType Name="DeveloperWorkProgress">
     <Key>
       <PropertyRef Name="Workid" />
@@ -96,10 +75,10 @@
     <Property Name="Project_Id" Type="Int32" />
     <Property Name="Developer_Id" Type="Int32" />
     <Property Name="FeedId" Type="Int32" />
-    <NavigationProperty Name="CreateProject" Relationship="Self.FK_DeveloperWorkProgress_CreateProject" FromRole="DeveloperWorkProgress" ToRole="CreateProject" />
     <NavigationProperty Name="NewModule" Relationship="Self.FK_DeveloperWorkProgress_NewModule" FromRole="DeveloperWorkProgress" ToRole="NewModule" />
     <NavigationProperty Name="ProjectFeedback" Relationship="Self.FK_DeveloperWorkProgress_ProjectFeedback" FromRole="DeveloperWorkProgress" ToRole="ProjectFeedback" />
     <NavigationProperty Name="CreateDeveloper" Relationship="ProjectAssignedModel.FK_DeveloperWorkProgress_CreateDeveloper" FromRole="DeveloperWorkProgress" ToRole="CreateDeveloper" />
+    <NavigationProperty Name="CreateProject" Relationship="ProjectAssignedModel.FK_DeveloperWorkProgress_CreateProject" FromRole="DeveloperWorkProgress" ToRole="CreateProject" />
   </EntityType>
   <EntityType Name="NewModule">
     <Key>
@@ -116,10 +95,10 @@
     <Property Name="Assign" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="Project_Id" Type="Int32" />
     <Property Name="Developer_Id" Type="Int32" />
-    <NavigationProperty Name="CreateProject" Relationship="Self.FK_NewModule_CreateProject" FromRole="NewModule" ToRole="CreateProject" />
     <NavigationProperty Name="DeveloperWorkProgresses" Relationship="Self.FK_DeveloperWorkProgress_NewModule" FromRole="NewModule" ToRole="DeveloperWorkProgress" />
     <NavigationProperty Name="ProjectFeedbacks" Relationship="Self.FK_ProjectFeedback_NewModule" FromRole="NewModule" ToRole="ProjectFeedback" />
     <NavigationProperty Name="CreateDeveloper" Relationship="ProjectAssignedModel.FK_NewModule_CreateDeveloper" FromRole="NewModule" ToRole="CreateDeveloper" />
+    <NavigationProperty Name="CreateProject" Relationship="ProjectAssignedModel.FK_NewModule_CreateProject" FromRole="NewModule" ToRole="CreateProject" />
   </EntityType>
   <EntityType Name="ProjectFeedback">
     <Key>
@@ -133,10 +112,10 @@
     <Property Name="Project_Id" Type="Int32" />
     <Property Name="Developer_Id" Type="Int32" />
     <Property Name="ModuleId" Type="Int32" />
-    <NavigationProperty Name="CreateProject" Relationship="Self.FK_ProjectFeedback_CreateProject" FromRole="ProjectFeedback" ToRole="CreateProject" />
     <NavigationProperty Name="DeveloperWorkProgresses" Relationship="Self.FK_DeveloperWorkProgress_ProjectFeedback" FromRole="ProjectFeedback" ToRole="DeveloperWorkProgress" />
     <NavigationProperty Name="NewModule" Relationship="Self.FK_ProjectFeedback_NewModule" FromRole="ProjectFeedback" ToRole="NewModule" />
     <NavigationProperty Name="CreateDeveloper" Relationship="ProjectAssignedModel.FK_ProjectFeedback_CreateDeveloper" FromRole="ProjectFeedback" ToRole="CreateDeveloper" />
+    <NavigationProperty Name="CreateProject" Relationship="ProjectAssignedModel.FK_ProjectFeedback_CreateProject" FromRole="ProjectFeedback" ToRole="CreateProject" />
   </EntityType>
   <EntityType Name="sysdiagram">
     <Key>
@@ -187,42 +166,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_DeveloperWorkProgress_CreateProject">
-    <End Role="CreateProject" Type="Self.CreateProject" Multiplicity="0..1" />
-    <End Role="DeveloperWorkProgress" Type="Self.DeveloperWorkProgress" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="CreateProject">
-        <PropertyRef Name="Project_Id" />
-      </Principal>
-      <Dependent Role="DeveloperWorkProgress">
-        <PropertyRef Name="Project_Id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_NewModule_CreateProject">
-    <End Role="CreateProject" Type="Self.CreateProject" Multiplicity="0..1" />
-    <End Role="NewModule" Type="Self.NewModule" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="CreateProject">
-        <PropertyRef Name="Project_Id" />
-      </Principal>
-      <Dependent Role="NewModule">
-        <PropertyRef Name="Project_Id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_ProjectFeedback_CreateProject">
-    <End Role="CreateProject" Type="Self.CreateProject" Multiplicity="0..1" />
-    <End Role="ProjectFeedback" Type="Self.ProjectFeedback" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="CreateProject">
-        <PropertyRef Name="Project_Id" />
-      </Principal>
-      <Dependent Role="ProjectFeedback">
-        <PropertyRef Name="Project_Id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_DeveloperWorkProgress_NewModule">
     <End Role="NewModule" Type="Self.NewModule" Multiplicity="0..1" />
     <End Role="DeveloperWorkProgress" Type="Self.DeveloperWorkProgress" Multiplicity="*" />
@@ -269,7 +212,6 @@
     <EntitySet Name="AspNetUserClaims" EntityType="Self.AspNetUserClaim" />
     <EntitySet Name="AspNetUserLogins" EntityType="Self.AspNetUserLogin" />
     <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUser" />
-    <EntitySet Name="CreateProjects" EntityType="Self.CreateProject" />
     <EntitySet Name="DeveloperWorkProgresses" EntityType="Self.DeveloperWorkProgress" />
     <EntitySet Name="NewModules" EntityType="Self.NewModule" />
     <EntitySet Name="ProjectFeedbacks" EntityType="Self.ProjectFeedback" />
@@ -282,18 +224,6 @@
     <AssociationSet Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
       <End Role="AspNetUsers" EntitySet="AspNetUsers" />
       <End Role="AspNetUserLogins" EntitySet="AspNetUserLogins" />
-    </AssociationSet>
-    <AssociationSet Name="FK_DeveloperWorkProgress_CreateProject" Association="Self.FK_DeveloperWorkProgress_CreateProject">
-      <End Role="CreateProject" EntitySet="CreateProjects" />
-      <End Role="DeveloperWorkProgress" EntitySet="DeveloperWorkProgresses" />
-    </AssociationSet>
-    <AssociationSet Name="FK_NewModule_CreateProject" Association="Self.FK_NewModule_CreateProject">
-      <End Role="CreateProject" EntitySet="CreateProjects" />
-      <End Role="NewModule" EntitySet="NewModules" />
-    </AssociationSet>
-    <AssociationSet Name="FK_ProjectFeedback_CreateProject" Association="Self.FK_ProjectFeedback_CreateProject">
-      <End Role="CreateProject" EntitySet="CreateProjects" />
-      <End Role="ProjectFeedback" EntitySet="ProjectFeedbacks" />
     </AssociationSet>
     <AssociationSet Name="FK_DeveloperWorkProgress_NewModule" Association="Self.FK_DeveloperWorkProgress_NewModule">
       <End Role="NewModule" EntitySet="NewModules" />
@@ -312,10 +242,6 @@
       <End Role="AspNetUsers" EntitySet="AspNetUsers" />
     </AssociationSet>
     <EntitySet Name="CreateDevelopers" EntityType="ProjectAssignedModel.CreateDeveloper" />
-    <AssociationSet Name="FK_CreateProject_CreateDeveloper" Association="ProjectAssignedModel.FK_CreateProject_CreateDeveloper">
-      <End Role="CreateDeveloper" EntitySet="CreateDevelopers" />
-      <End Role="CreateProject" EntitySet="CreateProjects" />
-    </AssociationSet>
     <AssociationSet Name="FK_DeveloperWorkProgress_CreateDeveloper" Association="ProjectAssignedModel.FK_DeveloperWorkProgress_CreateDeveloper">
       <End Role="CreateDeveloper" EntitySet="CreateDevelopers" />
       <End Role="DeveloperWorkProgress" EntitySet="DeveloperWorkProgresses" />
@@ -326,6 +252,23 @@
     </AssociationSet>
     <AssociationSet Name="FK_ProjectFeedback_CreateDeveloper" Association="ProjectAssignedModel.FK_ProjectFeedback_CreateDeveloper">
       <End Role="CreateDeveloper" EntitySet="CreateDevelopers" />
+      <End Role="ProjectFeedback" EntitySet="ProjectFeedbacks" />
+    </AssociationSet>
+    <EntitySet Name="CreateProjects" EntityType="ProjectAssignedModel.CreateProject" />
+    <AssociationSet Name="FK_CreateProject_CreateDeveloper" Association="ProjectAssignedModel.FK_CreateProject_CreateDeveloper">
+      <End Role="CreateDeveloper" EntitySet="CreateDevelopers" />
+      <End Role="CreateProject" EntitySet="CreateProjects" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DeveloperWorkProgress_CreateProject" Association="ProjectAssignedModel.FK_DeveloperWorkProgress_CreateProject">
+      <End Role="CreateProject" EntitySet="CreateProjects" />
+      <End Role="DeveloperWorkProgress" EntitySet="DeveloperWorkProgresses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_NewModule_CreateProject" Association="ProjectAssignedModel.FK_NewModule_CreateProject">
+      <End Role="CreateProject" EntitySet="CreateProjects" />
+      <End Role="NewModule" EntitySet="NewModules" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProjectFeedback_CreateProject" Association="ProjectAssignedModel.FK_ProjectFeedback_CreateProject">
+      <End Role="CreateProject" EntitySet="CreateProjects" />
       <End Role="ProjectFeedback" EntitySet="ProjectFeedbacks" />
     </AssociationSet>
   </EntityContainer>
@@ -348,23 +291,11 @@
     <Property Name="Bio" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="Username" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="UserPassword" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="CreateProjects" Relationship="ProjectAssignedModel.FK_CreateProject_CreateDeveloper" FromRole="CreateDeveloper" ToRole="CreateProject" />
     <NavigationProperty Name="DeveloperWorkProgresses" Relationship="ProjectAssignedModel.FK_DeveloperWorkProgress_CreateDeveloper" FromRole="CreateDeveloper" ToRole="DeveloperWorkProgress" />
     <NavigationProperty Name="NewModules" Relationship="ProjectAssignedModel.FK_NewModule_CreateDeveloper" FromRole="CreateDeveloper" ToRole="NewModule" />
     <NavigationProperty Name="ProjectFeedbacks" Relationship="ProjectAssignedModel.FK_ProjectFeedback_CreateDeveloper" FromRole="CreateDeveloper" ToRole="ProjectFeedback" />
+    <NavigationProperty Name="CreateProjects" Relationship="ProjectAssignedModel.FK_CreateProject_CreateDeveloper" FromRole="CreateDeveloper" ToRole="CreateProject" />
   </EntityType>
-  <Association Name="FK_CreateProject_CreateDeveloper">
-    <End Type="ProjectAssignedModel.CreateDeveloper" Role="CreateDeveloper" Multiplicity="0..1" />
-    <End Type="ProjectAssignedModel.CreateProject" Role="CreateProject" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="CreateDeveloper">
-        <PropertyRef Name="Developer_Id" />
-      </Principal>
-      <Dependent Role="CreateProject">
-        <PropertyRef Name="Developer_Id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_DeveloperWorkProgress_CreateDeveloper">
     <End Type="ProjectAssignedModel.CreateDeveloper" Role="CreateDeveloper" Multiplicity="0..1" />
     <End Type="ProjectAssignedModel.DeveloperWorkProgress" Role="DeveloperWorkProgress" Multiplicity="*" />
@@ -398,6 +329,75 @@
       </Principal>
       <Dependent Role="ProjectFeedback">
         <PropertyRef Name="Developer_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="CreateProject">
+    <Key>
+      <PropertyRef Name="Project_Id" />
+    </Key>
+    <Property Name="Project_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProjectTitle" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Budget" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="AwardDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Startdate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Enddate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ActualCompletedate" Type="DateTime" Precision="3" />
+    <Property Name="Status" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Statusfeedback" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Fileuploads" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Discription" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Developer_Id" Type="Int32" />
+    <NavigationProperty Name="CreateDeveloper" Relationship="ProjectAssignedModel.FK_CreateProject_CreateDeveloper" FromRole="CreateProject" ToRole="CreateDeveloper" />
+    <NavigationProperty Name="DeveloperWorkProgresses" Relationship="ProjectAssignedModel.FK_DeveloperWorkProgress_CreateProject" FromRole="CreateProject" ToRole="DeveloperWorkProgress" />
+    <NavigationProperty Name="NewModules" Relationship="ProjectAssignedModel.FK_NewModule_CreateProject" FromRole="CreateProject" ToRole="NewModule" />
+    <NavigationProperty Name="ProjectFeedbacks" Relationship="ProjectAssignedModel.FK_ProjectFeedback_CreateProject" FromRole="CreateProject" ToRole="ProjectFeedback" />
+  </EntityType>
+  <Association Name="FK_CreateProject_CreateDeveloper">
+    <End Type="ProjectAssignedModel.CreateDeveloper" Role="CreateDeveloper" Multiplicity="0..1" />
+    <End Type="ProjectAssignedModel.CreateProject" Role="CreateProject" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CreateDeveloper">
+        <PropertyRef Name="Developer_Id" />
+      </Principal>
+      <Dependent Role="CreateProject">
+        <PropertyRef Name="Developer_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DeveloperWorkProgress_CreateProject">
+    <End Type="ProjectAssignedModel.CreateProject" Role="CreateProject" Multiplicity="0..1" />
+    <End Type="ProjectAssignedModel.DeveloperWorkProgress" Role="DeveloperWorkProgress" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CreateProject">
+        <PropertyRef Name="Project_Id" />
+      </Principal>
+      <Dependent Role="DeveloperWorkProgress">
+        <PropertyRef Name="Project_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_NewModule_CreateProject">
+    <End Type="ProjectAssignedModel.CreateProject" Role="CreateProject" Multiplicity="0..1" />
+    <End Type="ProjectAssignedModel.NewModule" Role="NewModule" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CreateProject">
+        <PropertyRef Name="Project_Id" />
+      </Principal>
+      <Dependent Role="NewModule">
+        <PropertyRef Name="Project_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProjectFeedback_CreateProject">
+    <End Type="ProjectAssignedModel.CreateProject" Role="CreateProject" Multiplicity="0..1" />
+    <End Type="ProjectAssignedModel.ProjectFeedback" Role="ProjectFeedback" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CreateProject">
+        <PropertyRef Name="Project_Id" />
+      </Principal>
+      <Dependent Role="ProjectFeedback">
+        <PropertyRef Name="Project_Id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

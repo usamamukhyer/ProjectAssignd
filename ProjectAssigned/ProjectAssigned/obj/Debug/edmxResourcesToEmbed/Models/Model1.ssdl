@@ -92,7 +92,7 @@
     <Property Name="AwardDate" Type="datetime" Nullable="false" />
     <Property Name="Startdate" Type="datetime" Nullable="false" />
     <Property Name="Enddate" Type="datetime" Nullable="false" />
-    <Property Name="ActualCompletedate" Type="datetime" Nullable="false" />
+    <Property Name="ActualCompletedate" Type="datetime" />
     <Property Name="Status" Type="nvarchar" MaxLength="500" Nullable="false" />
     <Property Name="Statusfeedback" Type="nvarchar" MaxLength="500" Nullable="false" />
     <Property Name="Fileuploads" Type="nvarchar" MaxLength="500" Nullable="false" />
