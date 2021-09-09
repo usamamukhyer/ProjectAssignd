@@ -1,9 +1,8 @@
 ﻿@model ProjectAssigned.Models.CreateProject
 @{
-    ViewBag.Title = "AddProject";
+    ViewBag.Title = "Editproject";
     Layout = "~/Views/Shared/_ProjectAdminPannelLayout.cshtml";
 }
-
 
 <div class="app-content  my-3 my-md-5">
 
@@ -27,10 +26,10 @@
             </div>
 
             <div class="card-body">
-                @using (Html.BeginForm("AddProject","AssignProject" ,FormMethod.Post, new
+                @using (Html.BeginForm("Editproject", "AssignProject", FormMethod.Get @* new
                 {
                     enctype = "multipart/form-data"
-                } ))
+                }*@))
                 {
                     @Html.AntiForgeryToken()
                     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
@@ -45,7 +44,7 @@
                         <div class="col-sm-6 col-md-4">
                             <div class="form-group">
                                 @Html.LabelFor(model => model.ProjectType)
-                                @Html.DropDownList("ProjectType", null, "--Select project type--", htmlAttributes: new { @class = "form-control", @required = "required"})
+                                @Html.DropDownList("ProjectType", null, "--Select project type--", htmlAttributes: new { @class = "form-control", @required = "required" })
                                 @Html.ValidationMessageFor(model => model.ProjectType, "", new { @class = "text-danger" })
                             </div>
                         </div>
@@ -64,7 +63,7 @@
                                 @Html.ValidationMessageFor(m => m.Budget, "", new { @class = "text-danger" })
                             </div>
                         </div>
-                        
+
                     </div>
 
 
@@ -81,7 +80,7 @@
                         <div class="col-sm-6 col-md-4">
                             <div class="form-group">
                                 @Html.LabelFor(m => m.Startdate)
-                                @Html.TextBoxFor(m => m.Startdate, new { @class = "form-control fc-datepicker",@placeholder = "MM/DD/YYYY", required = "required" })
+                                @Html.TextBoxFor(m => m.Startdate, new { @class = "form-control fc-datepicker", @placeholder = "MM/DD/YYYY", required = "required" })
                                 @Html.ValidationMessageFor(m => m.Startdate, "", new { @class = "text-danger" })
                             </div>
                         </div>
@@ -110,25 +109,25 @@
                             <div class="form-group">
                                 @Html.LabelFor(m => m.ActualCompletedate)
                                 @Html.TextBoxFor(m => m.ActualCompletedate, new { @class = "form-control fc-datepicker", placeholder = "MM/DD/YYYY", required = "required" })
-                              
+
                             </div>
                         </div>
 
                         <div class="col-sm-6 col-md-4">
                             <div class="form-group">
-                                @Html.LabelFor(model => model.Developer_Id,"Assign")
-                                @Html.DropDownList("Developer_Id", null, "--Select Developer--", htmlAttributes: new { @class = "form-control", @required = "required"  })
+                                @Html.LabelFor(model => model.Developer_Id, "Assign")
+                                @Html.DropDownList("Developer_Id", null, "--Select Developer--", htmlAttributes: new { @class = "form-control", @required = "required" })
                                 @Html.ValidationMessageFor(model => model.Developer_Id, "", new { @class = "text-danger" })
                             </div>
                         </div>
                         <div class="col-sm-6 col-md-4">
                             <div class="form-group">
                                 @Html.LabelFor(model => model.Status)
-                                @Html.DropDownList("Status", null, "--Status--",htmlAttributes: new { @class = "form-control", @required = "required", @placeholder = "Select developer" })
+                                @Html.DropDownList("Status", null, "--Status--", htmlAttributes: new { @class = "form-control", @required = "required", @placeholder = "Select developer" })
                                 @Html.ValidationMessageFor(model => model.Status, "", new { @class = "text-danger" })
                             </div>
                         </div>
-                      
+
                     </div>
 
                     <div class="row">
@@ -144,7 +143,7 @@
                             <div class="form-group">
                                 @Html.LabelFor(m => m.Fileuploads)
                                 <div class="custom-file">
-                                    <input type="file" id="Fileuploads"  name="Fileuploads" accept="filecontain/txt,filecontain/doc,filecontain/png" class="custom-file-input"   required>
+                                    <input type="file" id="Fileuploads" name="Fileuploads" accept="filecontain/txt,filecontain/doc,filecontain/png" class="custom-file-input" required>
                                     <label class="custom-file-label">Choose file</label>
                                 </div>
                                 @Html.ValidationMessageFor(m => m.Fileuploads, "", new { @class = "text-danger" })
@@ -152,27 +151,26 @@
                         </div>
                     </div>
 
-                            <div class="row">
+                    <div class="row">
 
-                                <div class="col-sm-6 col-md-12">
-                                    <div class="form-group">
-                                        @Html.LabelFor(m => m.Discription)
-                                        @Html.TextAreaFor(m => m.Discription, new { @class = "form-control", placeholder = "Enter About your description", required = "required", rows = "5" })
-                                        @Html.ValidationMessageFor(m => m.Discription, "", new { @class = "text-danger" })
-                                    </div>
-                                </div>
+                        <div class="col-sm-6 col-md-12">
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.Discription)
+                                @Html.TextAreaFor(m => m.Discription, new { @class = "form-control", placeholder = "Enter About your description", required = "required", rows = "5" })
+                                @Html.ValidationMessageFor(m => m.Discription, "", new { @class = "text-danger" })
                             </div>
+                        </div>
+                    </div>
 
-                            <div class="card-footer text-right">
-                                <button type="submit" class="btn btn-primary" id="Onsuccess">Save</button>
-                            </div>
+                    <div class="card-footer text-right">
+                        <button type="submit" class="btn btn-primary" id="Onsuccess">Save</button>
+                    </div>
 
-                            }
-                     </div>
+                }
+            </div>
 
-                  
+
+        </div>
+
     </div>
-
 </div>
-    </div>
-

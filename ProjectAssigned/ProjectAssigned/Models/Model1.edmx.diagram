@@ -21,11 +21,11 @@
         <AssociationConnector Association="ProjectAssignedModel.FK_DeveloperWorkProgress_ProjectFeedback" ManuallyRouted="false" />
         <AssociationConnector Association="ProjectAssignedModel.FK_ProjectFeedback_NewModule" ManuallyRouted="false" />
         <AssociationConnector Association="ProjectAssignedModel.AspNetUserRoles" ManuallyRouted="false" />
-        <EntityTypeShape EntityType="ProjectAssignedModel.CreateDeveloper" Width="1.5" PointX="0.75" PointY="4.25" />
+        <EntityTypeShape EntityType="ProjectAssignedModel.CreateDeveloper" Width="1.5" PointX="0.75" PointY="4.375" />
         <AssociationConnector Association="ProjectAssignedModel.FK_DeveloperWorkProgress_CreateDeveloper" />
         <AssociationConnector Association="ProjectAssignedModel.FK_NewModule_CreateDeveloper" />
         <AssociationConnector Association="ProjectAssignedModel.FK_ProjectFeedback_CreateDeveloper" />
-        <EntityTypeShape EntityType="ProjectAssignedModel.CreateProject" Width="1.5" PointX="3" PointY="3.5" />
+        <EntityTypeShape EntityType="ProjectAssignedModel.CreateProject" Width="1.5" PointX="3" PointY="14.5" />
         <AssociationConnector Association="ProjectAssignedModel.FK_CreateProject_CreateDeveloper" />
         <AssociationConnector Association="ProjectAssignedModel.FK_DeveloperWorkProgress_CreateProject" />
         <AssociationConnector Association="ProjectAssignedModel.FK_NewModule_CreateProject" />

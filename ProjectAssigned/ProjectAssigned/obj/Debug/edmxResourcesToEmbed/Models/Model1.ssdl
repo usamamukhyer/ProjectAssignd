@@ -95,9 +95,11 @@
     <Property Name="ActualCompletedate" Type="datetime" />
     <Property Name="Status" Type="nvarchar" MaxLength="500" Nullable="false" />
     <Property Name="Statusfeedback" Type="nvarchar" MaxLength="500" Nullable="false" />
-    <Property Name="Fileuploads" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="Fileuploads" Type="nvarchar" MaxLength="500" />
     <Property Name="Discription" Type="nvarchar" MaxLength="500" Nullable="false" />
     <Property Name="Developer_Id" Type="int" />
+    <Property Name="ProjectType" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="Assign" Type="int" />
   </EntityType>
   <EntityType Name="DeveloperWorkProgress">
     <Key>

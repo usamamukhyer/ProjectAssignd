@@ -34,6 +34,8 @@ namespace ProjectAssigned.Models
         public string Fileuploads { get; set; }
         public string Discription { get; set; }
         public Nullable<int> Developer_Id { get; set; }
+        public string ProjectType { get; set; }
+        public Nullable<int> Assign { get; set; }
     
         public virtual CreateDeveloper CreateDeveloper { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

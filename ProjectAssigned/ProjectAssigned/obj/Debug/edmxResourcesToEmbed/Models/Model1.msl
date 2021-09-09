@@ -160,6 +160,8 @@
     <EntitySetMapping Name="CreateProjects">
       <EntityTypeMapping TypeName="ProjectAssignedModel.CreateProject">
         <MappingFragment StoreEntitySet="CreateProject">
+          <ScalarProperty Name="Assign" ColumnName="Assign" />
+          <ScalarProperty Name="ProjectType" ColumnName="ProjectType" />
           <ScalarProperty Name="Developer_Id" ColumnName="Developer_Id" />
           <ScalarProperty Name="Discription" ColumnName="Discription" />
           <ScalarProperty Name="Fileuploads" ColumnName="Fileuploads" />

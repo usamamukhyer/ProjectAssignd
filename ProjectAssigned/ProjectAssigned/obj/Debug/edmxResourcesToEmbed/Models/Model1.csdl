@@ -345,9 +345,11 @@
     <Property Name="ActualCompletedate" Type="DateTime" Precision="3" />
     <Property Name="Status" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
     <Property Name="Statusfeedback" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
-    <Property Name="Fileuploads" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Fileuploads" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
     <Property Name="Discription" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
     <Property Name="Developer_Id" Type="Int32" />
+    <Property Name="ProjectType" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Assign" Type="Int32" />
     <NavigationProperty Name="CreateDeveloper" Relationship="ProjectAssignedModel.FK_CreateProject_CreateDeveloper" FromRole="CreateProject" ToRole="CreateDeveloper" />
     <NavigationProperty Name="DeveloperWorkProgresses" Relationship="ProjectAssignedModel.FK_DeveloperWorkProgress_CreateProject" FromRole="CreateProject" ToRole="DeveloperWorkProgress" />
     <NavigationProperty Name="NewModules" Relationship="ProjectAssignedModel.FK_NewModule_CreateProject" FromRole="CreateProject" ToRole="NewModule" />
