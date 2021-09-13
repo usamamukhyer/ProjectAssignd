@@ -1,0 +1,87 @@
+﻿@model IEnumerable<ProjectAssigned.Models.ProjectFeedback>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_ProjectAdminPannelLayout.cshtml";
+}
+
+<div class="app-content  my-3 my-md-5">
+    <div class="side-app">
+        <div class="page-header">
+            <h4 class="page-title">Data</h4>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Data</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Data</li>
+            </ol>
+
+        </div>
+        <div class="row">
+
+            <div class="col-md-12 col-lg-12">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">Project Data</div>
+
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table id="example2" class="hover table-bordered border-top-0 border-bottom-0">
+                                <thead>
+                                    <tr>
+                                        <th>Project Title</th>
+                                        <th>Developer</th>
+                                        <th>@Html.DisplayNameFor(m => m.Startdate)</th>               
+                                        <th>@Html.DisplayNameFor(m => m.Enddate)</th>
+                                        <th>@Html.DisplayNameFor(m => m.time)</th>
+                                        <th> Edit</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <td>
+                                                @Html.DisplayFor(mitem => item.CreateProject.ProjectTitle)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(mitem => item.CreateDeveloper.Firstname)
+                                            </td>
+                                            
+                                            <td>
+                                                @Html.DisplayFor(mitem => item.Startdate)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(mitem => item.Enddate)
+                                            </td>
+
+                                            <td>
+                                                @Html.DisplayFor(mitem => item.time)
+                                            </td>
+                                            
+
+                                            <td>  <a class="btn btn-primary btn-sm" href="@Url.Action("Editproject","AssignProject",new {id=item.Project_Id })"><i class="fa fa-pencil fa-lg"></i></a></td>
+                                        </tr>
+                                    }
+                            </table>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section Mysection{
+
+    <!-- Data table css -->
+    <link href="~/Content/assets/plugins/datatable/dataTables.bootstrap4.min.css" rel="stylesheet" />
+    <link href="~/Content/assets/plugins/datatable/jquery.dataTables.min.css" rel="stylesheet" />
+    <!-- Data tables -->
+    <script src="~/Content/assets/plugins/datatable/jquery.dataTables.min.js"></script>
+    <script src="~/Content/assets/plugins/datatable/dataTables.bootstrap4.min.js"></script>
+    <script src="~/Content/assets/js/datatable.js"></script>
+
+}
+
+
+

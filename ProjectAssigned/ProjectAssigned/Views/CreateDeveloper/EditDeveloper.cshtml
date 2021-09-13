@@ -34,21 +34,27 @@
                     @Html.AntiForgeryToken()
                     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                     @Html.HiddenFor(m => m.Developer_Id)
+                    @Html.Hidden("prevemail", Model.Email)
+                    @Html.Hidden("prevpass", Model.UserPassword)
+                    @Html.Hidden("prevname", Model.Username)
+                    @Html.Hidden("prephone",Model.Phone)
+
+
 
 
                     <div class="row">
                         <div class="col-lg-4 col-sm-4 col-md-4 text-center">
                             @Html.LabelFor(model => model.Image)
 
-                            <input type="file" name="Dp" id="dp" class="dropify" data-default-file="~/Content/Filesdata/Images/@Model.Image" />
-                         
-                            @*<div class="text-danger">
-            @ViewBag.message
-        </div>
+                            <input type="file" name="Dp" id="dp" class="dropify" data-default-file="@Model.Image" />
 
-        <div class="text-danger">
-            @ViewBag.Message
-        </div>*@
+                            @*<div class="text-danger">
+                        @ViewBag.message
+                    </div>
+
+                    <div class="text-danger">
+                        @ViewBag.Message
+                    </div>*@
                         </div>
                         @Html.ValidationMessageFor(model => model.Image, "", new { @class = "text-danger" })
                     </div>
@@ -100,7 +106,7 @@
                         <div class="col-sm-6 col-md-4">
                             <div class="form-group">
                                 @Html.LabelFor(m => m.Joindate)
-                                @Html.TextBoxFor(m => m.Joindate, new { @class = "form-control fc-datepicker", placeholder = "MM/DD/YYYY", required = "required" })
+                                @Html.TextBoxFor(m => m.Joindate, new { @class = "form-control fc-datepicker", placeholder = "MM/DD/YYYY", @Value = @Model.Joindate.ToShortDateString() ,required = "required" })
                                 @Html.ValidationMessageFor(m => m.Joindate, "", new { @class = "text-danger" })
                             </div>
                         </div>
@@ -118,14 +124,14 @@
                         <div class="col-sm-6 col-md-4">
                             <div class="form-group">
                                 @Html.LabelFor(m => m.Email)
-                                @Html.TextBoxFor(m => m.Email, new { @class = "form-control", placeholder = "Email", required = "required", type = "email" })
+                                @Html.TextBoxFor(m => m.Email, new { @class = "form-control", @data_val = "false", placeholder = "Email", type = "email" })
                                 @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
                             </div>
                         </div>
                         <div class="col-sm-6 col-md-4">
                             <div class="form-group">
                                 @Html.LabelFor(m => m.Phone)
-                                @Html.TextBoxFor(m => m.Phone, new { @class = "form-control", placeholder = "Phone", required = "required", })
+                                @Html.TextBoxFor(m => m.Phone, new { @class = "form-control", placeholder = "Phone" })
                                 @Html.ValidationMessageFor(m => m.Phone, "", new { @class = "text-danger" })
                             </div>
                         </div>
@@ -137,18 +143,18 @@
                             <div class="form-group">
                                 @Html.LabelFor(m => m.Cv)
                                 <div class="custom-file">
-                                    
-                                    <input type="file" name="cvdata" , id="cvdata" class="custom-file-input" @Model.Cv @*Va data-default-file="@Url.Content("~/Content/Filesdata/Cv/"+ Model.Cv)"*@ />
+
+                                    <input type="file" name="cvdata"  id="cvdata" class="custom-file-input" value="@Model.Cv" @*Va data-default-file="@Url.Content("~/Content/Filesdata/Cv/"+ Model.Cv)"*@ />
                                     <label class="custom-file-label">Choose file</label>
 
 
                                     @*<div class="text-danger">
-            @ViewBag.mess
-        </div>
+                                @ViewBag.mess
+                            </div>
 
-        <div class="text-danger">
-            @ViewBag.Mess
-        </div>*@
+                            <div class="text-danger">
+                                @ViewBag.Mess
+                            </div>*@
                                 </div>
 
                                 @Html.ValidationMessageFor(m => m.Cv, "", new { @class = "text-danger" })
@@ -158,7 +164,7 @@
                         <div class="col-sm-6 col-md-4">
                             <div class="form-group">
                                 @Html.LabelFor(m => m.Username)
-                                @Html.TextBoxFor(m => m.Username, new { @class = "form-control", placeholder = "Username", required = "required", })
+                                @Html.TextBoxFor(m => m.Username, new { @class = "form-control", placeholder = "Username" })
                                 @Html.ValidationMessageFor(m => m.Username, "", new { @class = "text-danger" })
                             </div>
                         </div>
@@ -166,7 +172,7 @@
                         <div class="col-sm-6 col-md-4">
                             <div class="form-group">
                                 @Html.LabelFor(m => m.UserPassword)
-                                @Html.PasswordFor(m => m.UserPassword, new { @class = "form-control", placeholder = "User",Value=Model.UserPassword})
+                                @Html.PasswordFor(m => m.UserPassword, new { @class = "form-control", placeholder = "User", Value = Model.UserPassword })
                                 @Html.ValidationMessageFor(m => m.UserPassword, "", new { @class = "text-danger" })
                             </div>
                         </div>

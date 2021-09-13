@@ -1,104 +1,159 @@
-﻿
-@{
-    ViewBag.Title = "AssignFeedback";
-    Layout = "~/Views/Shared/_ProjectAdminPannelLayout.cshtml";
-}
+﻿@model ProjectAssigned.Models.ProjectFeedback
+@{ ViewBag.Title = "AssignFeedback";
+    Layout = "~/Views/Shared/_ProjectAdminPannelLayout.cshtml"; 
+    }
+
 
 <div class="app-content  my-3 my-md-5">
+
     <div class="side-app">
         <div class="page-header">
-            <h4 class="page-title">Admin </h4>
+            <h4 class="page-title">Edit Profile</h4>
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="#">Admin side</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Admin side</li>
+                <li class="breadcrumb-item"><a href="#">Pages</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Edit Profile</li>
             </ol>
+
         </div>
 
-        <div class="row">
-            <div class="col-md-12">
-                <div class="card m-b-20">
-
-                    <div class="card-body">
-
-                        <form>
 
 
+        <div class="card">
 
+            <div class="card-header">
+                <h3 class="card-title"> Profile</h3>
 
-                            <div class="form-row">
-
-                                <div class="form-group col-md-6">
-                                    <label for="inputState" class="col-form-label">Assign To</label>
-                                    <select id="inputState" class="form-control">
-                                        <option>---!---</option>
-                                        <option>usama</option>
-                                        <option>iqra</option>
-                                        <option>talha</option>
-                                        <option>adrees</option>
-
-                                    </select>
-                                </div>
-
-                                <div class="form-group col-md-6">
-                                    <label for="inputState" class="col-form-label">Project Title</label>
-                                    <select id="inputState" class="form-control">
-                                        <option>---!---</option>
-                                        <option>Pending</option>
-                                        <option>Progress</option>
-                                        <option>Fail</option>
-                                        <option>success</option>
-
-                                    </select>
-                                </div>
-
-                                <div class="form-group col-md-6">
-                                    <div class="form-group">
-                                        <label class="form-label" for="exampleInputEmail1">Feedback Start Date</label>
-
-                                        <div class="input-group">
-                                            <div class="input-group-prepend">
-                                                <div class="input-group-text">
-                                                    <i class="fa fa-calendar tx-16 lh-0 op-6"></i>
-                                                </div>
-                                            </div><input class="form-control fc-datepicker" placeholder="MM/DD/YYYY" type="text">
-                                        </div>
-
-                                    </div>
-                                </div>
-
-
-                                <div class="form-group col-md-6">
-                                    <div class="form-group">
-                                        <label class="form-label" for="exampleInputEmail1">Feedback End Date</label>
-
-                                        <div class="input-group">
-                                            <div class="input-group-prepend">
-                                                <div class="input-group-text">
-                                                    <i class="fa fa-calendar tx-16 lh-0 op-6"></i>
-                                                </div>
-                                            </div><input class="form-control fc-datepicker" placeholder="MM/DD/YYYY" type="text">
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-form-label">Discription</label>
-                                <textarea class="form-control" name="example-textarea-input" rows="4" placeholder="Discription"></textarea>
-                            </div>
-
-
-                            <button type="submit" class="btn btn-primary ">Post</button>
-
-                        </form>
-                    </div>
-                </div>
             </div>
+
+            <div class="card-body">
+                @using (Html.BeginForm("AssignFeedback", "Feedback", FormMethod.Post, new
+    {
+        enctype = "multipart/form-data"
+    }))
+                      {
+                        @Html.AntiForgeryToken()
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        @Html.HiddenFor(m => m.FeedId)
+                        <br />
+                        <div class="row">
+                            <div class="col-sm-6 col-md-4">
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.Project_Id, "Select Project")
+                                    @Html.DropDownList("projectFields", null, "--Select Project Title--", htmlAttributes: new { @class = "form-control", @required = "required" })
+                                    @Html.ValidationMessageFor(m=>m.CreateProject,"",new { @class="text-danger"})
+
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-md-4">
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.Developer_Id,"Developer")
+                                    @Html.DropDownList("developerFiedls", null, htmlAttributes: new { @class = "form-control", @required = "required" })
+                                   
+
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6 col-md-4">
+                                <div class="form-group">
+                                    @Html.LabelFor(m => m.time)
+                                    @Html.TextBoxFor(m => m.time, new { @class = "form-control", placeholder = "budget", required = "required" })
+                                    @Html.ValidationMessageFor(m => m.time, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                        <div class="row">
+                            <div class="col-sm-6 col-md-4">
+                                <div class="form-group">
+                                    @Html.LabelFor(m => m.Startdate)
+                                    <div class="input-group">
+
+                                        <div class="input-group-text">
+                                            <i class="fa fa-calendar tx-16 lh-0 op-6"></i>
+                                        </div>
+
+                                        @Html.TextBoxFor(m => m.Startdate, new { @class = "form-control fc-datepicker" })
+                                    </div>
+                                    @Html.ValidationMessageFor(m => m.Startdate, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+
+                            < <div class="col-sm-6 col-md-4">
+                                <div class="form-group">
+                                    @Html.LabelFor(m => m.Enddate)
+                                    <div class="input-group">
+
+                                        <div class="input-group-text">
+                                            <i class="fa fa-calendar tx-16 lh-0 op-6"></i>
+                                        </div>
+
+                                        @Html.TextBoxFor(m => m.Enddate, new { @class = "form-control fc-datepicker" })
+                                    </div>
+                                    @Html.ValidationMessageFor(m => m.Enddate, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="row">
+
+                            <div class="col-sm-6 col-md-12">
+                                <div class="form-group">
+                                    @Html.LabelFor(m => m.Discription)
+                                    @Html.TextAreaFor(m => m.Discription, new { @class = "form-control", placeholder = "Enter About your description", required = "required", rows = "5" })
+                                    @Html.ValidationMessageFor(m => m.Discription, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card-footer text-right">
+                            <button type="submit" class="btn btn-primary" id="Onsuccess">Save</button>
+                        </div>}
+            </div>
+
+
         </div>
-
-
 
     </div>
 </div>
 
+@section Mysection{
+    <script type="text/javascript">
+      
+        $('#projectFields').change(function () {
+            $('#developerFiedls').empty();
 
+            if ($('#projectFields option:selected').val() != '') {
+                $.ajax({
+                    method: "Get",
+                    url: '/Feedback/GetDeveloper?id=' + $('#projectFields option:selected').val(),
+                    success: function (data) {
+                        if (data.length) {
+                            for (var i = 0; i < data.length; i++) {
+                                $('#developerFiedls').append('<option value="' + data[i].Developer_Id + '">' + data[i].Firstname + '</option>');
+                            }
+
+                        }
+                    },
+                    error: function (XMLHttpRequest, textStatus, errorThrown) {
+                        flag = false;
+                        console.log("Something went wrong, please try again");
+                    }
+                });
+            }
+
+        });
+
+
+
+
+
+
+
+
+
+
+    </script>
+}

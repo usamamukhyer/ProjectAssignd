@@ -31,14 +31,15 @@ namespace ProjectAssigned.Controllers
         }
          
         [HttpPost]
-        public ActionResult AddDeveloper( CreateDeveloper create,HttpPostedFileBase Dp, HttpPostedFileBase cvdata   )
+        public ActionResult AddDeveloper( CreateDeveloper create, HttpPostedFileBase Dp, HttpPostedFileBase cvdata)
         {
-            
 
+          
             try
             {
-                //upload cv file
-                if (cvdata != null )
+
+               // upload cv file
+                if (cvdata != null)
                 {
                     extension = Path.GetExtension(cvdata.FileName);
                     if (extension.ToLower() == ".doc" || extension.ToLower() == ".docx" || extension.ToLower() == ".txt")
@@ -52,54 +53,61 @@ namespace ProjectAssigned.Controllers
                         }
                         else
                         {
-                            ViewBag.mess = "file size must be less than 2 mb";
+                            ModelState.AddModelError("", "file size must be less than 2 mb");
+
+                        }
+                    }
+                    else
+                    {
+                        ModelState.AddModelError("", "File must b doc,docx and text");
+                        return View(create);
+                    }
+                }
+                //Dp Upload code
+                if (Dp != null)
+                {
+                    extension = Path.GetExtension(Dp.FileName);
+                    if (extension.ToLower() == ".png" || extension.ToLower() == ".jpg" || extension.ToLower() == ".jpeg")
+                    {
+                        if (Dp.ContentLength < 500000)
+                        {
+                            fileName = Guid.NewGuid().ToString() + extension;
+                            uploadUrl = Server.MapPath("~/Content/Filesdata/Images/");
+                            create.Image = "~/Content/Filesdata/Images/" + fileName;
+                            Dp.SaveAs(Path.Combine(uploadUrl, fileName));
+
+                        }
+                        else
+                        {
+                            ModelState.AddModelError("", "Image must b less than 5 kb");
                             return View(create);
                         }
                     }
                     else
                     {
-                        ViewBag.Mess = "file must doc,docx or .txt";
+                        ModelState.AddModelError("", "image must b png jpg and jpeg");
                         return View(create);
                     }
                 }
-                //Dp Upload code
-                if (Dp!=null)
-                {
-                    extension =  Path.GetExtension(Dp.FileName);
-                    if (extension.ToLower() == ".png" || extension.ToLower() == ".jpg" || extension.ToLower() == ".jpeg")
-                    {
-                        if (Dp.ContentLength < 500000)
-                        { 
-                          fileName = Guid.NewGuid().ToString() + extension;
-                          uploadUrl = Server.MapPath("~/Content/Filesdata/Images/");
-                         create.Image = "~/Content/Filesdata/Images/" + fileName;
-                         Dp.SaveAs(Path.Combine(uploadUrl, fileName));
 
-                        }
-                        else
-                        {
-                            ViewBag.message = "Picture size must be less than 2 mb";
-                            return View(" AddDeveloper");
-                        }
-                    }
-                    else
-                    {
-                        ViewBag.Message = "Picture must be png, jpg or jpeg";
-                        return View( create);
-                    }
-                }
-                
-                //add record in the Db
+               // add record in the Db
+
                 db.CreateDevelopers.Add(create);
                 db.SaveChanges();
                 ModelState.Clear();
                 return RedirectToAction("DeveloperList");
+
             }
-            catch(Exception)
+            catch (Exception ex)
             {
-                ModelState.AddModelError("", "hi this is not good approach");
+                ModelState.AddModelError("", ex.Message);
             }
             return View(create);
+
+            
+
+
+
         }
 
 
@@ -118,7 +126,7 @@ namespace ProjectAssigned.Controllers
             {
               
             create = db.CreateDevelopers.Where(model => model.Developer_Id == id).FirstOrDefault<CreateDeveloper>();
-               
+                
             }
 
             return View(create);
@@ -126,9 +134,8 @@ namespace ProjectAssigned.Controllers
         [HttpPost]
         public ActionResult EditDeveloper(CreateDeveloper create, HttpPostedFileBase Dp, HttpPostedFileBase cvdata)
         {
-            if(ModelState.IsValid)
-            {
-                try
+           
+            try
                 {
                     //upload cv file
                     if (cvdata != null)
@@ -141,11 +148,11 @@ namespace ProjectAssigned.Controllers
                                 fileName = Guid.NewGuid().ToString() + extension;
                                 uploadUrl = Server.MapPath("~/Content/Filesdata/Cv/");
                                 create.Cv = "~/Content/Filesdata/CV/" + fileName;
-                                if (!String.IsNullOrEmpty(create.Cv))
+                                if (!String.IsNullOrEmpty(create.Image))
                                 {
-                                    if (System.IO.File.Exists(uploadUrl  + create.Cv))
+                                    if (System.IO.File.Exists(uploadUrl + "/" + create.Cv))
                                     {
-                                        System.IO.File.Delete(uploadUrl  + create.Cv);
+                                        System.IO.File.Delete(uploadUrl + "/" + create.Cv);
 
                                     }
                                 }
@@ -154,14 +161,12 @@ namespace ProjectAssigned.Controllers
                             }
                             else
                             {
-                                ViewBag.mess = "file size must be less than 2 mb";
-                                return View(create);
+                                ModelState.AddModelError("", "file must b less than 1 Mb");
                             }
                         }
                         else
                         {
-                            ViewBag.Mess = "file must doc,docx or .txt";
-                            return View(create);
+                            ModelState.AddModelError("", "File  must b doc , docx, txt");
                         }
                     }
                     //Dp Upload code
@@ -174,7 +179,9 @@ namespace ProjectAssigned.Controllers
                             {
                                 
                                 uploadUrl = Server.MapPath("~/Content/Filesdata/Images/");
-                               
+                                fileName = Guid.NewGuid().ToString() + extension;
+                                create.Image = "~/Content/Filesdata/Images/" + fileName;
+
                                 if (!String.IsNullOrEmpty(create.Image))
                                 {
                                     if (System.IO.File.Exists(uploadUrl + "/" + create.Image))
@@ -183,8 +190,7 @@ namespace ProjectAssigned.Controllers
 
                                     }
                                 }
-                                fileName = Guid.NewGuid().ToString() + extension;
-                                create.Image = "~/Content/Filesdata/Images/" + fileName;
+                                
                                 Dp.SaveAs(Path.Combine(uploadUrl, fileName));
 
                             }
@@ -196,36 +202,46 @@ namespace ProjectAssigned.Controllers
                         }
                         else
                         {
-                            ViewBag.Message = "Picture must be png, jpg or jpeg";
-                            return View(create);
+                            ModelState.AddModelError("", "Picture must be png, jpg or jpeg");
+                           
+                            
                         }
                     }
 
-                    //add record in the Db
+                //add record in the Db
+              
                     db.Entry(create).State = EntityState.Modified;
                     db.SaveChanges();
                    
                     return RedirectToAction("DeveloperList");
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
-                    ModelState.AddModelError("", "hi this is not good approach");
+                    ModelState.AddModelError("","Somthing went wrong");
                 }
-            }
-            else
-            {
-                db.Entry(create).State = EntityState.Modified;
-                db.SaveChanges();
-
-            }
+          
+           
             
            return View(create);
         }
 
-        public JsonResult IsUserExists(string Username, string UserPassword, string Email, string Phone)
+        public JsonResult IsUserExists(string Username, string UserPassword, string Email, string Phone, string prevemail,string prevpass,string prevname, string prephone)
         {
+            try { 
+            if(Username== prevname||Email==prevemail||UserPassword==prevpass||Phone==prephone)
+            {
+                return Json(true, JsonRequestBehavior.AllowGet);
+
+            }
+            return Json(!db.CreateDevelopers.Any(x => x.Username == Username || x.UserPassword == UserPassword || x.Email == Email || x.Phone == Phone),JsonRequestBehavior.AllowGet);
             //check if any of the UserName matches the UserName specified in the Parameter using the ANY extension method.  
-            return Json(!db.CreateDevelopers.Any(x => x.Username == Username || x.UserPassword== UserPassword || x.Email== Email || x.Phone == Phone), JsonRequestBehavior.AllowGet);
+            
+            }
+            catch(Exception)
+            {
+
+                return Json(true, JsonRequestBehavior.AllowGet);
+            }
         }
 
 

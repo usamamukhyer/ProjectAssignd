@@ -1911,6 +1911,7 @@
     <Content Include="Views\AssignProject\AddProject.cshtml" />
     <Content Include="Views\AssignProject\Index.cshtml" />
     <Content Include="Views\AssignProject\Editproject.cshtml" />
+    <Content Include="Views\Feedback\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -65,10 +65,11 @@
                                             @Html.DisplayFor(mitem => item.Joindate)
                                         </td>
                                         <td>
-                                            <img  src="@Url.Content(item.Image)" width="50" height="50" />
+                                            <img src="@Url.Content(item.Image)" width="50" height="50" />
                                         </td>
 
-                                        <td> @Html.ActionLink("Edit", "EditDeveloper", new { id = item.Developer_Id })</td>
+                                        
+                                        <td>  <a class="btn btn-primary btn-sm" href="@Url.Action("EditDeveloper","CreateDeveloper",new {id=item.Developer_Id })"><i class="fa fa-pencil fa-lg"></i></a></td>
                                     </tr>
                                   }
                                     

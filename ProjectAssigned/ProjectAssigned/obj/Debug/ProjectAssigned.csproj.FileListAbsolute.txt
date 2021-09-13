@@ -320,3 +320,4 @@ C:\Users\User\Desktop\My Office Work\My Internship Project\ProjectAssigned\Proje
 C:\Users\User\Desktop\My Office Work\My Internship Project\ProjectAssigned\ProjectAssigned\obj\Debug\ProjectAssigned.csproj.CopyComplete
 C:\Users\User\Desktop\My Office Work\My Internship Project\ProjectAssigned\ProjectAssigned\obj\Debug\ProjectAssigned.dll
 C:\Users\User\Desktop\My Office Work\My Internship Project\ProjectAssigned\ProjectAssigned\obj\Debug\ProjectAssigned.pdb
+C:\Users\User\Desktop\My Office Work\My Internship Project\ProjectAssigned\ProjectAssigned\obj\Debug\ProjectAssigned.csproj.AssemblyReference.cache

@@ -24,7 +24,7 @@ namespace ProjectAssigned.Controllers
 
         }
 
-        public ActionResult AddProject(int? id)
+        public ActionResult AddProject()
         {
             CreateProject model = new CreateProject();
 
@@ -50,14 +50,14 @@ namespace ProjectAssigned.Controllers
             ViewBag.Developer_Id = new SelectList(db.CreateDevelopers, "Developer_Id", "Firstname");
 
 
-            return View(model);
+            return View();
         }
 
         [HttpPost]
         public ActionResult AddProject(CreateProject model)
         {
-            if (ModelState.IsValid)
-            {
+           try { 
+            
                 //for the file  upload
                 if (Request.Files != null)
                 {
@@ -67,16 +67,16 @@ namespace ProjectAssigned.Controllers
                     {
                         try
                         {
-                            HttpPostedFileBase postedfile = files[file];
+                           HttpPostedFileBase postedfile = files[file];
                             string extension = Path.GetExtension(postedfile.FileName).ToLower();
 
                             string filecontain = ".txt,.doc,.pdf";
                             if (extension != string.Empty)
                             {
-
+                               
                                 if (filecontain.Contains(extension))
                                 {
-
+                                   
                                     string path = Server.MapPath("~/Content/Filesdata/Projectfiles/");
                                     model.Fileuploads = path.FetchUniquePath(postedfile.FileName);
                                     postedfile.SaveAs(path + "/" + model.Fileuploads);
@@ -110,15 +110,15 @@ namespace ProjectAssigned.Controllers
                 db.SaveChanges();
                 ModelState.Clear();
 
-                return RedirectToAction("AddProject");
-            }
-            else
+                return RedirectToAction("Index");
+           }
+            catch(Exception)
             {
+                ModelState.AddModelError("", "somthing went wrong");
 
-
-                ModelState.AddModelError("", "something went wrong");
-                return View(model);
             }
+                return View(model);
+            
 
         }
 
@@ -166,8 +166,89 @@ namespace ProjectAssigned.Controllers
         [HttpPost]
         public ActionResult Editproject(CreateProject model)
         {
+            if(ModelState.IsValid)
+            {
+                List<string> Statuslist = new List<string>();
+                Statuslist.Add("Success");
+                Statuslist.Add("Fail");
+                Statuslist.Add("Pending");
+                Statuslist.Add("In Progress");
 
-            return View();
+
+                //for dropdown values Project Type  list 
+
+                List<string> Type = new List<string>();
+                Type.Add("Foreign");
+                Type.Add("Local");
+                ViewBag.Status = new SelectList(Statuslist);
+                ViewBag.ProjectType = new SelectList(Type);
+                ViewBag.Developer_Id = new SelectList(db.CreateDevelopers);
+
+                if (Request.Files != null)
+                {
+                    HttpFileCollectionBase files = Request.Files;
+
+                    foreach (string file in files)
+                    {
+                        try
+                        {
+                            HttpPostedFileBase postedfile = files[file];
+                            string extension = Path.GetExtension(postedfile.FileName).ToLower();                        
+                            string filecontain = ".txt,.doc,.pdf";
+                            if (extension != string.Empty)
+                            {
+                                if (filecontain.Contains(extension))
+                                { 
+                                    string path = Server.MapPath("~/Content/Filesdata/Projectfiles/");
+                                    if (!String.IsNullOrEmpty(model.Fileuploads))
+                                    {
+                                        if (System.IO.File.Exists(path + "/" + model.Fileuploads))
+                                        {
+                                            System.IO.File.Delete(path + "/" + model.Fileuploads);
+
+                                        }
+                                    }
+                                    model.Fileuploads = path.FetchUniquePath(postedfile.FileName);
+                                    postedfile.SaveAs(path + "/" + model.Fileuploads);
+                                }
+                                else
+                                {
+                                    ModelState.AddModelError("", "Only txt, doc and pdf files are allowed");
+                                    return View(model);
+                                }
+
+
+                            }
+
+                        }
+                        catch (Exception ex)
+                        {
+
+                            ModelState.AddModelError("", ex.Message);
+                            return View(model);
+                        }
+
+
+                    }
+
+
+                }
+
+
+
+                db.Entry(model).State = System.Data.Entity.EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                db.Entry(model).State = System.Data.Entity.EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("Index");
+
+            }
+
+            return View(model);
 
         }
     }

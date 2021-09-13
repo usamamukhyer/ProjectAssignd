@@ -74,37 +74,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="NewModules">
-      <EntityTypeMapping TypeName="ProjectAssignedModel.NewModule">
-        <MappingFragment StoreEntitySet="NewModule">
-          <ScalarProperty Name="ModuleId" ColumnName="ModuleId" />
-          <ScalarProperty Name="Budget" ColumnName="Budget" />
-          <ScalarProperty Name="AwardDate" ColumnName="AwardDate" />
-          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
-          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
-          <ScalarProperty Name="ActualCompletedate" ColumnName="ActualCompletedate" />
-          <ScalarProperty Name="Discription" ColumnName="Discription" />
-          <ScalarProperty Name="Status" ColumnName="Status" />
-          <ScalarProperty Name="Assign" ColumnName="Assign" />
-          <ScalarProperty Name="Project_Id" ColumnName="Project_Id" />
-          <ScalarProperty Name="Developer_Id" ColumnName="Developer_Id" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="ProjectFeedbacks">
-      <EntityTypeMapping TypeName="ProjectAssignedModel.ProjectFeedback">
-        <MappingFragment StoreEntitySet="ProjectFeedback">
-          <ScalarProperty Name="FeedId" ColumnName="FeedId" />
-          <ScalarProperty Name="Startdate" ColumnName="Startdate" />
-          <ScalarProperty Name="time" ColumnName="time" />
-          <ScalarProperty Name="Enddate" ColumnName="Enddate" />
-          <ScalarProperty Name="Discription" ColumnName="Discription" />
-          <ScalarProperty Name="Project_Id" ColumnName="Project_Id" />
-          <ScalarProperty Name="Developer_Id" ColumnName="Developer_Id" />
-          <ScalarProperty Name="ModuleId" ColumnName="ModuleId" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="sysdiagrams">
       <EntityTypeMapping TypeName="ProjectAssignedModel.sysdiagram">
         <MappingFragment StoreEntitySet="sysdiagrams">
@@ -136,6 +105,40 @@
         <ScalarProperty Name="Id" ColumnName="UserId" />
       </EndProperty>
     </AssociationSetMapping>
+    <EntitySetMapping Name="CreateProjects">
+      <EntityTypeMapping TypeName="ProjectAssignedModel.CreateProject">
+        <MappingFragment StoreEntitySet="CreateProject">
+          <ScalarProperty Name="Assign" ColumnName="Assign" />
+          <ScalarProperty Name="ProjectType" ColumnName="ProjectType" />
+          <ScalarProperty Name="Developer_Id" ColumnName="Developer_Id" />
+          <ScalarProperty Name="Discription" ColumnName="Discription" />
+          <ScalarProperty Name="Fileuploads" ColumnName="Fileuploads" />
+          <ScalarProperty Name="Statusfeedback" ColumnName="Statusfeedback" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="ActualCompletedate" ColumnName="ActualCompletedate" />
+          <ScalarProperty Name="Enddate" ColumnName="Enddate" />
+          <ScalarProperty Name="Startdate" ColumnName="Startdate" />
+          <ScalarProperty Name="AwardDate" ColumnName="AwardDate" />
+          <ScalarProperty Name="Budget" ColumnName="Budget" />
+          <ScalarProperty Name="ProjectTitle" ColumnName="ProjectTitle" />
+          <ScalarProperty Name="Project_Id" ColumnName="Project_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProjectFeedbacks">
+      <EntityTypeMapping TypeName="ProjectAssignedModel.ProjectFeedback">
+        <MappingFragment StoreEntitySet="ProjectFeedback">
+          <ScalarProperty Name="ModuleId" ColumnName="ModuleId" />
+          <ScalarProperty Name="Developer_Id" ColumnName="Developer_Id" />
+          <ScalarProperty Name="Project_Id" ColumnName="Project_Id" />
+          <ScalarProperty Name="Discription" ColumnName="Discription" />
+          <ScalarProperty Name="Enddate" ColumnName="Enddate" />
+          <ScalarProperty Name="time" ColumnName="time" />
+          <ScalarProperty Name="Startdate" ColumnName="Startdate" />
+          <ScalarProperty Name="FeedId" ColumnName="FeedId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="CreateDevelopers">
       <EntityTypeMapping TypeName="ProjectAssignedModel.CreateDeveloper">
         <MappingFragment StoreEntitySet="CreateDeveloper">
@@ -157,23 +160,22 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="CreateProjects">
-      <EntityTypeMapping TypeName="ProjectAssignedModel.CreateProject">
-        <MappingFragment StoreEntitySet="CreateProject">
-          <ScalarProperty Name="Assign" ColumnName="Assign" />
-          <ScalarProperty Name="ProjectType" ColumnName="ProjectType" />
-          <ScalarProperty Name="Developer_Id" ColumnName="Developer_Id" />
-          <ScalarProperty Name="Discription" ColumnName="Discription" />
-          <ScalarProperty Name="Fileuploads" ColumnName="Fileuploads" />
+    <EntitySetMapping Name="NewModules">
+      <EntityTypeMapping TypeName="ProjectAssignedModel.NewModule">
+        <MappingFragment StoreEntitySet="NewModule">
           <ScalarProperty Name="Statusfeedback" ColumnName="Statusfeedback" />
+          <ScalarProperty Name="fileupload" ColumnName="fileupload" />
+          <ScalarProperty Name="Developer_Id" ColumnName="Developer_Id" />
+          <ScalarProperty Name="Project_Id" ColumnName="Project_Id" />
+          <ScalarProperty Name="Assign" ColumnName="Assign" />
           <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Discription" ColumnName="Discription" />
           <ScalarProperty Name="ActualCompletedate" ColumnName="ActualCompletedate" />
-          <ScalarProperty Name="Enddate" ColumnName="Enddate" />
-          <ScalarProperty Name="Startdate" ColumnName="Startdate" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
           <ScalarProperty Name="AwardDate" ColumnName="AwardDate" />
           <ScalarProperty Name="Budget" ColumnName="Budget" />
-          <ScalarProperty Name="ProjectTitle" ColumnName="ProjectTitle" />
-          <ScalarProperty Name="Project_Id" ColumnName="Project_Id" />
+          <ScalarProperty Name="ModuleId" ColumnName="ModuleId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

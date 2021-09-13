@@ -24,6 +24,7 @@ namespace ProjectAssigned.Models
         [StringLength(10, ErrorMessage = "Must be between {2} and {1} characters", MinimumLength = 6)]
         public string Designation { get; set; }
         [Required(ErrorMessage = "Date time is required")]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
         public System.DateTime Joindate { get; set; }
         [Required(ErrorMessage = "salary is required")]
         [StringLength(15, ErrorMessage = "Must be between {2} and {1} characters", MinimumLength = 1)]
@@ -34,7 +35,7 @@ namespace ProjectAssigned.Models
         [Required(ErrorMessage = "email is required")]
         [DataType(DataType.EmailAddress, ErrorMessage = "must b include @")]
         [StringLength(30, ErrorMessage = "Must be between {2} and {1} characters", MinimumLength = 8)]
-        [Remote("IsUserExists", "CreateDeveloper", ErrorMessage = "Email is already taken")]
+        [Remote("IsUserExists", "CreateDeveloper", ErrorMessage = "Email is already taken", AdditionalFields = "prevemail")]
 
         public string Email { get; set; }
         [Required(ErrorMessage = "Address is required")]
@@ -43,7 +44,7 @@ namespace ProjectAssigned.Models
         [Required(ErrorMessage = "Phone is required")]
         
         [Range(0, 20, ErrorMessage = "Phone must be between 0 and 20")]
-        [Remote("IsUserExists", "CreateDeveloper", ErrorMessage = "Phone is already taken")]
+        [Remote("IsUserExists", "CreateDeveloper", ErrorMessage = "Phone is already taken", AdditionalFields = "prephone")]
         public string Phone { get; set; }
         [StringLength(20, ErrorMessage = "Must be between {2} and {1} characters", MinimumLength = 6)]
         [Required(ErrorMessage = "Experience is required")]
@@ -56,12 +57,12 @@ namespace ProjectAssigned.Models
 
         [Required(ErrorMessage = "Username is required")]
         [StringLength(20, ErrorMessage = "Must be between {2} and {1} characters", MinimumLength = 4)]
-        [Remote("IsUserExists", "CreateDeveloper", ErrorMessage = "User name is already taken")]
+        [Remote("IsUserExists", "CreateDeveloper", ErrorMessage = "User name is already taken", AdditionalFields = "prevname")]
         public string Username { get; set; }
 
         [Required(ErrorMessage = "Password is required")]
         [StringLength(10, ErrorMessage = "Must be between {2} and {1} characters", MinimumLength = 6)]
-        [Remote("IsUserExists", "CreateDeveloper", ErrorMessage = "Password is already taken")]
+        [Remote("IsUserExists", "CreateDeveloper", ErrorMessage = "Password is already taken",AdditionalFields = "prevpass")]
         public string UserPassword { get; set; }
        
 

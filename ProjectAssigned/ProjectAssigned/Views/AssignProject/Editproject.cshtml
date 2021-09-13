@@ -26,10 +26,10 @@
             </div>
 
             <div class="card-body">
-                @using (Html.BeginForm("Editproject", "AssignProject", FormMethod.Get @* new
+                @using (Html.BeginForm("Editproject", "AssignProject", FormMethod.Post , new
                 {
                     enctype = "multipart/form-data"
-                }*@))
+                }))
                 {
                     @Html.AntiForgeryToken()
                     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
@@ -71,7 +71,13 @@
                         <div class="col-sm-6 col-md-4">
                             <div class="form-group">
                                 @Html.LabelFor(m => m.AwardDate)
-                                @Html.TextBoxFor(m => m.AwardDate, new { @class = "form-control fc-datepicker", @placeholder = "MM/DD/YYYY", required = "required", type = "text" })
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text">
+                                            <i class="fa fa-calendar tx-16 lh-0 op-6"></i>
+                                        </div>
+                                    </div><input class="form-control fc-datepicker" value="@Model.AwardDate" type="text">
+                                </div>
                                 @Html.ValidationMessageFor(m => m.AwardDate, "", new { @class = "text-danger" })
                             </div>
                         </div>
@@ -80,19 +86,26 @@
                         <div class="col-sm-6 col-md-4">
                             <div class="form-group">
                                 @Html.LabelFor(m => m.Startdate)
-                                @Html.TextBoxFor(m => m.Startdate, new { @class = "form-control fc-datepicker", @placeholder = "MM/DD/YYYY", required = "required" })
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text">
+                                            <i class="fa fa-calendar tx-16 lh-0 op-6"></i>
+                                        </div>
+                                    </div><input class="form-control fc-datepicker" value="@Model.AwardDate" type="text">
+                                </div>
                                 @Html.ValidationMessageFor(m => m.Startdate, "", new { @class = "text-danger" })
                             </div>
                         </div>
                         <div class="col-sm-6 col-md-4">
                             <div class="form-group">
                                 @Html.LabelFor(m => m.Enddate)
-                                <div class="input-group">
+                                 <div class="input-group">
                                     <div class="input-group-prepend">
                                         <div class="input-group-text">
                                             <i class="fa fa-calendar tx-16 lh-0 op-6"></i>
                                         </div>
-                                        @Html.TextBoxFor(m => m.Enddate, new { @class = "form-control fc-datepicker", @placeholder = "MM/DD/YYYY" })
+                                    </div><input class="form-control fc-datepicker" value="@Model.AwardDate" type="text">
+                                </div>
                                         @Html.ValidationMessageFor(m => m.Enddate, "", new { @class = "text-danger" })
                                     </div>
 
@@ -101,14 +114,19 @@
 
 
 
-                        </div>
-                    </div>
+                       
 
                     <div class="row">
                         <div class="col-sm-6 col-md-4">
                             <div class="form-group">
                                 @Html.LabelFor(m => m.ActualCompletedate)
-                                @Html.TextBoxFor(m => m.ActualCompletedate, new { @class = "form-control fc-datepicker", placeholder = "MM/DD/YYYY", required = "required" })
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text">
+                                            <i class="fa fa-calendar tx-16 lh-0 op-6"></i>
+                                        </div>
+                                    </div><input class="form-control fc-datepicker" value="@Model.AwardDate" type="text">
+                                </div>
 
                             </div>
                         </div>
@@ -139,11 +157,11 @@
                             </div>
                         </div>
 
-                        <div class="col-sm-6 col-md-12">
+                        <div class="col-sm-6col-md-4">
                             <div class="form-group">
                                 @Html.LabelFor(m => m.Fileuploads)
                                 <div class="custom-file">
-                                    <input type="file" id="Fileuploads" name="Fileuploads" accept="filecontain/txt,filecontain/doc,filecontain/png" class="custom-file-input" required>
+                                    <input type="file" id="Fileuploads" name="Fileuploads" class="custom-file-input"  value="@Model.Fileuploads">
                                     <label class="custom-file-label">Choose file</label>
                                 </div>
                                 @Html.ValidationMessageFor(m => m.Fileuploads, "", new { @class = "text-danger" })

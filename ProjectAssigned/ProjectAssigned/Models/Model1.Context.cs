@@ -31,11 +31,11 @@ namespace ProjectAssigned.Models
         public virtual DbSet<AspNetUserLogin> AspNetUserLogins { get; set; }
         public virtual DbSet<AspNetUser> AspNetUsers { get; set; }
         public virtual DbSet<DeveloperWorkProgress> DeveloperWorkProgresses { get; set; }
-        public virtual DbSet<NewModule> NewModules { get; set; }
-        public virtual DbSet<ProjectFeedback> ProjectFeedbacks { get; set; }
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<Transection> Transections { get; set; }
-        public virtual DbSet<CreateDeveloper> CreateDevelopers { get; set; }
         public virtual DbSet<CreateProject> CreateProjects { get; set; }
+        public virtual DbSet<ProjectFeedback> ProjectFeedbacks { get; set; }
+        public virtual DbSet<CreateDeveloper> CreateDevelopers { get; set; }
+        public virtual DbSet<NewModule> NewModules { get; set; }
     }
 }

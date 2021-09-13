@@ -89,10 +89,10 @@
     <Property Name="Project_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="ProjectTitle" Type="nvarchar" MaxLength="500" Nullable="false" />
     <Property Name="Budget" Type="nvarchar" MaxLength="500" Nullable="false" />
-    <Property Name="AwardDate" Type="datetime" Nullable="false" />
-    <Property Name="Startdate" Type="datetime" Nullable="false" />
-    <Property Name="Enddate" Type="datetime" Nullable="false" />
-    <Property Name="ActualCompletedate" Type="datetime" />
+    <Property Name="AwardDate" Type="date" Nullable="false" />
+    <Property Name="Startdate" Type="date" Nullable="false" />
+    <Property Name="Enddate" Type="date" Nullable="false" />
+    <Property Name="ActualCompletedate" Type="date" Nullable="false" />
     <Property Name="Status" Type="nvarchar" MaxLength="500" Nullable="false" />
     <Property Name="Statusfeedback" Type="nvarchar" MaxLength="500" Nullable="false" />
     <Property Name="Fileuploads" Type="nvarchar" MaxLength="500" />
@@ -126,21 +126,23 @@
     <Property Name="AwardDate" Type="datetime" Nullable="false" />
     <Property Name="StartDate" Type="datetime" Nullable="false" />
     <Property Name="EndDate" Type="datetime" Nullable="false" />
-    <Property Name="ActualCompletedate" Type="datetime" Nullable="false" />
+    <Property Name="ActualCompletedate" Type="datetime" />
     <Property Name="Discription" Type="nvarchar" MaxLength="500" Nullable="false" />
     <Property Name="Status" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Assign" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="Project_Id" Type="int" />
     <Property Name="Developer_Id" Type="int" />
+    <Property Name="fileupload" Type="nvarchar(max)" />
+    <Property Name="Statusfeedback" Type="nvarchar" MaxLength="500" Nullable="false" />
   </EntityType>
   <EntityType Name="ProjectFeedback">
     <Key>
       <PropertyRef Name="FeedId" />
     </Key>
     <Property Name="FeedId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Startdate" Type="datetime" Nullable="false" />
+    <Property Name="Startdate" Type="date" Nullable="false" />
     <Property Name="time" Type="time" Precision="7" Nullable="false" />
-    <Property Name="Enddate" Type="datetime" Nullable="false" />
+    <Property Name="Enddate" Type="date" Nullable="false" />
     <Property Name="Discription" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Project_Id" Type="int" />
     <Property Name="Developer_Id" Type="int" />
