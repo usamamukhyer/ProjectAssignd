@@ -85,18 +85,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Transections">
-      <EntityTypeMapping TypeName="ProjectAssignedModel.Transection">
-        <MappingFragment StoreEntitySet="Transection">
-          <ScalarProperty Name="TransecId" ColumnName="TransecId" />
-          <ScalarProperty Name="CashType" ColumnName="CashType" />
-          <ScalarProperty Name="Date" ColumnName="Date" />
-          <ScalarProperty Name="Amount" ColumnName="Amount" />
-          <ScalarProperty Name="Discription" ColumnName="Discription" />
-          <ScalarProperty Name="DetailDiscription" ColumnName="DetailDiscription" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <AssociationSetMapping Name="AspNetUserRoles" TypeName="ProjectAssignedModel.AspNetUserRoles" StoreEntitySet="AspNetUserRoles">
       <EndProperty Name="AspNetRoles">
         <ScalarProperty Name="Id" ColumnName="RoleId" />
@@ -179,5 +167,21 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="Transections">
+      <EntityTypeMapping TypeName="ProjectAssignedModel.Transection">
+        <MappingFragment StoreEntitySet="Transection">
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="IncomeSpentTo" ColumnName="IncomeSpentTo" />
+          <ScalarProperty Name="IncomeCollectFrom" ColumnName="IncomeCollectFrom" />
+          <ScalarProperty Name="Discription" ColumnName="Discription" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="CashType" ColumnName="CashType" />
+          <ScalarProperty Name="TransecId" ColumnName="TransecId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="cash_In" FunctionName="ProjectAssignedModel.Store.cash_In" />
+    <FunctionImportMapping FunctionImportName="cash_Out" FunctionName="ProjectAssignedModel.Store.cash_Out" />
+    <FunctionImportMapping FunctionImportName="remaining_Cash" FunctionName="ProjectAssignedModel.Store.remaining_Cash" />
   </EntityContainerMapping>
 </Mapping>

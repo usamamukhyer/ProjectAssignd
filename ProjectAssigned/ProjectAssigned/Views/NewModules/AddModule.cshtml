@@ -1,0 +1,213 @@
+﻿@model ProjectAssigned.Models.NewModule
+@{
+    ViewBag.Title = "AddModule";
+    Layout = "~/Views/Shared/_ProjectAdminPannelLayout.cshtml";
+}
+
+<div class="app-content  my-3 my-md-5">
+
+    <div class="side-app">
+        <div class="page-header">
+            <h4 class="page-title">Edit Profile</h4>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Pages</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Edit Profile</li>
+            </ol>
+
+        </div>
+
+
+
+        <div class="card">
+
+            <div class="card-header">
+                <h3 class="card-title"> Profile</h3>
+
+            </div>
+
+            <div class="card-body">
+                @using (Html.BeginForm("AddModule", "NewModules", FormMethod.Post, new
+                {
+                    enctype = "multipart/form-data"
+                }))
+                {
+                    @Html.AntiForgeryToken()
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    @Html.HiddenFor(m => m.ModuleId)
+
+                <div class="row">
+                    <div class="col-sm-6 col-md-4">
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Project_Id, "Select Project")
+                            @Html.DropDownList("Project_Id", null, "--Select Project Title--", htmlAttributes: new { @class = "form-control", @required = "required" })
+                            @Html.ValidationMessageFor(m => m.CreateProject, "", new { @class = "text-danger" })
+
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-4">
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Developer_Id, "Developer")
+                            @Html.DropDownList("Developer_Id", null, htmlAttributes: new { @class = "form-control", @required = "required" })
+
+
+                        </div>
+                        </div>
+                        <div class="col-sm-6 col-md-4">
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.Budget, "Select Project")
+                                @Html.TextBoxFor(m => m.Budget, new { @class = "form-control", required = "required" })
+                                @Html.ValidationMessageFor(m => m.Budget, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-6 col-md-4">
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.AwardDate)
+                                <div class="input-group">
+
+                                    <div class="input-group-text">
+                                        <i class="fa fa-calendar tx-16 lh-0 op-6"></i>
+                                    </div>
+
+                                    @Html.TextBoxFor(m => m.AwardDate, new { @class = "form-control fc-datepicker", placeholder = "DD-MM-YYY", required = "required" })
+                                </div>
+                                @Html.ValidationMessageFor(m => m.AwardDate, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-4">
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.StartDate)
+                                <div class="input-group">
+
+                                    <div class="input-group-text">
+                                        <i class="fa fa-calendar tx-16 lh-0 op-6"></i>
+                                    </div>
+
+                                    @Html.TextBoxFor(m => m.StartDate, new { @class = "form-control fc-datepicker", placeholder = "DD-MM-YYY", required = "required" })
+                                </div>
+                                @Html.ValidationMessageFor(m => m.StartDate, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-4">
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.EndDate)
+                                <div class="input-group">
+
+                                    <div class="input-group-text">
+                                        <i class="fa fa-calendar tx-16 lh-0 op-6"></i>
+                                    </div>
+
+                                    @Html.TextBoxFor(m => m.EndDate, new { @class = "form-control fc-datepicker", placeholder = "DD-MM-YYY", required = "required" })
+                                </div>
+                                @Html.ValidationMessageFor(m => m.EndDate, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-6 col-md-4">
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.ActualCompletedate)
+                                <div class="input-group">
+
+                                    <div class="input-group-text">
+                                        <i class="fa fa-calendar tx-16 lh-0 op-6"></i>
+                                    </div>
+
+                                    @Html.TextBoxFor(m => m.ActualCompletedate, new { @class = "form-control fc-datepicker", placeholder = "DD-MM-YYY", required = "required" })
+                                </div>
+                                @Html.ValidationMessageFor(m => m.AwardDate, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-4">
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.Assign)
+                                @Html.DropDownList("Assign", null, "--please select a developer", new { @class = "form-control", required = "required" })
+                                @Html.ValidationMessageFor(m => m.Assign, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-4">
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.Status)
+                                @Html.DropDownList("Status", null, "--please select a developer", new { @class = "form-control", required = "required" })
+                                @Html.ValidationMessageFor(m => m.Status, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-6 col-md-4">
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.Statusfeedback)
+                                @Html.TextBoxFor(m => m.Statusfeedback, new { @class = "form-control", @placeholder = "Feedback", required = "required", })
+                                @Html.ValidationMessageFor(m => m.Statusfeedback, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-4">
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.fileupload)
+                                <div class="custom-file">
+                                    <input type="file" name="file" , id="file" class="custom-file-input" required>
+                                    <label class="custom-file-label">Choose file</label>
+                                </div>
+                                @Html.ValidationMessageFor(m => m.fileupload, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+
+                        <div class="col-sm-6 col-md-12">
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.Discription)
+                                @Html.TextAreaFor(m => m.Discription, new { @class = "form-control", placeholder = "Enter About your description", required = "required", rows = "5" })
+                                @Html.ValidationMessageFor(m => m.Discription, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card-footer text-right">
+                        <button type="submit" class="btn btn-primary" id="Onsuccess">Save</button>
+                    </div>
+                    }
+                </div>
+
+        </div>
+    </div>
+
+</div>
+
+@section Mysection{
+    <script type="text/javascript">
+
+        $('#Project_Id').change(function () {
+            $('#Developer_Id').empty();
+
+            if ($('#Project_Id option:selected').val() != '') {
+                $.ajax({
+                    method: "Get",
+                    url: '/NewModules/GetDeveloper?id=' + $('#Project_Id option:selected').val(),
+                    success: function (data) {
+                        if (data.length) {
+                            for (var i = 0; i < data.length; i++) {
+                                $('#Developer_Id').append('<option value="' + data[i].Developer_Id + '">' + data[i].Firstname + '</option>');
+                            }
+
+                        }
+                    },
+                    error: function (XMLHttpRequest, textStatus, errorThrown) {
+                        flag = false;
+                        console.log("Something went wrong, please try again");
+                    }
+                });
+            }
+
+        });
+    </script>
+}

@@ -12,7 +12,6 @@
         <EntityTypeShape EntityType="ProjectAssignedModel.AspNetUser" Width="1.5" PointX="3" PointY="9.25" IsExpanded="true" />
         <EntityTypeShape EntityType="ProjectAssignedModel.DeveloperWorkProgress" Width="1.5" PointX="5.25" PointY="3.625" IsExpanded="true" />
         <EntityTypeShape EntityType="ProjectAssignedModel.sysdiagram" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="ProjectAssignedModel.Transection" Width="1.5" PointX="7.75" PointY="8.75" IsExpanded="true" />
         <AssociationConnector Association="ProjectAssignedModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
         <AssociationConnector Association="ProjectAssignedModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
         <AssociationConnector Association="ProjectAssignedModel.AspNetUserRoles" ManuallyRouted="false" />
@@ -25,11 +24,12 @@
         <AssociationConnector Association="ProjectAssignedModel.FK_CreateProject_CreateDeveloper" />
         <AssociationConnector Association="ProjectAssignedModel.FK_DeveloperWorkProgress_CreateDeveloper" />
         <AssociationConnector Association="ProjectAssignedModel.FK_ProjectFeedback_CreateDeveloper" />
-        <EntityTypeShape EntityType="ProjectAssignedModel.NewModule" Width="1.5" PointX="3" PointY="3.5" />
+        <EntityTypeShape EntityType="ProjectAssignedModel.NewModule" Width="1.5" PointX="12.5" PointY="2.375" />
         <AssociationConnector Association="ProjectAssignedModel.FK_NewModule_CreateDeveloper" />
         <AssociationConnector Association="ProjectAssignedModel.FK_NewModule_CreateProject" />
         <AssociationConnector Association="ProjectAssignedModel.FK_DeveloperWorkProgress_NewModule" />
         <AssociationConnector Association="ProjectAssignedModel.FK_ProjectFeedback_NewModule" />
+        <EntityTypeShape EntityType="ProjectAssignedModel.Transection" Width="1.5" PointX="4.5" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

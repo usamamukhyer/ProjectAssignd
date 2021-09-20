@@ -181,6 +181,7 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\NewModulesController.cs" />
     <Compile Include="Controllers\ProjectDetailController.cs" />
+    <Compile Include="Controllers\TransectionController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -1912,6 +1913,11 @@
     <Content Include="Views\AssignProject\Index.cshtml" />
     <Content Include="Views\AssignProject\Editproject.cshtml" />
     <Content Include="Views\Feedback\Index.cshtml" />
+    <Content Include="Views\Feedback\EditFeedback.cshtml" />
+    <Content Include="Views\NewModules\AddModule.cshtml" />
+    <Content Include="Views\Transection\AddTransection.cshtml" />
+    <Content Include="Views\Transection\Index.cshtml" />
+    <Content Include="Views\Transection\EditTransection.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

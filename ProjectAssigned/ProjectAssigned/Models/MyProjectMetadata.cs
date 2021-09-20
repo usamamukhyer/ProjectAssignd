@@ -68,7 +68,22 @@ namespace ProjectAssigned.Models
 
     }
 
+    public class ProjectFeedbackMetedata
+    {
+        public int FeedId { get; set; }
+        
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
+        public System.DateTime Startdate { get; set; }
+        public System.TimeSpan time { get; set; }
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
+        public System.DateTime Enddate { get; set; }
+        public string Discription { get; set; }
+        public Nullable<int> Project_Id { get; set; }
+        public Nullable<int> Developer_Id { get; set; }
+        public Nullable<int> ModuleId { get; set; }
 
+
+    }
 
     public static class Extension
     {

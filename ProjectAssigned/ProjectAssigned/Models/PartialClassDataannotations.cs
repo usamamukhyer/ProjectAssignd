@@ -11,4 +11,11 @@ namespace ProjectAssigned.Models
     {
 
     }
+
+    [MetadataType(typeof(ProjectFeedbackMetedata))]
+    public partial class ProjectFeedback
+    {
+
+
+    }
 }

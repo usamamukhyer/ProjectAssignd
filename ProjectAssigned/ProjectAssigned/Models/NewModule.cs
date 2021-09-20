@@ -29,7 +29,7 @@ namespace ProjectAssigned.Models
         public Nullable<System.DateTime> ActualCompletedate { get; set; }
         public string Discription { get; set; }
         public string Status { get; set; }
-        public string Assign { get; set; }
+        public Nullable<int> Assign { get; set; }
         public Nullable<int> Project_Id { get; set; }
         public Nullable<int> Developer_Id { get; set; }
         public string fileupload { get; set; }

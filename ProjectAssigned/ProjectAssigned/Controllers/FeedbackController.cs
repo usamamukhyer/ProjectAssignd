@@ -24,8 +24,8 @@ namespace ProjectAssigned.Controllers
         public ActionResult AssignFeedback()
         {
             
-            ViewBag.developerFiedls = new SelectList(new List<CreateDeveloper>(), "Developer_Id", "Firstname", null);
-            ViewBag.projectFields = new SelectList(db.CreateProjects.OrderByDescending(m=> m.ProjectTitle), "Project_Id", "ProjectTitle", null);
+            ViewBag.Developer_Id = new SelectList(new List<CreateDeveloper>(), "Developer_Id", "Firstname", null);
+            ViewBag.Project_Id = new SelectList(db.CreateProjects.OrderByDescending(m=> m.ProjectTitle), "Project_Id", "ProjectTitle", null);
             return View();
         }
 
@@ -45,14 +45,44 @@ namespace ProjectAssigned.Controllers
             return RedirectToAction ("AssignFeedback");
         }
 
+        //http get for 
         public ActionResult EditFeedback(int?id)
         {
            ProjectFeedback model = new ProjectFeedback();
-            if(id!=null)
+            if (id!=null)
             {
+               
+
                 model = db.ProjectFeedbacks.Where(x => x.FeedId == id).FirstOrDefault<ProjectFeedback>();
-                ViewBag.developerFiedls = new SelectList(db.CreateDevelopers, "Developer_Id", "Firstname", model.Developer_Id);
-                ViewBag.projectFields = new SelectList(db.CreateProjects.OrderByDescending(m => m.ProjectTitle), "Project_Id", "ProjectTitle", model.Project_Id);
+               // Query to show developer against in edit mode
+                ViewBag.Developer_Id = new SelectList(db.CreateDevelopers.OrderByDescending(x=> x.Firstname), "Developer_Id", "Firstname",model.Developer_Id);
+                // Query to show project  in edit mode
+                ViewBag.Project_Id = new SelectList(db.CreateProjects.OrderByDescending(m => m.ProjectTitle), "Project_Id", "ProjectTitle", model.Project_Id);
+
+
+
+            }
+            return View(model);
+        }
+
+        [HttpPost]
+        //edit of the feedback
+        public ActionResult EditFeedback(ProjectFeedback model)
+        {
+            try
+            {
+
+                if(ModelState.IsValid)
+                {
+                    db.Entry(model).State = System.Data.Entity.EntityState.Modified;
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+
+                }
+            }
+            catch(Exception)
+            {
+                ModelState.AddModelError("", "Somthing wen wrong please contact to your Administrator");
             }
             return View(model);
         }
@@ -62,8 +92,8 @@ namespace ProjectAssigned.Controllers
         public JsonResult GetDeveloper(int id)
         {
             db.Configuration.ProxyCreationEnabled = false;
-            var model = db.CreateProjects.AsNoTracking().Where(x => x.Project_Id == id).FirstOrDefault();
-            var developer=   db.CreateDevelopers.Where(x => x.Developer_Id == model.Developer_Id).ToList();
+            var  project= db.CreateProjects.AsNoTracking().Where(x => x.Project_Id == id).FirstOrDefault();
+            var developer=   db.CreateDevelopers.Where(x => x.Developer_Id == project.Developer_Id).ToList();
 
 
             return Json(developer, JsonRequestBehavior.AllowGet);

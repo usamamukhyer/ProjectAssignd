@@ -129,7 +129,7 @@
     <Property Name="ActualCompletedate" Type="datetime" />
     <Property Name="Discription" Type="nvarchar" MaxLength="500" Nullable="false" />
     <Property Name="Status" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Assign" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Assign" Type="int" />
     <Property Name="Project_Id" Type="int" />
     <Property Name="Developer_Id" Type="int" />
     <Property Name="fileupload" Type="nvarchar(max)" />
@@ -165,9 +165,10 @@
     <Property Name="TransecId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="CashType" Type="nvarchar" MaxLength="100" Nullable="false" />
     <Property Name="Date" Type="datetime" Nullable="false" />
-    <Property Name="Amount" Type="nvarchar" MaxLength="500" Nullable="false" />
     <Property Name="Discription" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="DetailDiscription" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="IncomeCollectFrom" Type="nvarchar" MaxLength="500" />
+    <Property Name="IncomeSpentTo" Type="nvarchar" MaxLength="500" />
+    <Property Name="Amount" Type="nvarchar(max)" />
   </EntityType>
   <Association Name="FK_CreateProject_CreateDeveloper">
     <End Role="CreateDeveloper" Type="Self.CreateDeveloper" Multiplicity="0..1" />
@@ -345,6 +346,9 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Function Name="cash_In" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="cash_Out" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="remaining_Cash" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <EntityContainer Name="ProjectAssignedModelStoreContainer">
     <EntitySet Name="__MigrationHistory" EntityType="Self.__MigrationHistory" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="AspNetRoles" EntityType="Self.AspNetRoles" Schema="dbo" store:Type="Tables" />

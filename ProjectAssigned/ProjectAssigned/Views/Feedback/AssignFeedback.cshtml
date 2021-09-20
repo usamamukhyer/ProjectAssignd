@@ -38,16 +38,16 @@
                         <div class="row">
                             <div class="col-sm-6 col-md-4">
                                 <div class="form-group">
-                                    @Html.LabelFor(model => model.Project_Id, "Select Project")
-                                    @Html.DropDownList("projectFields", null, "--Select Project Title--", htmlAttributes: new { @class = "form-control", @required = "required" })
-                                    @Html.ValidationMessageFor(m=>m.CreateProject,"",new { @class="text-danger"})
+                                    @Html.LabelFor(model => model.CreateProject.ProjectTitle, "Select Project")
+                                    @Html.DropDownList("Project_Id", null, "--Select Project Title--", htmlAttributes: new { @class = "form-control", @required = "required" })
+                                    
 
                                 </div>
                             </div>
                             <div class="col-sm-6 col-md-4">
                                 <div class="form-group">
-                                    @Html.LabelFor(model => model.Developer_Id,"Developer")
-                                    @Html.DropDownList("developerFiedls", null, htmlAttributes: new { @class = "form-control", @required = "required" })
+                                    @Html.LabelFor(model => model.CreateDeveloper.Firstname,"Developer")
+                                    @Html.DropDownList("Developer_Id", null, htmlAttributes: new { @class = "form-control", @required = "required" })
                                    
 
                                 </div>
@@ -74,14 +74,14 @@
                                             <i class="fa fa-calendar tx-16 lh-0 op-6"></i>
                                         </div>
 
-                                        @Html.TextBoxFor(m => m.Startdate, new { @class = "form-control fc-datepicker" })
+                                        @Html.TextBoxFor(m => m.Startdate, new { @class = "form-control fc-datepicker", placeholder = "DD-MM-YYY",required = "required" })
                                     </div>
                                     @Html.ValidationMessageFor(m => m.Startdate, "", new { @class = "text-danger" })
                                 </div>
                             </div>
 
 
-                            < <div class="col-sm-6 col-md-4">
+                             <div class="col-sm-6 col-md-4">
                                 <div class="form-group">
                                     @Html.LabelFor(m => m.Enddate)
                                     <div class="input-group">
@@ -90,7 +90,7 @@
                                             <i class="fa fa-calendar tx-16 lh-0 op-6"></i>
                                         </div>
 
-                                        @Html.TextBoxFor(m => m.Enddate, new { @class = "form-control fc-datepicker" })
+                                        @Html.TextBoxFor(m => m.Enddate, new { @class = "form-control fc-datepicker",placeholder="DD-MM-YYY", required = "required" })
                                     </div>
                                     @Html.ValidationMessageFor(m => m.Enddate, "", new { @class = "text-danger" })
                                 </div>
@@ -122,17 +122,17 @@
 @section Mysection{
     <script type="text/javascript">
       
-        $('#projectFields').change(function () {
-            $('#developerFiedls').empty();
+        $('#Project_Id').change(function () {
+            $('#Developer_Id').empty();
 
-            if ($('#projectFields option:selected').val() != '') {
+            if ($('#Project_Id option:selected').val() != '') {
                 $.ajax({
                     method: "Get",
-                    url: '/Feedback/GetDeveloper?id=' + $('#projectFields option:selected').val(),
+                    url: '/Feedback/GetDeveloper?id=' + $('#Project_Id option:selected').val(),
                     success: function (data) {
                         if (data.length) {
                             for (var i = 0; i < data.length; i++) {
-                                $('#developerFiedls').append('<option value="' + data[i].Developer_Id + '">' + data[i].Firstname + '</option>');
+                                $('#Developer_Id').append('<option value="' + data[i].Developer_Id + '">' + data[i].Firstname + '</option>');
                             }
 
                         }
@@ -145,15 +145,6 @@
             }
 
         });
-
-
-
-
-
-
-
-
-
 
     </script>
 }

@@ -27,8 +27,8 @@
                             <table id="example2" class="hover table-bordered border-top-0 border-bottom-0">
                                 <thead>
                                     <tr>
-                                        <th>Project Title</th>
-                                        <th>Developer</th>
+                                        <th>@Html.DisplayNameFor(m => m.CreateProject.ProjectTitle)</th>
+                                        <th>@Html.DisplayNameFor(m => m.CreateDeveloper.Firstname)</th>
                                         <th>@Html.DisplayNameFor(m => m.Startdate)</th>               
                                         <th>@Html.DisplayNameFor(m => m.Enddate)</th>
                                         <th>@Html.DisplayNameFor(m => m.time)</th>
@@ -59,7 +59,7 @@
                                             </td>
                                             
 
-                                            <td>  <a class="btn btn-primary btn-sm" href="@Url.Action("Editproject","AssignProject",new {id=item.Project_Id })"><i class="fa fa-pencil fa-lg"></i></a></td>
+                                            <td>  <a class="btn btn-primary btn-sm" href="@Url.Action("EditFeedback", "Feedback",new {id=item.FeedId })"><i class="fa fa-pencil fa-lg"></i></a></td>
                                         </tr>
                                     }
                             </table>

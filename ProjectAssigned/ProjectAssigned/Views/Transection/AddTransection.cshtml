@@ -1,0 +1,148 @@
+﻿@model ProjectAssigned.Models.Transection
+@{
+    ViewBag.Title = "AddTransection";
+    Layout = "~/Views/Shared/_ProjectAdminPannelLayout.cshtml";
+}
+
+<div class="app-content  my-3 my-md-5">
+
+    <div class="side-app">
+        <div class="page-header">
+            <h4 class="page-title">Edit Profile</h4>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Pages</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Edit Profile</li>
+            </ol>
+
+        </div>
+
+
+
+        <div class="card">
+
+            <div class="card-header">
+                <h3 class="card-title"> Profile</h3>
+
+            </div>
+
+            <div class="card-body">
+                @using (Html.BeginForm("AddTransection","Transection",FormMethod.Post))
+                {
+                    @Html.AntiForgeryToken()
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    @Html.HiddenFor(m => m.TransecId)
+                    <br />
+                    <div class="row">
+                        <div class="col-sm-6 col-md-6">
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.CashType)
+                                @Html.DropDownList("CashType",null,"--Select CashType--", htmlAttributes: new { @class = "form-control", @id = "CashType" })
+                                @Html.ValidationMessageFor(m => m.CashType, "", new { @class = "text-danger" })
+
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-6">
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.Date)
+                                <div class="input-group">
+
+                                    <div class="input-group-text">
+                                        <i class="fa fa-calendar tx-16 lh-0 op-6"></i>
+                                    </div>
+
+                                    @Html.TextBoxFor(m => m.Date, new { @class = "form-control fc-datepicker", placeholder = "DD-MM-YYY", @required = "required" })
+                                </div>
+                                @Html.ValidationMessageFor(m => m.Date, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div id="incomefields" class="col-sm-6 col-md-6">
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.IncomeCollectFrom, "Resource of income")
+                                @Html.DropDownList("IncomeCollectFrom", null, "--Select Income From--", htmlAttributes: new { @class = "form-control ", required = "required" })
+                                @Html.ValidationMessageFor(m => m.CashType, "", new { @class = "text-danger" })
+
+                            </div>
+                        </div>
+                        <div  id="Spentfields" class="col-sm-6 col-md-6">
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.IncomeSpentTo, "Spent To")
+                                @Html.DropDownList("IncomeSpentTo", null, "--Select Income From--", htmlAttributes: new { @class = "form-control ", @required = "required", @id = "income" })
+                                @Html.ValidationMessageFor(m => m.CashType, "", new { @class = "text-danger" })
+
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6 col-md-6">
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.Amount)
+                                @Html.TextBoxFor(m => m.Amount, new { @class = "form-control", placeholder = "Amount", required = "required" })
+                                @Html.ValidationMessageFor(m => m.Amount, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                    </div>
+
+                    @*<div class="row">
+                        <div   class="col-sm-6 col-md-6">
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.IncomeSpentTo, "Spent To")
+                                @Html.DropDownList("IncomeSpentTo", null, "--Select Income From--", htmlAttributes: new { @class = "form-control ", @required = "required", @id = "income" })
+                                @Html.ValidationMessageFor(m => m.CashType, "", new { @class = "text-danger" })
+
+                            </div>
+                        </div>
+
+                        
+
+                    </div>*@
+                    <div  class="row">
+
+                        <div class="col-sm-6 col-md-12">
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.Discription)
+                                @Html.TextAreaFor(m => m.Discription, new { @class = "form-control", placeholder = "Enter About your description", required = "required", rows = "5" })
+                                @Html.ValidationMessageFor(m => m.Discription, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card-footer text-right">
+                        <button type="submit" class="btn btn-primary" id="Onsuccess">Save</button>
+                    </div>
+                    }
+            </div>
+
+
+        </div>
+
+    </div>
+</div>
+@section Mysection{
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            $("#incomefields").hide();
+            $('#Spentfields').hide();
+            $('#CashType').change(function () {
+                var value = $(this).val();
+                if (value == 'CashIn') {
+                    $('#incomefields').show();
+                    $('#Spentfields').hide();
+                } else if (value == 'CashOut') {
+                    $('#incomefields').hide();
+                    $('#Spentfields').show();
+                }  else{
+                    $("#incomefields").hide();
+                    $('#discriptionfield').hide();
+                       }
+            });
+        });
+
+
+
+
+    </script>
+    }
+
