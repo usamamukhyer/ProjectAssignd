@@ -1,0 +1,104 @@
+﻿@model IEnumerable<ProjectAssigned.Models.NewModule>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_ProjectAdminPannelLayout.cshtml";
+}
+
+<h2>Index</h2>
+
+<div class="app-content  my-3 my-md-5">
+    <div class="side-app">
+        <div class="page-header">
+            <h4 class="page-title">Data</h4>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Data</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Data</li>
+            </ol>
+
+        </div>
+        <div class="row">
+
+            <div class="col-md-12 col-lg-12">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">Data</div>
+
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table id="example2" class="hover table-bordered border-top-0 border-bottom-0">
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.Budget)
+                                        </th>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.AwardDate)
+                                        </th>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.StartDate)
+                                        </th>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.EndDate)
+                                        </th>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.ActualCompletedate)
+                                        </th>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.Discription)
+                                        </th>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.Status)
+                                        </th>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.Assign)
+                                        </th>
+                                        <th> Edit</th>
+
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                    <tr>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Budget)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.AwardDate)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.StartDate)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.EndDate)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.ActualCompletedate)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Discription)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Status)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Assign)
+                                        </td>
+
+                                        <td>  <a class="btn btn-primary btn-sm" href="@Url.Action("EditDeveloper","CreateDeveloper",new {id=item.ModuleId})"><i class="fa fa-pencil fa-lg"></i></a></td>
+                                    </tr>
+                                    }
+
+
+                            </table>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

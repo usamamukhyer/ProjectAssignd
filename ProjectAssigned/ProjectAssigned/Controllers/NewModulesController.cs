@@ -15,7 +15,7 @@ namespace ProjectAssigned.Controllers
         // GET: NewModules
         public ActionResult Index()
         {
-            return View();
+            return View(db.NewModules.ToList());
         }
 
 
@@ -43,8 +43,18 @@ namespace ProjectAssigned.Controllers
         public ActionResult AddModule(NewModule model,HttpPostedFileBase file)
         {
             try {
+                List<string> statusDrd = new List<string>();
+                statusDrd.Add("Success");
+                statusDrd.Add("Fail");
+                statusDrd.Add("Pending");
+                statusDrd.Add("In Progress");
+                ViewBag.Status = new SelectList(statusDrd);
+                ViewBag.Developer_Id = new SelectList(new List<CreateDeveloper>(), "Developer_Id", "Firstname");
+                ViewBag.Project_Id = new SelectList(db.CreateProjects.OrderByDescending(m => m.ProjectTitle), "Project_Id", "ProjectTitle");
+                ViewBag.Assign = new SelectList(db.CreateDevelopers, "Developer_Id", "Firstname");
 
-            string extension = Path.GetExtension(file.FileName);
+
+                string extension = Path.GetExtension(file.FileName);
             if (extension.ToLower() == ".doc" || extension.ToLower() == ".docx" || extension.ToLower() == ".txt")
             {
                 if (file.ContentLength < 1000000)
@@ -74,7 +84,7 @@ namespace ProjectAssigned.Controllers
             db.SaveChanges();
             ModelState.Clear();
 
-            return View(model);
+            return View("AddModule");
         }
 
 

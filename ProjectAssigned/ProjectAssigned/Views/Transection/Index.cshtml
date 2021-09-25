@@ -1,4 +1,4 @@
-﻿@model IEnumerable<ProjectAssigned.Models.Transection>
+﻿@*@model IEnumerable<ProjectAssigned.Models.Transection>*@
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_ProjectAdminPannelLayout.cshtml";
@@ -20,63 +20,87 @@
             <div class="col-md-12 col-lg-12">
                 <div class="card">
                     <div class="card-header">
-                        <div>
-                            <h4 style="color:#ec296b">Total Income:@ViewBag.totalIncome&nbsp;pkr</h4>
-                            <h4 style="color:#ec296b">Total Spent:@ViewBag.totalSpent&nbsp;pkr</h4>
-                            <h4 style="color:#ec296b">Total Spent:@ViewBag.Remaining&nbsp;pkr</h4>
-                            
+                        @*<div>
+                                <h4 style="color:#ec296b">Total Income:@ViewBag.totalIncome&nbsp;pkr</h4>
+                                <h4 style="color:#ec296b">Total Spent:@ViewBag.totalSpent&nbsp;pkr</h4>
+                                <h4 style="color:#ec296b">Total Spent:@ViewBag.Remaining&nbsp;pkr</h4>
 
-                        </div>
+
+                            </div>*@
 
 
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
-                            <table id="example2" class="hover table-bordered border-top-0 border-bottom-0">
+                            <table id="transectionTable" class="hover table-bordered border-top-0 border-bottom-0">
                                 <thead>
                                     <tr>
-                                        <th>@Html.DisplayNameFor(m => m.CashType)</th>
-                                        <th>@Html.DisplayNameFor(m => m.Date)</th>
-                                        <th>@Html.DisplayNameFor(m => m.Amount)</th>
-                                       
-                                        <th>@Html.DisplayNameFor(m => m.IncomeCollectFrom)</th>
-                                        <th>@Html.DisplayNameFor(m => m.IncomeSpentTo)</th>
-                                        <th>@Html.DisplayNameFor(m => m.Discription)</th>
-                                        <th> Edit</th>
-
-
-
+                                        <th>
+                                            TransecId
+                                        </th>
+                                        <th>
+                                            CashType
+                                        </th>
+                                        <th>
+                                            IncomeCollectFrom
+                                        </th>
+                                        <th>
+                                            IncomeSpentTo
+                                        </th>
+                                        <th>
+                                            Amount
+                                        </th>
+                                        <th>
+                                            Date
+                                        </th>
+                                        <th>
+                                            Discription
+                                        </th>
                                     </tr>
                                 </thead>
+
                                 <tbody>
-                                    @foreach (var item in Model)
-                                    {
+                                </tbody>
+                                <tfoot>
                                     <tr>
-                                        <td>
-                                            @Html.DisplayFor(mitem => item.CashType)
-                                        </td>
-                                        <td>
-                                            @Html.DisplayFor(mitem => item.Date)
-                                        </td>
-                                        <td>
-                                            @Html.DisplayFor(mitem => item.Amount)
-                                        </td>
-                                        <td>
-                                            @Html.DisplayFor(mitem => item.IncomeCollectFrom)
-                                        </td>
-                                        <td>
-                                            @Html.DisplayFor(mitem => item.IncomeSpentTo)
-                                        </td>
-                                        <td>
-                                            @Html.DisplayFor(mitem => item.Discription)
-                                        </td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
 
 
-
-                                        <td>  <a class="btn btn-primary btn-sm" href="@Url.Action("EditTransection", "Transection",new {id=item.TransecId})"><i class="fa fa-pencil fa-lg"></i></a></td>
                                     </tr>
-                                    
-                                    }
+                                </tfoot>
+                                @*<tbody>
+                                       @foreach (var item in Model)
+                                       {
+                                       <tr>
+                                           <td>
+                                               @Html.DisplayFor(mitem => item.CashType)
+                                           </td>
+                                           <td>
+                                               @Html.DisplayFor(mitem => item.Date)
+                                           </td>
+                                           <td>
+                                               @Html.DisplayFor(mitem => item.Amount)
+                                           </td>
+                                           <td>
+                                               @Html.DisplayFor(mitem => item.IncomeCollectFrom)
+                                           </td>
+                                           <td>
+                                               @Html.DisplayFor(mitem => item.IncomeSpentTo)
+                                           </td>
+                                           <td>
+                                               @Html.DisplayFor(mitem => item.Discription)
+                                           </td>
+
+
+
+                                           <td>  <a class="btn btn-primary btn-sm" href="@Url.Action("EditTransection", "Transection",new {id=item.TransecId})"><i class="fa fa-pencil fa-lg"></i></a></td>
+                                    </tr>
+
+                                       }*@
 
 
                             </table>
@@ -90,13 +114,76 @@
 </div>
 @section Mysection{
 
-    <!-- Data table css -->
-    <link href="~/Content/assets/plugins/datatable/dataTables.bootstrap4.min.css" rel="stylesheet" />
-    <link href="~/Content/assets/plugins/datatable/jquery.dataTables.min.css" rel="stylesheet" />
-    <!-- Data tables -->
-    <script src="~/Content/assets/plugins/datatable/jquery.dataTables.min.js"></script>
-    <script src="~/Content/assets/plugins/datatable/dataTables.bootstrap4.min.js"></script>
-    <script src="~/Content/assets/js/datatable.js"></script>
+    <script>
+        $(document).ready(function () {
+
+            $("#transectionTable").DataTable(
+                {
+                    "processing": true,
+                    "serverSide": true,
+                    "ajax": {
+                        "type": "Get",
+                        "url": "/Transection/Index",
+                        "dataType": "json"
+                        /*"dataSrc": $.parseJSON(data.data)*/
+
+                    },
+
+                    "columns": [
+                        { "data": "CashType", "name": "CashType" },
+                        { "data": "Date", "name": "Date" },
+                        { "data": "Amount", "name": "Amount" },
+                        { "data": "IncomeCollectFrom", "name": "IncomeCollectFrom" },
+                        { "data": "IncomeSpentTo", "name": "IncomeSpentTo" },
+                        { "data": "Discription", "name": "Discription" }
+                    ]
+
+
+                    //        //"serverSide": "true",
+                    //        //"order": [0,"asc"]
+                    //    }
+                });
+
+        });
+
+    </script>
+    @*<*@@*script>
+
+            $(document).ready(function () {
+                Index();
+            })
+
+            var Index = function () {
+                $.ajax({
+                        type: "Get",
+                        url: "/Transection/Index",
+                        success: function (response) {
+                            Binddatatable(response);
+
+                        }
+                    })
+
+            }
+
+            var Binddatatable = function (response) {
+
+                $("#transectionTable").DataTable({
+
+                    "aaData": response,
+                    "aocolumns": [
+                        { "mData": "TransecId" },
+                        { "mData": " CashType" },
+                        { "mData": " IncomeCollectFrom" },
+                        { "mData": "IncomeSpentTo" },
+                        { "mData": " Amount" },
+                        { "mData": " Date" },
+                        { "mData": "Discription" },
+                    ]
+                });
+
+            }
+        </script>*@
+
 
 }
 

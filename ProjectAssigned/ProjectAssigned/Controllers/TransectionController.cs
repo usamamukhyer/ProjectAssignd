@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Script.Serialization;
 using ProjectAssigned.Models;
 namespace ProjectAssigned.Controllers
 {
@@ -10,14 +11,30 @@ namespace ProjectAssigned.Controllers
     {
         ProjectAssignedEntities db = new ProjectAssignedEntities();
         // GET: Transection
-        public ActionResult Index()
-        {
-            ViewBag.totalIncome = db.cash_In().First();
-            ViewBag.totalSpent= db.cash_Out().First().ToString();
-            ViewBag.Remaining = db.remaining_Cash().First().ToString();
 
-            return View(db.Transections.ToList());
+        public JsonResult Index()
+        {
+            List<TransectionViewModel> list= db.Transections.Select(x =>new TransectionViewModel { 
+            TransecId=x.TransecId,
+            CashType=x.CashType,
+            IncomeCollectFrom=x.IncomeCollectFrom,
+            IncomeSpentTo=x.IncomeSpentTo,
+            Amount=x.Amount,
+            Date=x.Date,
+            Discription=x.Discription
+            } ).ToList();
+
+            return Json(new {data=list }, JsonRequestBehavior.AllowGet);
         }
+
+      
+        //public ActionResult List()
+        //{
+        //    var data = db.Transections.OrderBy(a => a.CashType).ToList();
+        //    return Json(new { data = data }, JsonRequestBehavior.AllowGet);
+        //}
+
+
 
         //Http get and post method for the adding of the transection
         #region Addtransection

@@ -1,0 +1,127 @@
+﻿@model IEnumerable<ProjectAssigned.Models.Transection>
+
+@{
+    ViewBag.Title = "List";
+    Layout = "~/Views/Shared/_ProjectAdminPannelLayout.cshtml";
+}
+
+
+
+<div class="app-content  my-3 my-md-5">
+    <div class="side-app">
+        <div class="page-header">
+            <h4 class="page-title">Data</h4>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Data</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Data</li>
+            </ol>
+
+        </div>
+        <div class="row">
+
+            <div class="col-md-12 col-lg-12">
+                <div class="card">
+                    <div class="card-header">
+                        <div>
+                            <h4 style="color:#ec296b">Total Income:@ViewBag.totalIncome&nbsp;pkr</h4>
+                            <h4 style="color:#ec296b">Total Spent:@ViewBag.totalSpent&nbsp;pkr</h4>
+                            <h4 style="color:#ec296b">Total Spent:@ViewBag.Remaining&nbsp;pkr</h4>
+
+
+                        </div>
+
+
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table id="transectionTable" class="hover table-bordered border-top-0 border-bottom-0">
+                                <thead>
+                                    <tr>
+                                        <th>CashType</th>
+                                        <th>Date</th>
+                                        <th>Amount</th>
+                                        <th>IncomeCollectFrom</th>
+                                        <th>IncomeSpentTo</th>
+                                        <th>Discription</th>
+                                        <th> Edit</th>
+
+
+
+                                    </tr>
+                                </thead>
+                                @*<tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                    <tr>
+                                        <td>
+                                            @Html.DisplayFor(mitem => item.CashType)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(mitem => item.Date)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(mitem => item.Amount)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(mitem => item.IncomeCollectFrom)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(mitem => item.IncomeSpentTo)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(mitem => item.Discription)
+                                        </td>
+
+
+
+                                        <td>  <a class="btn btn-primary btn-sm" href="@Url.Action("EditTransection", "Transection",new {id=item.TransecId})"><i class="fa fa-pencil fa-lg"></i></a></td>
+                                    </tr>
+
+                                    }*@
+
+
+                            </table>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Data table css -->
+<link href="//cdn.datatables.net/1.11.2/css/jquery.dataTables.min.css" />
+@section Mysection{
+    <script src="//cdn.datatables.net/1.11.2/js/jquery.dataTables.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#transectionTable").DataTable(
+                {
+                                "ajax": {
+                                "url": "/Transection/List",
+                                "type": "GET",
+                                "datatype": "json"
+                            },
+                            "columns": [
+                                { "data": "CashType", "autoWidth": true },
+                                { "data": "Date", "autoWidth": true },
+                                { "data": "Amount", "autoWidth": true },
+                                { "data": "IncomeCollectFrom", "autoWidth": true },
+                                { "data": "Discription", "autoWidth": true },
+                                { "data": "PostalCode", "autoWidth": true }
+                            ],
+
+                          "serverSide": "true",
+                          "order": [0, "asc"]
+                     
+                }
+            );
+
+        });
+
+    </script>
+}
+
+
+
+
