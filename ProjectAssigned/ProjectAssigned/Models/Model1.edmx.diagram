@@ -4,32 +4,31 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="8168445f679d46fa9d06c71c47b9d2ad" Name="Diagram1">
+      <Diagram DiagramId="dc429819d8c14ce6ba91970ee3836715" Name="Diagram1">
         <EntityTypeShape EntityType="ProjectAssignedModel.C__MigrationHistory" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="ProjectAssignedModel.AspNetRole" Width="1.5" PointX="0.75" PointY="10.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="ProjectAssignedModel.AspNetUserClaim" Width="1.5" PointX="5.25" PointY="9" IsExpanded="true" />
-        <EntityTypeShape EntityType="ProjectAssignedModel.AspNetUserLogin" Width="1.5" PointX="5.25" PointY="11.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="ProjectAssignedModel.AspNetUser" Width="1.5" PointX="3" PointY="9.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="ProjectAssignedModel.DeveloperWorkProgress" Width="1.5" PointX="5.25" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjectAssignedModel.AspNetRole" Width="1.5" PointX="3" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjectAssignedModel.AspNetUserClaim" Width="1.5" PointX="3" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjectAssignedModel.AspNetUserLogin" Width="1.5" PointX="3" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjectAssignedModel.CreateProject" Width="1.5" PointX="3" PointY="11.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjectAssignedModel.DeveloperWorkProgress" Width="1.5" PointX="5.25" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjectAssignedModel.NewModule" Width="1.5" PointX="8.25" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjectAssignedModel.ProjectFeedback" Width="1.5" PointX="10.5" PointY="9.625" IsExpanded="true" />
         <EntityTypeShape EntityType="ProjectAssignedModel.sysdiagram" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
-        <AssociationConnector Association="ProjectAssignedModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
-        <AssociationConnector Association="ProjectAssignedModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
-        <AssociationConnector Association="ProjectAssignedModel.AspNetUserRoles" ManuallyRouted="false" />
-        <EntityTypeShape EntityType="ProjectAssignedModel.CreateProject" Width="1.5" PointX="10.25" PointY="1.125" />
-        <AssociationConnector Association="ProjectAssignedModel.FK_DeveloperWorkProgress_CreateProject" />
-        <EntityTypeShape EntityType="ProjectAssignedModel.ProjectFeedback" Width="1.5" PointX="7.875" PointY="4" />
-        <AssociationConnector Association="ProjectAssignedModel.FK_ProjectFeedback_CreateProject" />
-        <AssociationConnector Association="ProjectAssignedModel.FK_DeveloperWorkProgress_ProjectFeedback" />
-        <EntityTypeShape EntityType="ProjectAssignedModel.CreateDeveloper" Width="1.5" PointX="0.75" PointY="3.125" />
-        <AssociationConnector Association="ProjectAssignedModel.FK_CreateProject_CreateDeveloper" />
-        <AssociationConnector Association="ProjectAssignedModel.FK_DeveloperWorkProgress_CreateDeveloper" />
-        <AssociationConnector Association="ProjectAssignedModel.FK_ProjectFeedback_CreateDeveloper" />
-        <EntityTypeShape EntityType="ProjectAssignedModel.NewModule" Width="1.5" PointX="12.5" PointY="2.375" />
-        <AssociationConnector Association="ProjectAssignedModel.FK_NewModule_CreateDeveloper" />
-        <AssociationConnector Association="ProjectAssignedModel.FK_NewModule_CreateProject" />
-        <AssociationConnector Association="ProjectAssignedModel.FK_DeveloperWorkProgress_NewModule" />
-        <AssociationConnector Association="ProjectAssignedModel.FK_ProjectFeedback_NewModule" />
-        <EntityTypeShape EntityType="ProjectAssignedModel.Transection" Width="1.5" PointX="4.5" PointY="0.75" />
+        <EntityTypeShape EntityType="ProjectAssignedModel.Transection" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="ProjectAssignedModel.FK_DeveloperWorkProgress_CreateProject" ManuallyRouted="false" />
+        <AssociationConnector Association="ProjectAssignedModel.FK_NewModule_CreateProject" ManuallyRouted="false" />
+        <AssociationConnector Association="ProjectAssignedModel.FK_ProjectFeedback_CreateProject" ManuallyRouted="false" />
+        <AssociationConnector Association="ProjectAssignedModel.FK_DeveloperWorkProgress_NewModule" ManuallyRouted="false" />
+        <AssociationConnector Association="ProjectAssignedModel.FK_DeveloperWorkProgress_ProjectFeedback" ManuallyRouted="false" />
+        <AssociationConnector Association="ProjectAssignedModel.FK_ProjectFeedback_NewModule" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="ProjectAssignedModel.AspNetUser" Width="1.5" PointX="0.75" PointY="6.5" />
+        <AssociationConnector Association="ProjectAssignedModel.FK_AspNetUserClaims_AspNetUsers" />
+        <AssociationConnector Association="ProjectAssignedModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" />
+        <AssociationConnector Association="ProjectAssignedModel.FK_CreateProject_AspNetUsers" />
+        <AssociationConnector Association="ProjectAssignedModel.FK_DeveloperWorkProgress_AspNetUsers" />
+        <AssociationConnector Association="ProjectAssignedModel.FK_NewModule_AspNetUsers" />
+        <AssociationConnector Association="ProjectAssignedModel.FK_ProjectFeedback_AspNetUsers" />
+        <AssociationConnector Association="ProjectAssignedModel.AspNetUserRoles" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

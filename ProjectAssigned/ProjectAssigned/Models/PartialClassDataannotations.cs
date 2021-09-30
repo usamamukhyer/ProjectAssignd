@@ -6,8 +6,8 @@ using System.Web;
 
 namespace ProjectAssigned.Models
 {
-  [MetadataType(typeof(CreateDeveloperMetadata))]
-  public partial class CreateDeveloper
+  [MetadataType(typeof(AspnetuserMetdata))]
+  public partial class AspNetUser
     {
 
     }

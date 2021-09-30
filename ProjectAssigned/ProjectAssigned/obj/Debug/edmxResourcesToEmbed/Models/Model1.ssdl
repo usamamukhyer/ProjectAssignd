@@ -50,37 +50,27 @@
     </Key>
     <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
     <Property Name="Email" Type="nvarchar" MaxLength="256" />
-    <Property Name="EmailConfirmed" Type="bit" Nullable="false" />
+    <Property Name="EmailConfirmed" Type="bit" />
     <Property Name="PasswordHash" Type="nvarchar(max)" />
     <Property Name="SecurityStamp" Type="nvarchar(max)" />
     <Property Name="PhoneNumber" Type="nvarchar(max)" />
-    <Property Name="PhoneNumberConfirmed" Type="bit" Nullable="false" />
-    <Property Name="TwoFactorEnabled" Type="bit" Nullable="false" />
+    <Property Name="PhoneNumberConfirmed" Type="bit" />
+    <Property Name="TwoFactorEnabled" Type="bit" />
     <Property Name="LockoutEndDateUtc" Type="datetime" />
-    <Property Name="LockoutEnabled" Type="bit" Nullable="false" />
-    <Property Name="AccessFailedCount" Type="int" Nullable="false" />
-    <Property Name="UserName" Type="nvarchar" MaxLength="256" Nullable="false" />
+    <Property Name="LockoutEnabled" Type="bit" />
+    <Property Name="AccessFailedCount" Type="int" />
+    <Property Name="Cv" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Photo" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Experience" Type="nvarchar" MaxLength="100" Nullable="false" />
     <Property Name="IsActive" Type="bit" />
-  </EntityType>
-  <EntityType Name="CreateDeveloper">
-    <Key>
-      <PropertyRef Name="Developer_Id" />
-    </Key>
-    <Property Name="Developer_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Firstname" Type="nvarchar" MaxLength="500" Nullable="false" />
-    <Property Name="Lastname" Type="nvarchar" MaxLength="500" Nullable="false" />
-    <Property Name="Image" Type="nvarchar" MaxLength="500" Nullable="false" />
-    <Property Name="Designation" Type="nvarchar" MaxLength="500" Nullable="false" />
-    <Property Name="Joindate" Type="datetime" Nullable="false" />
+    <Property Name="LastName" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="FirstName" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Address" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Designation" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Bio" Type="nvarchar" MaxLength="500" Nullable="false" />
     <Property Name="Salary" Type="nvarchar" MaxLength="500" Nullable="false" />
-    <Property Name="Email" Type="nvarchar" MaxLength="500" Nullable="false" />
-    <Property Name="Address" Type="nvarchar" MaxLength="500" Nullable="false" />
-    <Property Name="Phone" Type="nvarchar" MaxLength="500" Nullable="false" />
-    <Property Name="Experience" Type="nvarchar" MaxLength="500" Nullable="false" />
-    <Property Name="Cv" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Bio" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Username" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="UserPassword" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="UserName" Type="nchar" MaxLength="100" />
+    <Property Name="JoinDate" Type="nchar" MaxLength="10" />
   </EntityType>
   <EntityType Name="CreateProject">
     <Key>
@@ -97,7 +87,7 @@
     <Property Name="Statusfeedback" Type="nvarchar" MaxLength="500" Nullable="false" />
     <Property Name="Fileuploads" Type="nvarchar" MaxLength="500" />
     <Property Name="Discription" Type="nvarchar" MaxLength="500" Nullable="false" />
-    <Property Name="Developer_Id" Type="int" />
+    <Property Name="UserId" Type="nvarchar" MaxLength="128" />
     <Property Name="ProjectType" Type="nvarchar" MaxLength="500" Nullable="false" />
     <Property Name="Assign" Type="int" />
   </EntityType>
@@ -114,7 +104,7 @@
     <Property Name="discription" Type="nvarchar(max)" Nullable="false" />
     <Property Name="ModuleId" Type="int" />
     <Property Name="Project_Id" Type="int" />
-    <Property Name="Developer_Id" Type="int" />
+    <Property Name="UserId" Type="nvarchar" MaxLength="128" />
     <Property Name="FeedId" Type="int" />
   </EntityType>
   <EntityType Name="NewModule">
@@ -131,7 +121,7 @@
     <Property Name="Status" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Assign" Type="int" />
     <Property Name="Project_Id" Type="int" />
-    <Property Name="Developer_Id" Type="int" />
+    <Property Name="UserId" Type="nvarchar" MaxLength="128" />
     <Property Name="fileupload" Type="nvarchar(max)" />
     <Property Name="Statusfeedback" Type="nvarchar" MaxLength="500" Nullable="false" />
   </EntityType>
@@ -145,8 +135,9 @@
     <Property Name="Enddate" Type="date" Nullable="false" />
     <Property Name="Discription" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Project_Id" Type="int" />
-    <Property Name="Developer_Id" Type="int" />
+    <Property Name="UserId" Type="nvarchar" MaxLength="128" />
     <Property Name="ModuleId" Type="int" />
+    <Property Name="ProjectType" Type="nvarchar(max)" />
   </EntityType>
   <EntityType Name="sysdiagrams">
     <Key>
@@ -170,28 +161,38 @@
     <Property Name="IncomeSpentTo" Type="nvarchar" MaxLength="500" />
     <Property Name="Amount" Type="nvarchar(max)" />
   </EntityType>
-  <Association Name="FK_CreateProject_CreateDeveloper">
-    <End Role="CreateDeveloper" Type="Self.CreateDeveloper" Multiplicity="0..1" />
-    <End Role="CreateProject" Type="Self.CreateProject" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="CreateDeveloper">
-        <PropertyRef Name="Developer_Id" />
-      </Principal>
-      <Dependent Role="CreateProject">
-        <PropertyRef Name="Developer_Id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
-    <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
-      <OnDelete Action="Cascade" />
-    </End>
+  <Association Name="FK_AspNetUserClaims_AspNetUsers">
+    <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1" />
     <End Role="AspNetUserClaims" Type="Self.AspNetUserClaims" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="AspNetUsers">
         <PropertyRef Name="Id" />
       </Principal>
       <Dependent Role="AspNetUserClaims">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AspNetUserRoles_AspNetUsers">
+    <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1" />
+    <End Role="AspNetUserRoles" Type="Self.AspNetUserRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserRoles">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CreateProject_AspNetUsers">
+    <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="0..1" />
+    <End Role="CreateProject" Type="Self.CreateProject" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CreateProject">
         <PropertyRef Name="UserId" />
       </Dependent>
     </ReferentialConstraint>
@@ -224,29 +225,15 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId">
-    <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
-      <OnDelete Action="Cascade" />
-    </End>
-    <End Role="AspNetUserRoles" Type="Self.AspNetUserRoles" Multiplicity="*" />
+  <Association Name="FK_DeveloperWorkProgress_AspNetUsers">
+    <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="0..1" />
+    <End Role="DeveloperWorkProgress" Type="Self.DeveloperWorkProgress" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="AspNetUsers">
         <PropertyRef Name="Id" />
       </Principal>
-      <Dependent Role="AspNetUserRoles">
-        <PropertyRef Name="UserId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_DeveloperWorkProgress_CreateDeveloper">
-    <End Role="CreateDeveloper" Type="Self.CreateDeveloper" Multiplicity="0..1" />
-    <End Role="DeveloperWorkProgress" Type="Self.DeveloperWorkProgress" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="CreateDeveloper">
-        <PropertyRef Name="Developer_Id" />
-      </Principal>
       <Dependent Role="DeveloperWorkProgress">
-        <PropertyRef Name="Developer_Id" />
+        <PropertyRef Name="UserId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -286,15 +273,15 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_NewModule_CreateDeveloper">
-    <End Role="CreateDeveloper" Type="Self.CreateDeveloper" Multiplicity="0..1" />
+  <Association Name="FK_NewModule_AspNetUsers">
+    <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="0..1" />
     <End Role="NewModule" Type="Self.NewModule" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="CreateDeveloper">
-        <PropertyRef Name="Developer_Id" />
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
       </Principal>
       <Dependent Role="NewModule">
-        <PropertyRef Name="Developer_Id" />
+        <PropertyRef Name="UserId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -310,15 +297,15 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_ProjectFeedback_CreateDeveloper">
-    <End Role="CreateDeveloper" Type="Self.CreateDeveloper" Multiplicity="0..1" />
+  <Association Name="FK_ProjectFeedback_AspNetUsers">
+    <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="0..1" />
     <End Role="ProjectFeedback" Type="Self.ProjectFeedback" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="CreateDeveloper">
-        <PropertyRef Name="Developer_Id" />
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
       </Principal>
       <Dependent Role="ProjectFeedback">
-        <PropertyRef Name="Developer_Id" />
+        <PropertyRef Name="UserId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -346,9 +333,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Function Name="cash_In" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
-  <Function Name="cash_Out" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
-  <Function Name="remaining_Cash" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <EntityContainer Name="ProjectAssignedModelStoreContainer">
     <EntitySet Name="__MigrationHistory" EntityType="Self.__MigrationHistory" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="AspNetRoles" EntityType="Self.AspNetRoles" Schema="dbo" store:Type="Tables" />
@@ -356,20 +340,23 @@
     <EntitySet Name="AspNetUserLogins" EntityType="Self.AspNetUserLogins" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="AspNetUserRoles" EntityType="Self.AspNetUserRoles" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUsers" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="CreateDeveloper" EntityType="Self.CreateDeveloper" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="CreateProject" EntityType="Self.CreateProject" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="DeveloperWorkProgress" EntityType="Self.DeveloperWorkProgress" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="NewModule" EntityType="Self.NewModule" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ProjectFeedback" EntityType="Self.ProjectFeedback" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Transection" EntityType="Self.Transection" Schema="dbo" store:Type="Tables" />
-    <AssociationSet Name="FK_CreateProject_CreateDeveloper" Association="Self.FK_CreateProject_CreateDeveloper">
-      <End Role="CreateDeveloper" EntitySet="CreateDeveloper" />
-      <End Role="CreateProject" EntitySet="CreateProject" />
-    </AssociationSet>
-    <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+    <AssociationSet Name="FK_AspNetUserClaims_AspNetUsers" Association="Self.FK_AspNetUserClaims_AspNetUsers">
       <End Role="AspNetUsers" EntitySet="AspNetUsers" />
       <End Role="AspNetUserClaims" EntitySet="AspNetUserClaims" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AspNetUserRoles_AspNetUsers" Association="Self.FK_AspNetUserRoles_AspNetUsers">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CreateProject_AspNetUsers" Association="Self.FK_CreateProject_AspNetUsers">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="CreateProject" EntitySet="CreateProject" />
     </AssociationSet>
     <AssociationSet Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
       <End Role="AspNetUsers" EntitySet="AspNetUsers" />
@@ -379,12 +366,8 @@
       <End Role="AspNetRoles" EntitySet="AspNetRoles" />
       <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
     </AssociationSet>
-    <AssociationSet Name="FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId">
+    <AssociationSet Name="FK_DeveloperWorkProgress_AspNetUsers" Association="Self.FK_DeveloperWorkProgress_AspNetUsers">
       <End Role="AspNetUsers" EntitySet="AspNetUsers" />
-      <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
-    </AssociationSet>
-    <AssociationSet Name="FK_DeveloperWorkProgress_CreateDeveloper" Association="Self.FK_DeveloperWorkProgress_CreateDeveloper">
-      <End Role="CreateDeveloper" EntitySet="CreateDeveloper" />
       <End Role="DeveloperWorkProgress" EntitySet="DeveloperWorkProgress" />
     </AssociationSet>
     <AssociationSet Name="FK_DeveloperWorkProgress_CreateProject" Association="Self.FK_DeveloperWorkProgress_CreateProject">
@@ -399,16 +382,16 @@
       <End Role="ProjectFeedback" EntitySet="ProjectFeedback" />
       <End Role="DeveloperWorkProgress" EntitySet="DeveloperWorkProgress" />
     </AssociationSet>
-    <AssociationSet Name="FK_NewModule_CreateDeveloper" Association="Self.FK_NewModule_CreateDeveloper">
-      <End Role="CreateDeveloper" EntitySet="CreateDeveloper" />
+    <AssociationSet Name="FK_NewModule_AspNetUsers" Association="Self.FK_NewModule_AspNetUsers">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
       <End Role="NewModule" EntitySet="NewModule" />
     </AssociationSet>
     <AssociationSet Name="FK_NewModule_CreateProject" Association="Self.FK_NewModule_CreateProject">
       <End Role="CreateProject" EntitySet="CreateProject" />
       <End Role="NewModule" EntitySet="NewModule" />
     </AssociationSet>
-    <AssociationSet Name="FK_ProjectFeedback_CreateDeveloper" Association="Self.FK_ProjectFeedback_CreateDeveloper">
-      <End Role="CreateDeveloper" EntitySet="CreateDeveloper" />
+    <AssociationSet Name="FK_ProjectFeedback_AspNetUsers" Association="Self.FK_ProjectFeedback_AspNetUsers">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
       <End Role="ProjectFeedback" EntitySet="ProjectFeedback" />
     </AssociationSet>
     <AssociationSet Name="FK_ProjectFeedback_CreateProject" Association="Self.FK_ProjectFeedback_CreateProject">

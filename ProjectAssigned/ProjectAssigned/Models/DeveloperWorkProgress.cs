@@ -23,12 +23,12 @@ namespace ProjectAssigned.Models
         public string discription { get; set; }
         public Nullable<int> ModuleId { get; set; }
         public Nullable<int> Project_Id { get; set; }
-        public Nullable<int> Developer_Id { get; set; }
+        public string UserId { get; set; }
         public Nullable<int> FeedId { get; set; }
     
         public virtual CreateProject CreateProject { get; set; }
-        public virtual ProjectFeedback ProjectFeedback { get; set; }
-        public virtual CreateDeveloper CreateDeveloper { get; set; }
         public virtual NewModule NewModule { get; set; }
+        public virtual ProjectFeedback ProjectFeedback { get; set; }
+        public virtual AspNetUser AspNetUser { get; set; }
     }
 }

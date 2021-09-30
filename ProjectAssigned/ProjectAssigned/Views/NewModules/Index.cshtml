@@ -52,7 +52,7 @@
                                             @Html.DisplayNameFor(model => model.Status)
                                         </th>
                                         <th>
-                                            @Html.DisplayNameFor(model => model.Assign)
+                                           Assign
                                         </th>
                                         <th> Edit</th>
 
@@ -85,10 +85,10 @@
                                             @Html.DisplayFor(modelItem => item.Status)
                                         </td>
                                         <td>
-                                            @Html.DisplayFor(modelItem => item.Assign)
+                                            @Html.DisplayFor(modelItem => item.CreateDeveloper.Firstname)
                                         </td>
 
-                                        <td>  <a class="btn btn-primary btn-sm" href="@Url.Action("EditDeveloper","CreateDeveloper",new {id=item.ModuleId})"><i class="fa fa-pencil fa-lg"></i></a></td>
+                                        <td>  <a class="btn btn-primary btn-sm" href="@Url.Action("EditModule","NewModules",new {id=item.ModuleId})"><i class="fa fa-pencil fa-lg"></i></a></td>
                                     </tr>
                                     }
 

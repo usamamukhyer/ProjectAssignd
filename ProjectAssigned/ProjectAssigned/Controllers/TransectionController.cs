@@ -1,30 +1,52 @@
-﻿using System;
+﻿using ProjectAssigned.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
-using System.Web.Script.Serialization;
-using ProjectAssigned.Models;
+using System.Linq.Dynamic;
 namespace ProjectAssigned.Controllers
 {
     public class TransectionController : Controller
     {
         ProjectAssignedEntities db = new ProjectAssignedEntities();
         // GET: Transection
-
-        public JsonResult Index()
+        public ActionResult Index()
         {
+            return View();
+
+        }
+        public JsonResult GetList()
+        {
+            //server side processing data
+            int start = Convert.ToInt32(Request["start"]);
+            int length = Convert.ToInt32(Request["length"]);
+            string searchValue = Request["search[value]"];
+            string sortColumn = Request["columns[" + Request["order[0][column]"] + "][name]"];
+            string sortDirec = Request["order[0][dir]"];
+            
             List<TransectionViewModel> list= db.Transections.Select(x =>new TransectionViewModel { 
             TransecId=x.TransecId,
             CashType=x.CashType,
             IncomeCollectFrom=x.IncomeCollectFrom,
             IncomeSpentTo=x.IncomeSpentTo,
             Amount=x.Amount,
-            Date=x.Date,
+            Date=x.Date.ToString(),
             Discription=x.Discription
             } ).ToList();
+            int totalRows = list.Count;
+            int filterRecords = list.Count;
+            if(!string.IsNullOrEmpty(searchValue))
+            {
 
-            return Json(new {data=list }, JsonRequestBehavior.AllowGet);
+                list = list.Where(x =>
+                
+                x.CashType.ToLower().Contains(searchValue.ToLower()) || /*/*x.IncomeCollectFrom.ToLower().Contains(searchValue.ToLower()) ||*/  x.Discription.ToLower().Contains(searchValue.ToLower()) || x.Date.ToString().Contains(searchValue.ToLower())).ToList<TransectionViewModel>();
+            }
+            //sorting of the data table
+            list = list.OrderBy(sortColumn + " " + sortDirec).ToList<TransectionViewModel>();
+            //paging of the datatable
+            list = list.Skip(start).Take(length).ToList<TransectionViewModel>();
+            return Json(new {data=list,draw=Request["draw"],recordsTotal=totalRows,recordsFiltered=filterRecords}, JsonRequestBehavior.AllowGet);
         }
 
       
@@ -139,7 +161,7 @@ namespace ProjectAssigned.Controllers
             List<string> collectFrom = new List<string>();
             collectFrom.Add("From forign projects");
             collectFrom.Add("From Local projects");
-            ViewBag.IncomeCollectFrom = new SelectList(collectFrom);
+            
 
 
             //list for the spent the resources
@@ -164,9 +186,10 @@ namespace ProjectAssigned.Controllers
             }
             else
             {
-                ViewBag.CashType = new SelectList(cashType);
-                ViewBag.IncomeCollectFrom = new SelectList(collectFrom);
-                ViewBag.IncomeSpentTo = new SelectList(spentTo);
+                model = db.Transections.Where(x => x.TransecId == id).FirstOrDefault<Transection>();
+                ViewBag.CashType = new SelectList(cashType, model.CashType);
+                ViewBag.IncomeCollectFrom = new SelectList(collectFrom, model.IncomeCollectFrom);
+                ViewBag.IncomeSpentTo = new SelectList(spentTo, model.IncomeSpentTo);
             }
             return View(model);
         }

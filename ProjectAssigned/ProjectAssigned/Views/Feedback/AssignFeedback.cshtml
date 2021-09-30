@@ -38,26 +38,26 @@
                         <div class="row">
                             <div class="col-sm-6 col-md-4">
                                 <div class="form-group">
+                                    @Html.LabelFor(model => model.ProjectType,"Project Type")
+                                    @Html.DropDownList("ProjectType", null, "--Select Project Type--", htmlAttributes: new { @class = "form-control", @required = "required" })
+
+
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-md-4">
+                                <div class="form-group">
                                     @Html.LabelFor(model => model.CreateProject.ProjectTitle, "Select Project")
                                     @Html.DropDownList("Project_Id", null, "--Select Project Title--", htmlAttributes: new { @class = "form-control", @required = "required" })
-                                    
+
 
                                 </div>
                             </div>
                             <div class="col-sm-6 col-md-4">
                                 <div class="form-group">
-                                    @Html.LabelFor(model => model.CreateDeveloper.Firstname,"Developer")
+                                    @Html.LabelFor(model => model.CreateDeveloper.Firstname, "Developer")
                                     @Html.DropDownList("Developer_Id", null, htmlAttributes: new { @class = "form-control", @required = "required" })
-                                   
 
-                                </div>
-                            </div>
 
-                            <div class="col-sm-6 col-md-4">
-                                <div class="form-group">
-                                    @Html.LabelFor(m => m.time)
-                                    @Html.TextBoxFor(m => m.time, new { @class = "form-control", placeholder = "budget", required = "required" })
-                                    @Html.ValidationMessageFor(m => m.time, "", new { @class = "text-danger" })
                                 </div>
                             </div>
 
@@ -67,6 +67,13 @@
                         <div class="row">
                             <div class="col-sm-6 col-md-4">
                                 <div class="form-group">
+                                    @Html.LabelFor(m => m.time)
+                                    @Html.TextBoxFor(m => m.time, new { @class = "form-control", placeholder = "budget", required = "required" })
+                                    @Html.ValidationMessageFor(m => m.time, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-md-4">
+                                <div class="form-group">
                                     @Html.LabelFor(m => m.Startdate)
                                     <div class="input-group">
 
@@ -74,14 +81,14 @@
                                             <i class="fa fa-calendar tx-16 lh-0 op-6"></i>
                                         </div>
 
-                                        @Html.TextBoxFor(m => m.Startdate, new { @class = "form-control fc-datepicker", placeholder = "DD-MM-YYY",required = "required" })
+                                        @Html.TextBoxFor(m => m.Startdate, new { @class = "form-control fc-datepicker", placeholder = "DD-MM-YYY", required = "required" })
                                     </div>
                                     @Html.ValidationMessageFor(m => m.Startdate, "", new { @class = "text-danger" })
                                 </div>
                             </div>
 
 
-                             <div class="col-sm-6 col-md-4">
+                            <div class="col-sm-6 col-md-4">
                                 <div class="form-group">
                                     @Html.LabelFor(m => m.Enddate)
                                     <div class="input-group">
@@ -90,7 +97,7 @@
                                             <i class="fa fa-calendar tx-16 lh-0 op-6"></i>
                                         </div>
 
-                                        @Html.TextBoxFor(m => m.Enddate, new { @class = "form-control fc-datepicker",placeholder="DD-MM-YYY", required = "required" })
+                                        @Html.TextBoxFor(m => m.Enddate, new { @class = "form-control fc-datepicker", placeholder = "DD-MM-YYY", required = "required" })
                                     </div>
                                     @Html.ValidationMessageFor(m => m.Enddate, "", new { @class = "text-danger" })
                                 </div>
@@ -121,18 +128,19 @@
 
 @section Mysection{
     <script type="text/javascript">
-      
-        $('#Project_Id').change(function () {
-            $('#Developer_Id').empty();
 
-            if ($('#Project_Id option:selected').val() != '') {
+
+        $("#ProjectType").change(function () {
+            $('#Project_Id').empty();
+            $('#Developer_Id').empty();
+            if ($('#ProjectType option:selected').val("Previous Project")) {
                 $.ajax({
                     method: "Get",
-                    url: '/Feedback/GetDeveloper?id=' + $('#Project_Id option:selected').val(),
+                    url: '/Feedback/GetProjectDeveloper?id=' + $('#Project_Id option:selected').val("Previous Project"),
                     success: function (data) {
                         if (data.length) {
                             for (var i = 0; i < data.length; i++) {
-                                $('#Developer_Id').append('<option value="' + data[i].Developer_Id + '">' + data[i].Firstname + '</option>');
+                                $('#Project_Id').append('<option value="' + data[i].Project_Id + '">' + data[i].ProjectTitle + '</option>');
                             }
 
                         }
@@ -141,10 +149,32 @@
                         flag = false;
                         console.log("Something went wrong, please try again");
                     }
-                });
-            }
+
 
         });
+        //$('#Project_Id').change(function () {
+        //    $('#Developer_Id').empty();
+
+        //    if ($('#Project_Id option:selected').val() != '') {
+        //        $.ajax({
+        //            method: "Get",
+        //            url: '/Feedback/GetDeveloper?id=' + $('#Project_Id option:selected').val(),
+        //            success: function (data) {
+        //                if (data.length) {
+        //                    for (var i = 0; i < data.length; i++) {
+        //                        $('#Developer_Id').append('<option value="' + data[i].Developer_Id + '">' + data[i].Firstname + '</option>');
+        //                    }
+
+        //                }
+        //            },
+        //            error: function (XMLHttpRequest, textStatus, errorThrown) {
+        //                flag = false;
+        //                console.log("Something went wrong, please try again");
+        //            }
+        //        });
+        //    }
+
+        //});
 
     </script>
 }

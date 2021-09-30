@@ -284,6 +284,7 @@ C:\Users\User\Desktop\My Office Work\My Internship Project\ProjectAssigned\Proje
 C:\Users\User\Desktop\My Office Work\My Internship Project\ProjectAssigned\ProjectAssigned\bin\Microsoft.Web.Infrastructure.dll
 C:\Users\User\Desktop\My Office Work\My Internship Project\ProjectAssigned\ProjectAssigned\bin\Newtonsoft.Json.dll
 C:\Users\User\Desktop\My Office Work\My Internship Project\ProjectAssigned\ProjectAssigned\bin\Owin.dll
+C:\Users\User\Desktop\My Office Work\My Internship Project\ProjectAssigned\ProjectAssigned\bin\System.Linq.Dynamic.dll
 C:\Users\User\Desktop\My Office Work\My Internship Project\ProjectAssigned\ProjectAssigned\bin\System.Web.Helpers.dll
 C:\Users\User\Desktop\My Office Work\My Internship Project\ProjectAssigned\ProjectAssigned\bin\System.Web.Mvc.dll
 C:\Users\User\Desktop\My Office Work\My Internship Project\ProjectAssigned\ProjectAssigned\bin\System.Web.Optimization.dll

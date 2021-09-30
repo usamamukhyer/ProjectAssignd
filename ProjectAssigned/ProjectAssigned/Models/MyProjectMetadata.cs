@@ -68,7 +68,49 @@ namespace ProjectAssigned.Models
 
     }
 
-    public class ProjectFeedbackMetedata
+    public class AspnetuserMetdata
+    {
+        [Required(ErrorMessage = "email is required")]
+        [DataType(DataType.EmailAddress, ErrorMessage = "must b include @")]
+        [StringLength(30, ErrorMessage = "Must be between {2} and {1} characters", MinimumLength = 8)]
+        public string Email { get; set; }
+        [Required(ErrorMessage = "Password is required")]
+        [StringLength(10, ErrorMessage = "Must be between {2} and {1} characters", MinimumLength = 6)]
+
+        public string PasswordHash { get; set; }
+
+        [Range(0, int.MaxValue, ErrorMessage = "Please enter valid integer Number")]
+        public string PhoneNumber { get; set; }
+
+        [Required(ErrorMessage = "the username is required")]
+        public string UserName { get; set; }
+
+        [Required(ErrorMessage = "this First name is required")]
+        [StringLength(8, ErrorMessage = "Must be between {2} and {1} characters", MinimumLength = 2)]
+        public string FirstName { get; set; }
+        [Required(ErrorMessage = "Last Name is required")]
+        [StringLength(8, ErrorMessage = "Must be between {2} and {1} characters", MinimumLength = 2)]
+        public string LastName { get; set; }
+        [Required(ErrorMessage = "Designation is required")]
+        [StringLength(10, ErrorMessage = "Must be between {2} and {1} characters", MinimumLength = 6)]
+        public string Designation { get; set; }
+        public string Address { get; set; }
+        public string Salary { get; set; }
+        public string Experience { get; set; }
+        [Required(ErrorMessage = "Date time is required")]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
+        public string JoinDate { get; set; }
+        [Required(ErrorMessage = "cv is required")]
+        public string Cv { get; set; }
+        [Required(ErrorMessage = "Photo is required")]
+        public string Photo { get; set; }
+        [Required(ErrorMessage = "bio is required")]
+        public string Bio { get; set; }
+
+      
+    }
+
+        public class ProjectFeedbackMetedata
     {
         public int FeedId { get; set; }
         

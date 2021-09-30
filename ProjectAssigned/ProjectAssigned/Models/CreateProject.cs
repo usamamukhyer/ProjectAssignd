@@ -18,8 +18,8 @@ namespace ProjectAssigned.Models
         public CreateProject()
         {
             this.DeveloperWorkProgresses = new HashSet<DeveloperWorkProgress>();
-            this.ProjectFeedbacks = new HashSet<ProjectFeedback>();
             this.NewModules = new HashSet<NewModule>();
+            this.ProjectFeedbacks = new HashSet<ProjectFeedback>();
         }
     
         public int Project_Id { get; set; }
@@ -33,16 +33,16 @@ namespace ProjectAssigned.Models
         public string Statusfeedback { get; set; }
         public string Fileuploads { get; set; }
         public string Discription { get; set; }
-        public Nullable<int> Developer_Id { get; set; }
+        public string UserId { get; set; }
         public string ProjectType { get; set; }
         public Nullable<int> Assign { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DeveloperWorkProgress> DeveloperWorkProgresses { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ProjectFeedback> ProjectFeedbacks { get; set; }
-        public virtual CreateDeveloper CreateDeveloper { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<NewModule> NewModules { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ProjectFeedback> ProjectFeedbacks { get; set; }
+        public virtual AspNetUser AspNetUser { get; set; }
     }
 }
