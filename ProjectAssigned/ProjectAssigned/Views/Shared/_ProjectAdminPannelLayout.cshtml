@@ -1,4 +1,5 @@
-﻿<!doctype html>
+﻿@using Microsoft.AspNet.Identity
+<!doctype html>
 <html lang="en" dir="ltr">
 <head>
     <meta charset="UTF-8">
@@ -36,7 +37,7 @@
     <link href="~/Content/assets/plugins/select2/select2.min.css" rel="stylesheet" />
 
 
-        @*<link href="~/Content/assets/plugins/time-picker/jquery.timepicker.css" rel="stylesheet" />*@
+    @*<link href="~/Content/assets/plugins/time-picker/jquery.timepicker.css" rel="stylesheet" />*@
     <!-- Date Picker Plugin -->
     <link href="~/Content/assets/plugins/date-picker/spectrum.css" rel="stylesheet" />
     <link href="~/Content/assets/plugins/datatable/dataTables.bootstrap4.min.css" rel="stylesheet" />
@@ -65,219 +66,55 @@
                             <img src="~/Content/assets/images/brand/logo.png" class="header-brand-img" alt="Claylist logo">
                         </a>
                         <a aria-label="Hide Sidebar" class="app-sidebar__toggle" data-toggle="sidebar" href="#"></a>
-                        <div class="header-navicon">
-                            <a href="#" data-toggle="search" class="nav-link d-lg-none navsearch-icon">
-                                <i class="fa fa-search"></i>
-                            </a>
-                        </div>
-                        <div class="header-navsearch">
-                            <a href="#" class=" "></a>
-                            <form class="form-inline mr-auto">
-                                <div class="nav-search">
-                                    <input type="search" class="form-control header-search" placeholder="Search…" aria-label="Search">
-                                    <button class="btn btn-primary" type="submit"><i class="fa fa-search"></i></button>
-                                </div>
-                            </form>
-                        </div>
-                        <div class="d-flex order-lg-2 ml-auto">
-                            <div class="dropdown d-none d-md-flex">
-                                <a class="nav-link icon full-screen-link">
-                                    <i class="fe fe-maximize-2" id="fullscreen-button"></i>
-                                </a>
-                            </div>
-                            <div class="dropdown d-none d-md-flex country-selector">
-                                <a href="#" class="d-flex nav-link leading-none" data-toggle="dropdown">
-                                    <img src="~/Content/assets/images/us_flag.jpg" alt="img" class="avatar avatar-xs mr-1 align-self-center">
-                                    <div>
-                                        <strong class="text-dark">English</strong>
-                                    </div>
-                                </a>
-                                <div class="language-width dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                                    <a href="#" class="dropdown-item d-flex pb-3">
-                                        <img src="~/Content/assets/images/french_flag.jpg" alt="flag-img" class="avatar  mr-3 align-self-center">
-                                        <div>
-                                            <strong>French</strong>
-                                        </div>
-                                    </a>
-                                    <a href="#" class="dropdown-item d-flex pb-3">
-                                        <img src="~/Content/assets/images/germany_flag.jpg" alt="flag-img" class="avatar  mr-3 align-self-center">
-                                        <div>
-                                            <strong>Germany</strong>
-                                        </div>
-                                    </a>
-                                    <a href="#" class="dropdown-item d-flex pb-3">
-                                        <img src="~/Content/assets/images/italy_flag.jpg" alt="flag-img" class="avatar  mr-3 align-self-center">
-                                        <div>
-                                            <strong>Italy</strong>
-                                        </div>
-                                    </a>
-                                    <a href="#" class="dropdown-item d-flex pb-3">
-                                        <img src="~/Content/assets/images/russia_flag.jpg" alt="flag-img" class="avatar  mr-3 align-self-center">
-                                        <div>
-                                            <strong>Russia</strong>
-                                        </div>
-                                    </a>
-                                    <a href="#" class="dropdown-item d-flex pb-3">
-                                        <img src="~/Content/assets/images/spain_flag.jpg" alt="flag-img" class="avatar  mr-3 align-self-center">
-                                        <div>
-                                            <strong>Spain</strong>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="dropdown d-none d-md-flex">
-                                <a class="nav-link icon" data-toggle="dropdown">
-                                    <i class="fa fa-bell-o"></i>
-                                    <span class=" nav-unread badge badge-danger  badge-pill">4</span>
-                                </a>
-                                <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                                    <a href="#" class="dropdown-item text-center">You have 4 notification</a>
-                                    <div class="dropdown-divider"></div>
-                                    <a href="#" class="dropdown-item d-flex pb-3">
-                                        <div class="notifyimg">
-                                            <i class="fa fa-envelope-o"></i>
-                                        </div>
-                                        <div>
-                                            <strong>2 new Messages</strong>
-                                            <div class="small text-muted">17:50 Pm</div>
-                                        </div>
-                                    </a>
-                                    <a href="#" class="dropdown-item d-flex pb-3">
-                                        <div class="notifyimg">
-                                            <i class="fa fa-calendar"></i>
-                                        </div>
-                                        <div>
-                                            <strong> 1 Event Soon</strong>
-                                            <div class="small text-muted">19-10-2019</div>
-                                        </div>
-                                    </a>
-                                    <a href="#" class="dropdown-item d-flex pb-3">
-                                        <div class="notifyimg">
-                                            <i class="fa fa-comment-o"></i>
-                                        </div>
-                                        <div>
-                                            <strong> 3 new Comments</strong>
-                                            <div class="small text-muted">05:34 Am</div>
-                                        </div>
-                                    </a>
-                                    <a href="#" class="dropdown-item d-flex pb-3">
-                                        <div class="notifyimg">
-                                            <i class="fa fa-exclamation-triangle"></i>
-                                        </div>
-                                        <div>
-                                            <strong> Application Error</strong>
-                                            <div class="small text-muted">13:45 Pm</div>
-                                        </div>
-                                    </a>
-                                    <div class="dropdown-divider"></div>
-                                    <a href="#" class="dropdown-item text-center">See all Notification</a>
-                                </div>
-                            </div>
-                            <div class="dropdown d-none d-md-flex">
-                                <a class="nav-link icon" data-toggle="dropdown">
-                                    <i class="fa fa-envelope-o"></i>
-                                    <span class=" nav-unread badge badge-warning  badge-pill">3</span>
-                                </a>
-                                <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                                    <a href="#" class="dropdown-item d-flex pb-3">
-                                        <img src="~/Content/assets/images/faces/male/41.jpg" alt="avatar-img" class="avatar brround mr-3 align-self-center">
-                                        <div>
-                                            <strong>Blake</strong> I've finished it! See you soContentContentContent.
-                                            <div class="small text-muted">30 mins ago</div>
-                                        </div>
-                                    </a>
-                                    <a href="#" class="dropdown-item d-flex pb-3">
-                                        <img src="~/Content/assets/images/faces/female/1.jpg" alt="avatar-img" class="avatar brround mr-3 align-self-center">
-                                        <div>
-                                            <strong>Caroline</strong> Just see the my AdminContentContent
-                                            <div class="small text-muted">12 mins ago</div>
-                                        </div>
-                                    </a>
-                                    <a href="#" class="dropdown-item d-flex pb-3">
-                                        <img src="~/Content/assets/images/faces/male/18.jpg" alt="avatar-img" class="avatar brround mr-3 align-self-center">
-                                        <div>
-                                            <strong>Jonathan</strong> Hi! I'am singerContentContentContent
-                                            <div class="small text-muted">1 hour ago</div>
-                                        </div>
-                                    </a>
-                                    <a href="#" class="dropdown-item d-flex pb-3">
-                                        <img src="~/Content/assets/images/faces/female/18.jpg" alt="avatar-img" class="avatar brround mr-3 align-self-center">
-                                        <div>
-                                            <strong>Emily</strong> Just a reminder that you haveContentContent.
-                                            <div class="small text-muted">45 mins ago</div>
-                                        </div>
-                                    </a>
-                                    <div class="dropdown-divider"></div>
-                                    <a href="#" class="dropdown-item text-center">View all Messages</a>
-                                </div>
-                            </div>
-                            <div class="dropdown d-none d-md-flex">
-                                <a class="nav-link icon" data-toggle="dropdown">
-                                    <i class="fe fe-grid"></i>
-                                </a>
-                                <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow  app-selector">
-                                    <ul class="drop-icon-wrap">
-                                        <li>
-                                            <a href="#" class="drop-icon-item">
-                                                <i class="icon icon-speech text-dark"></i>
-                                                <span class="block"> E-mail</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#" class="drop-icon-item">
-                                                <i class="icon icon-map text-dark"></i>
-                                                <span class="block">map</span>
-                                            </a>
-                                        </li>
 
-                                        <li>
-                                            <a href="#" class="drop-icon-item">
-                                                <i class="icon icon-bubbles text-dark"></i>
-                                                <span class="block">Messages</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#" class="drop-icon-item">
-                                                <i class="icon icon-user-follow text-dark"></i>
-                                                <span class="block">Followers</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#" class="drop-icon-item">
-                                                <i class="icon icon-picture text-dark"></i>
-                                                <span class="block">Photos</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#" class="drop-icon-item">
-                                                <i class="icon icon-settings text-dark"></i>
-                                                <span class="block">Settings</span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                    <div class="dropdown-divider"></div>
-                                    <a href="#" class="dropdown-item text-center">View all</a>
-                                </div>
-                            </div>
+
+
+                       
+
+
+                        @*{ 
+                            ProjectAssigned.Models.ProjectAssignedEntities db = new ProjectAssigned.Models.ProjectAssignedEntities();
+                            string Image = "";
+                            string userId = (new ProjectAssigned.Models.GenericModel()).FetchUserProfile().Id;
+                            var userpic = db.AspNetUsers.FirstOrDefault(x => x.Id == userId);
+                            if (userpic != null)
+                            {
+                                Image = userpic.Photo;
+
+                            }
+                            else
+                            {
+                                Image = "dummy-avatar.png";
+                            }
+
+                        }*@
+
+
+
+
+
+                        <div class="d-flex order-lg-2 ml-auto">
                             <div class="dropdown">
+                               
+                                  
                                 <a href="#" class="nav-link pr-0 leading-none user-img" data-toggle="dropdown">
-                                    <img src="~/Content/assets/images/faces/male/25.jpg" alt="profile-img" class="avatar avatar-md brround">
+                                    <span class="username">@User.Identity.GetUserName()</span>
+                                    <img src="~/Content/Filesdata/Images/" alt="profile-img" class="avatar avatar-md brround">
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-md-right dropdown-menu-arrow ">
                                     <a class="dropdown-item" href="profile.html">
-                                        <i class="dropdown-icon icon icon-user"></i> Login
+                                        <i class="dropdown-icon icon icon-user"></i> Change Password
                                     </a>
-                                    <a class="dropdown-item" href="emailservices.html">
-                                        <i class="dropdown-icon icon icon-speech"></i> Inbox
+
+                                    <a class="dropdown-item" href="javascript:document.getElementById('logoutForm').submit()">
+                                        <i class="dropdown-icon icon icon-power"></i> Log out
                                     </a>
-                                    <a class="dropdown-item" href="editprofile.html">
-                                        <i class="dropdown-icon  icon icon-settings"></i> Account Settings
-                                    </a>
-                                    @*<a class="dropdown-item" href="login.html">
-                                            <i class="dropdown-icon icon icon-power"></i> Log out
-                                        </a>*@
+                                    @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+                                    {
+                                    @Html.AntiForgeryToken()
+                                    }
                                 </div>
-                            </div>
+</div>
                         </div>
                     </div>
                 </div>
@@ -299,21 +136,21 @@
                         </div>
                     </div>
                 </div>
-
+              
                 <ul class="side-menu">
                     <li class="slide">
-                        <a class="side-menu__item" href="@Url.Action("Progress","DashBoard")"><i class="side-menu__icon fa fa-tachometer"></i><span class="side-menu__label">Dashboard</span></a>
+                        <a class="side-menu__item" href="@Url.Action("Progress", "DashBoard")"><i class="side-menu__icon fa fa-tachometer"></i><span class="side-menu__label">Dashboard</span></a>
                     </li>
                     <li class="slide">
                         <a class="side-menu__item" data-toggle="slide" href="#"><i class="side-menu__icon fa fa-user"></i><span class="side-menu__label">Developers</span><i class="angle fa fa-angle-right"></i></a>
                         <ul class="slide-menu">
                             <li>
-                                <a href="@Url.Action("AddDeveloper","CreateDeveloper")" class="slide-item">Create Developer</a>
+                                <a href="@Url.Action("AddDeveloper", "CreateDeveloper")" class="slide-item">Create Developer</a>
 
                             </li>
 
                             <li class="slide">
-                                <a href="@Url.Action("DeveloperList","CreateDeveloper")" class="slide-item">Developers List</a>
+                                <a href="@Url.Action("DeveloperList", "CreateDeveloper")" class="slide-item">Developers List</a>
                             </li>
                         </ul>
                     </li>
@@ -322,33 +159,33 @@
                         <a class="side-menu__item" data-toggle="slide" href="#"><i class="side-menu__icon fa fa-wpforms"></i><span class="side-menu__label">Projects</span><i class="angle fa fa-angle-right"></i></a>
                         <ul class="slide-menu">
                             <li>
-                                <a href="@Url.Action("AddProject","AssignProject")" class="slide-item">Assign Project</a>
+                                <a href="@Url.Action("AddProject", "AssignProject")" class="slide-item">Assign Project</a>
                             </li>
 
                             <li class="slide">
-                                <a href="@Url.Action("Index","AssignProject")" class="slide-item">Project List</a>
+                                <a href="@Url.Action("Index", "AssignProject")" class="slide-item">Project List</a>
                             </li>
                         </ul>
                     </li>
 
                     <li class="slide">
-                        <a class="side-menu__item" href="@Url.Action("Index","Admin")"><i class="side-menu__icon fa fa-user-circle"></i><span class="side-menu__label">Admin Manage Form</span></a>
+                        <a class="side-menu__item" href="@Url.Action("Index", "Admin")"><i class="side-menu__icon fa fa-user-circle"></i><span class="side-menu__label">Admin Manage Form</span></a>
 
                     </li>
 
                     <li class="slide">
-                        <a class="side-menu__item" href="@Url.Action("Assigntable","DeveloperAssignList")"><i class="side-menu__icon fa fa-user"></i><span class="side-menu__label">Developer Manage Form</span></a>
+                        <a class="side-menu__item" href="@Url.Action("Assigntable", "DeveloperAssignList")"><i class="side-menu__icon fa fa-user"></i><span class="side-menu__label">Developer Manage Form</span></a>
 
                     </li>
                     <li class="slide">
                         <a class="side-menu__item" data-toggle="slide" href="#"><i class="side-menu__icon fa fa-edit"></i><span class="side-menu__label">Modules</span><i class="angle fa fa-angle-right"></i></a>
                         <ul class="slide-menu">
                             <li>
-                                <a href="@Url.Action("AddModule","NewModules")" class="slide-item">Add Module</a>
+                                <a href="@Url.Action("AddModule", "NewModules")" class="slide-item">Add Module</a>
                             </li>
 
                             <li class="slide">
-                                <a href="@Url.Action("Index","NewModules")" class="slide-item">Module List</a>
+                                <a href="@Url.Action("Index", "NewModules")" class="slide-item">Module List</a>
                             </li>
                         </ul>
                     </li>
@@ -357,11 +194,11 @@
                         <a class="side-menu__item" data-toggle="slide" href="#"><i class="side-menu__icon fa fa-money"></i><span class="side-menu__label">Company Income</span><i class="angle fa fa-angle-right"></i></a>
                         <ul class="slide-menu">
                             <li>
-                                <a href="@Url.Action("AddTransection","Transection")" class="slide-item">Add Cash</a>
+                                <a href="@Url.Action("AddTransection", "Transection")" class="slide-item">Add Cash</a>
                             </li>
 
                             <li class="slide">
-                                <a href="@Url.Action("Index","Transection")" class="slide-item">Cash List</a>
+                                <a href="@Url.Action("Index", "Transection")" class="slide-item">Cash List</a>
                             </li>
                         </ul>
                     </li>
@@ -369,6 +206,7 @@
 
 
                 </ul>
+            
             </aside>
         </div>
         <div>
@@ -441,9 +279,6 @@
 
     <!-- Custom scroll bar Js-->
     <!--<script src="~/Content/assets/plugins/scroll-bar/jquery.mCustomScrollbar.concat.min.js"></script>-->
-
-
-
     @*<script src="~/Content/assets/plugins/counters/counterup.min.js"></script>
         <script src="~/Content/assets/plugins/counters/waypoints.min.js"></script>*@
 

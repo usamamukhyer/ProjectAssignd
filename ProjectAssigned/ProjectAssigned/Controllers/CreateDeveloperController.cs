@@ -1,18 +1,25 @@
-﻿using System;
+﻿using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.Owin;
+using Microsoft.Owin.Security;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Mail;
+using System.Threading.Tasks;
 using System.Web;
+using System.Web.Configuration;
 using System.Web.Mvc;
+
+
+
 using System.IO;
 using ProjectAssigned.Models;
 using System.Net;
 using System.Data.Entity;
-using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.Owin;
-
 
 namespace ProjectAssigned.Controllers
 {
+    
     public class CreateDeveloperController : Controller
     {
         ProjectAssignedEntities db=new ProjectAssignedEntities();
@@ -32,7 +39,12 @@ namespace ProjectAssigned.Controllers
         {
             return View();
         }
+        public ActionResult DeveloperList()
+        {
 
+
+            return View(db.AspNetUsers.ToList());
+        }
         [HttpPost]
         public ActionResult AddDeveloper(AspNetUser model)
         {
@@ -45,7 +57,7 @@ namespace ProjectAssigned.Controllers
                 {
                     if (model.Picture.ContentLength < 1000000)
                     {
-                        fileName = fileName + DateTime.Now.ToString("yymmssff") + extension;
+                        fileName = fileName + Guid.NewGuid().ToString() + extension;
                         model.Photo = fileName;
                         model.Picture.SaveAs(Path.Combine(Server.MapPath("~/Content/Filesdata/Images/"), fileName));
                     }
@@ -70,8 +82,8 @@ namespace ProjectAssigned.Controllers
                 {
                     if (model.cvfile.ContentLength < 1000)
                     {
-                        fileName = fileName + DateTime.Now.ToString("yymmssff") + extension;
-                        model.Cv = fileName;
+                        fileName = fileName + Guid.NewGuid().ToString() + extension;
+                        model.CV = fileName;
                         model.cvfile.SaveAs(Path.Combine(Server.MapPath("~/Content/Filesdata/Cv/"), fileName));
                     }
                     else
@@ -88,20 +100,21 @@ namespace ProjectAssigned.Controllers
 
             }
 
-            var user = new ApplicationUser { UserName = model.UserName, Email = model.Email, Address = model.Address, FirstName = model.FirstName, LastName = model.LastName, IsActive = model.IsActive, PhoneNumber = model.PhoneNumber, Experience = model.Experience, Photo = model.Photo, CV = model.Cv, JoinDate = model.JoinDate, Salary = model.Salary, Bio = model.Bio, Designation = model.Designation };
+            var user = new ApplicationUser { UserName = model.UserName, Email = model.Email, Address = model.Address, FirstName = model.FirstName, LastName = model.LastName, IsActive = model.IsActive, PhoneNumber = model.PhoneNumber, Experience = model.Experience, Photo = model.Photo, CV = model.CV, JoinDate = model.JoinDate, Salary = model.Salary, Bio = model.Bio, Designation = model.Designation };
             var result = UserManager.Create(user, model.PasswordHash);
             if (result.Succeeded)
             {
-               
+                UserManager.AddToRoles(user.Id, "Developer");
                 //TempData["Message"] = "Success : Doctor has been added successfully";
                 //string profileName = user.FirstName + " " + (String.IsNullOrEmpty(user.LastName) ? string.Empty : user.LastName);
                 //(new GenericModel()).FetchUserProfile().activityLog("Doctor creation", "<b>Profile of '" + profileName + "'</b> has been created", user.Id, "AspNetUser");
-                return RedirectToAction("AddDeveloper");
+                var password = model.PasswordHash;
+                var userName = model.UserName;
+                bool isSent = SendEmail(user.Email,"Account Details", "Your account Username is:" + userName + "<br> Your password is:" + password + "");
+                return View("DeveloperList");
             }
-            else
-            {
-                ModelState.AddModelError("", "Passwords must have at least one non letter or digit character.Passwords must have at least one digit('0' - '9').Passwords must have at least one uppercase('A' - 'Z').");
-                return View(model);
+            else { 
+                AddErrors(result);
             }
             //string errorMessage = "";
             //foreach (var error in result.Errors)
@@ -120,15 +133,71 @@ namespace ProjectAssigned.Controllers
 
             return View(model);
         }
-    
-            //return view();
 
-    
-    
+        private void AddErrors(IdentityResult result)
+        {
+            foreach(var error in result.Errors)
+            {
+                ModelState.AddModelError("", error);
+
+            }
+        }
+
+        public static bool SendEmail(string toEmail, string subject, string body)
+        {
+            try
+            {
+                MailMessage mailMessage = new MailMessage();
+                SmtpClient client = new SmtpClient();
+                client.EnableSsl = true;
+                client.Port = Convert.ToInt32(WebConfigurationManager.AppSettings["Port"]);
+                client.Host = WebConfigurationManager.AppSettings["ServerHost"];
+                client.DeliveryMethod = SmtpDeliveryMethod.Network;
+                client.UseDefaultCredentials = true;
+                client.Credentials = new System.Net.NetworkCredential(WebConfigurationManager.AppSettings["Email"], WebConfigurationManager.AppSettings["Password"]);
+                mailMessage.From = new MailAddress(WebConfigurationManager.AppSettings["DisplayEmail"].ToString(), WebConfigurationManager.AppSettings["DisplayName"]);
+                if (!String.IsNullOrEmpty(toEmail))
+                {
+                    toEmail.Split(',').ToList().ForEach(x =>
+                    {
+                        if (!String.IsNullOrWhiteSpace(x))
+                            mailMessage.To.Add(new MailAddress(x));
+                    });
+                }
+                //if (!String.IsNullOrEmpty(emailTemplate.CC))
+                //{
+                //    emailTemplate.CC.Split(',').ToList().ForEach(x =>
+                //    {
+                //        if (!String.IsNullOrWhiteSpace(x))
+                //            mailMessage.CC.Add(new MailAddress(x));
+                //    });
+                //}
+                //if (!String.IsNullOrEmpty(emailTemplate.BCC))
+                //{
+                //    emailTemplate.BCC.Split(',').ToList().ForEach(x =>
+                //    {
+                //        if (!String.IsNullOrWhiteSpace(x))
+                //            mailMessage.Bcc.Add(new MailAddress(x));
+                //    });
+                //}
+                mailMessage.IsBodyHtml = true;
+                mailMessage.Subject = subject;// emailTemplate.Subject;
+                mailMessage.Body = body;// emailTemplate.MessageBody;
+                client.Send(mailMessage);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
 
 
 
-}
+
+
+
+    }
 }
 
 //string extension;

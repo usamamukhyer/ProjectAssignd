@@ -30,10 +30,10 @@ namespace ProjectAssigned.Models
         public Nullable<int> ModuleId { get; set; }
         public string ProjectType { get; set; }
     
+        public virtual AspNetUser AspNetUser { get; set; }
         public virtual CreateProject CreateProject { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DeveloperWorkProgress> DeveloperWorkProgresses { get; set; }
         public virtual NewModule NewModule { get; set; }
-        public virtual AspNetUser AspNetUser { get; set; }
     }
 }

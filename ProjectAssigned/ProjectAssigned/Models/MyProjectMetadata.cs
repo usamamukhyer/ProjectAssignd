@@ -101,7 +101,7 @@ namespace ProjectAssigned.Models
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
         public string JoinDate { get; set; }
         [Required(ErrorMessage = "cv is required")]
-        public string Cv { get; set; }
+        public string CV{ get; set; }
         [Required(ErrorMessage = "Photo is required")]
         public string Photo { get; set; }
         [Required(ErrorMessage = "bio is required")]

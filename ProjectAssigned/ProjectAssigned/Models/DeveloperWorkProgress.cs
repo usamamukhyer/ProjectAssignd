@@ -26,9 +26,9 @@ namespace ProjectAssigned.Models
         public string UserId { get; set; }
         public Nullable<int> FeedId { get; set; }
     
+        public virtual AspNetUser AspNetUser { get; set; }
         public virtual CreateProject CreateProject { get; set; }
         public virtual NewModule NewModule { get; set; }
         public virtual ProjectFeedback ProjectFeedback { get; set; }
-        public virtual AspNetUser AspNetUser { get; set; }
     }
 }

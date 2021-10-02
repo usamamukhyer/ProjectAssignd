@@ -3,24 +3,25 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using System.Linq;
 
 namespace ProjectAssigned.Models
 {
     // You can add profile data for the user by adding more properties to your ApplicationUser class, please visit https://go.microsoft.com/fwlink/?LinkID=317594 to learn more.
     public class ApplicationUser : IdentityUser
     {
-        public string JoinDate { get;internal set; }
-        public string CV { get; internal set; }
-        public string Photo { get; internal set; }
-        public string Experience { get; internal set; }
-        public bool? IsActive { get; internal set; }
-        public string LastName { get; internal set; }
-        public string FirstName { get; internal set; }
-        public string Address { get; internal set; }
-        public string Designation { get; internal set; }
-        public string Bio { get; internal set;  }
+        public string JoinDate { get;set; }
+        public string CV { get;set; }
+        public string Photo { get; set; }
+        public string Experience { get;set; }
+        public bool? IsActive { get; set; }
+        public string LastName { get; set; }
+        public string FirstName { get; set; }
+        public string Address { get; set; }
+        public string Designation { get; set; }
+        public string Bio { get; set;  }
       
-        public string Salary { get; internal set; }
+        public string Salary { get; set; }
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
@@ -43,4 +44,16 @@ namespace ProjectAssigned.Models
             return new ApplicationDbContext();
         }
     }
+
+
+    public class GenericModel
+    {
+      public  ProjectAssignedEntities db = new ProjectAssignedEntities();
+        public AspNetUser FetchUserProfile()
+        {
+            string id = System.Web.HttpContext.Current.User.Identity.GetUserId();
+            return db.AspNetUsers.FirstOrDefault(x => x.Id == id);
+        }
+    }
+
 }

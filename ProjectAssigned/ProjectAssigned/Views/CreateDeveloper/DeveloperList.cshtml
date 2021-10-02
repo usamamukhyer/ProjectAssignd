@@ -1,9 +1,9 @@
-﻿@model IEnumerable<ProjectAssigned.Models.CreateDeveloper>
+﻿@model IEnumerable<ProjectAssigned.Models.AspNetUser>
 
 
 
 @{
-    ViewBag.Title = "Assigntable";
+    ViewBag.Title = "DeveloperList";
     Layout = "~/Views/Shared/_ProjectAdminPannelLayout.cshtml";
 }
 
@@ -30,13 +30,13 @@
                             <table id="example2" class="hover table-bordered border-top-0 border-bottom-0">
                                 <thead>
                                     <tr>
-                                        <th>@Html.DisplayNameFor(m => m.Firstname)</th>
-                                        <th>@Html.DisplayNameFor(m => m.Lastname)</th>
+                                        <th>@Html.DisplayNameFor(m => m.FirstName)</th>
+                                        <th>@Html.DisplayNameFor(m => m.LastName)</th>
                                         <th>@Html.DisplayNameFor(m => m.Designation)</th>
                                         <th>@Html.DisplayNameFor(m => m.Salary)</th>
                                         <th>@Html.DisplayNameFor(m => m.Address)</th>
-                                        <th>@Html.DisplayNameFor(m => m.Joindate)</th>
-                                        <th> Edit</th>
+                                        <th>@Html.DisplayNameFor(m => m.JoinDate)</th>
+                                        <th>@Html.DisplayNameFor(m => m.Photo)</th>
                                         <th> Edit</th>
 
 
@@ -47,10 +47,10 @@
                                   { 
                                     <tr>
                                         <td>
-                                            @Html.DisplayFor(mitem => item.Firstname)
+                                            @Html.DisplayFor(mitem => item.FirstName)
                                         </td>
                                         <td>
-                                            @Html.DisplayFor(mitem => item.Lastname)
+                                            @Html.DisplayFor(mitem => item.LastName)
                                         </td>
                                         <td>
                                             @Html.DisplayFor(mitem => item.Designation)
@@ -62,14 +62,14 @@
                                             @Html.DisplayFor(mitem => item.Address)
                                         </td>
                                         <td>
-                                            @Html.DisplayFor(mitem => item.Joindate)
+                                            @Html.DisplayFor(mitem => item.JoinDate)
                                         </td>
                                         <td>
-                                            <img src="@Url.Content(item.Image)" width="50" height="50" />
+                                            <img src="@Url.Content(item.Photo)" width="50" height="50" />
                                         </td>
 
                                         
-                                        <td>  <a class="btn btn-primary btn-sm" href="@Url.Action("EditDeveloper","CreateDeveloper",new {id=item.Developer_Id })"><i class="fa fa-pencil fa-lg"></i></a></td>
+                                        <td>  <a class="btn btn-primary btn-sm" href="@Url.Action("EditDeveloper","CreateDeveloper",new {id=item.Id})"><i class="fa fa-pencil fa-lg"></i></a></td>
                                     </tr>
                                   }
                                     

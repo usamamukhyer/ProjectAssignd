@@ -32,12 +32,12 @@
 
                   <div class="row">
            
-                     <div class="col-sm-6 col-md-4">
+                      r<div class="col-sm-6 col-md-4">
                         <div class="form-group">
 
                             @Html.LabelFor(model => model.Photo, "Picture")
                             @Html.TextBoxFor(model => model.Picture, new { @class = "dropify", @data_height = "200", @type = "file" })
-                            @Html.ValidationMessageFor(model => model.Picture, "", new { @class = "text-danger" })
+                            @Html.ValidationMessageFor(model => model.Photo, "", new { @class = "text-danger" })
                         </div>
                      </div>
                  </div>
@@ -126,13 +126,13 @@
 
                             <div class="col-sm-6 col-md-4">
                                 <div class="form-group">
-                                    @Html.LabelFor(m => m.Cv)
+                                    @Html.LabelFor(m => m.CV)
                                     <div class="custom-file">
                                         <input type="file" name="cvfile" , id="cvfile" class="custom-file-input" required>
                                         <label class="custom-file-label">Choose file</label>
                                     </div>
 
-                                    @Html.ValidationMessageFor(m => m.Cv, "", new { @class = "text-danger" })
+                                    @Html.ValidationMessageFor(m => m.CV, "", new { @class = "text-danger" })
                                 </div>
                             </div>
 
