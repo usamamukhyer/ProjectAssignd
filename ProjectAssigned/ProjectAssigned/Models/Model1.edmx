@@ -54,11 +54,11 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
-          <Property Name="JoinDate" Type="nvarchar(max)" />
+          <Property Name="JoinDate" Type="datetime" Nullable="false" />
           <Property Name="CV" Type="nvarchar(max)" />
           <Property Name="Photo" Type="nvarchar(max)" />
           <Property Name="Experience" Type="nvarchar(max)" />
-          <Property Name="IsActive" Type="bit" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
           <Property Name="LastName" Type="nvarchar(max)" />
           <Property Name="FirstName" Type="nvarchar(max)" />
           <Property Name="Address" Type="nvarchar(max)" />
@@ -482,11 +482,11 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="JoinDate" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="JoinDate" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="CV" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Photo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Experience" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="IsActive" Type="Boolean" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
           <Property Name="LastName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="FirstName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />

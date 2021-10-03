@@ -49,11 +49,11 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
-    <Property Name="JoinDate" Type="nvarchar(max)" />
+    <Property Name="JoinDate" Type="datetime" Nullable="false" />
     <Property Name="CV" Type="nvarchar(max)" />
     <Property Name="Photo" Type="nvarchar(max)" />
     <Property Name="Experience" Type="nvarchar(max)" />
-    <Property Name="IsActive" Type="bit" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
     <Property Name="LastName" Type="nvarchar(max)" />
     <Property Name="FirstName" Type="nvarchar(max)" />
     <Property Name="Address" Type="nvarchar(max)" />

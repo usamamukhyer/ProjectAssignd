@@ -192,6 +192,14 @@
     <Compile Include="Migrations\202109301524081_Asp net users with the custom fields.Designer.cs">
       <DependentUpon>202109301524081_Asp net users with the custom fields.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202110030806513_bool value of is active not null.cs" />
+    <Compile Include="Migrations\202110030806513_bool value of is active not null.Designer.cs">
+      <DependentUpon>202110030806513_bool value of is active not null.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202110030953375_Datetime update.cs" />
+    <Compile Include="Migrations\202110030953375_Datetime update.Designer.cs">
+      <DependentUpon>202110030953375_Datetime update.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AspNetRole.cs">
@@ -1958,6 +1966,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202109301524081_Asp net users with the custom fields.resx">
       <DependentUpon>202109301524081_Asp net users with the custom fields.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202110030806513_bool value of is active not null.resx">
+      <DependentUpon>202110030806513_bool value of is active not null.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202110030953375_Datetime update.resx">
+      <DependentUpon>202110030953375_Datetime update.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

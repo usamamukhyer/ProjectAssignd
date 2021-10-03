@@ -12,7 +12,6 @@ namespace ProjectAssigned.Models
     using System;
     using System.Collections.Generic;
     using System.Web;
-    
     public partial class AspNetUser
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -28,11 +27,11 @@ namespace ProjectAssigned.Models
         }
     
         public string Id { get; set; }
-        public string JoinDate { get; set; }
+        public System.DateTime JoinDate { get; set; }
         public string CV { get; set; }
         public string Photo { get; set; }
         public string Experience { get; set; }
-        public Nullable<bool> IsActive { get; set; }
+        public bool IsActive { get; set; }
         public string LastName { get; set; }
         public string FirstName { get; set; }
         public string Address { get; set; }
@@ -51,7 +50,7 @@ namespace ProjectAssigned.Models
         public int AccessFailedCount { get; set; }
         public string UserName { get; set; }
         public HttpPostedFileBase Picture { get; set; }
-        public HttpPostedFileBase cvfile { get; set; }
+        public HttpPostedFileBase cvfile{ get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<AspNetUserClaim> AspNetUserClaims { get; set; }

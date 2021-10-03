@@ -99,7 +99,7 @@ namespace ProjectAssigned.Models
         public string Experience { get; set; }
         [Required(ErrorMessage = "Date time is required")]
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
-        public string JoinDate { get; set; }
+        public System.DateTime JoinDate { get; set; }
         [Required(ErrorMessage = "cv is required")]
         public string CV{ get; set; }
         [Required(ErrorMessage = "Photo is required")]

@@ -9,6 +9,8 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using ProjectAssigned.Models;
+using System.Net.Mail;
+using System.Web.Configuration;
 
 namespace ProjectAssigned.Controllers
 {
@@ -79,9 +81,11 @@ namespace ProjectAssigned.Controllers
             AspNetUser user = db.AspNetUsers.FirstOrDefault(m => m.UserName == model.UserName);
             if(user!=null)
             { 
-            var result = await SignInManager.PasswordSignInAsync(model.UserName, model.Password, model.RememberMe, shouldLockout: false);
-            switch (result)
-            {
+             if(user.IsActive==true)
+                { 
+               var result = await SignInManager.PasswordSignInAsync(model.UserName, model.Password, model.RememberMe, shouldLockout: false);
+               switch (result)
+               {
                 case SignInStatus.Success:
                     return RedirectToLocal("/DashBoard/Progress");
                 case SignInStatus.LockedOut:
@@ -92,13 +96,20 @@ namespace ProjectAssigned.Controllers
                 default:
                     ModelState.AddModelError("", "Invalid login attempt.");
                     return View(model);
-            }
-                
+               }
+             }
+                else
+                {
+                    ModelState.AddModelError("", "Your account have been blocked please contact to admin");
+                    return View(model);
+
+                }
+
             }
             else
             {
                 ModelState.AddModelError("", "Username does not exist.");
-                return View("Login");
+                return View(model);
             }
         }
 
@@ -213,23 +224,74 @@ namespace ProjectAssigned.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = await UserManager.FindByNameAsync(model.Email);
-                if (user == null || !(await UserManager.IsEmailConfirmedAsync(user.Id)))
+                var user = db.AspNetUsers.FirstOrDefault(x => x.Email == model.Email);
+                if (user == null)
                 {
-                    // Don't reveal that the user does not exist or is not confirmed
-                    return View("ForgotPasswordConfirmation");
+                    ModelState.AddModelError("", "Email is not found please enter a valiid email");
+                    return View(model);
                 }
+
+               
 
                 // For more information on how to enable account confirmation and password reset please visit https://go.microsoft.com/fwlink/?LinkID=320771
                 // Send an email with this link
-                // string code = await UserManager.GeneratePasswordResetTokenAsync(user.Id);
-                // var callbackUrl = Url.Action("ResetPassword", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);		
+                string code = await UserManager.GeneratePasswordResetTokenAsync(user.Id);
+                 var callbackUrl = Url.Action("ResetPassword", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
                 // await UserManager.SendEmailAsync(user.Id, "Reset Password", "Please reset your password by clicking <a href=\"" + callbackUrl + "\">here</a>");
-                // return RedirectToAction("ForgotPasswordConfirmation", "Account");
+                bool isSent = SendEmail(user.Email, "Reset Password", "Please reset your password by clicking <a href=\"" + callbackUrl + "\">here</a>");
+               return RedirectToAction("ForgotPasswordConfirmation", "Account");
             }
 
             // If we got this far, something failed, redisplay form
             return View(model);
+        }
+        public static bool SendEmail(string toEmail, string subject, string body)
+        {
+            try
+            {
+                MailMessage mailMessage = new MailMessage();
+                SmtpClient client = new SmtpClient();
+                client.EnableSsl = true;
+                client.Port = Convert.ToInt32(WebConfigurationManager.AppSettings["Port"]);
+                client.Host = WebConfigurationManager.AppSettings["ServerHost"];
+                client.DeliveryMethod = SmtpDeliveryMethod.Network;
+                client.UseDefaultCredentials = true;
+                client.Credentials = new System.Net.NetworkCredential(WebConfigurationManager.AppSettings["Email"], WebConfigurationManager.AppSettings["Password"]);
+                mailMessage.From = new MailAddress(WebConfigurationManager.AppSettings["DisplayEmail"].ToString(), WebConfigurationManager.AppSettings["DisplayName"]);
+                if (!String.IsNullOrEmpty(toEmail))
+                {
+                    toEmail.Split(',').ToList().ForEach(x =>
+                    {
+                        if (!String.IsNullOrWhiteSpace(x))
+                            mailMessage.To.Add(new MailAddress(x));
+                    });
+                }
+                //if (!String.IsNullOrEmpty(emailTemplate.CC))
+                //{
+                //    emailTemplate.CC.Split(',').ToList().ForEach(x =>
+                //    {
+                //        if (!String.IsNullOrWhiteSpace(x))
+                //            mailMessage.CC.Add(new MailAddress(x));
+                //    });
+                //}
+                //if (!String.IsNullOrEmpty(emailTemplate.BCC))
+                //{
+                //    emailTemplate.BCC.Split(',').ToList().ForEach(x =>
+                //    {
+                //        if (!String.IsNullOrWhiteSpace(x))
+                //            mailMessage.Bcc.Add(new MailAddress(x));
+                //    });
+                //}
+                mailMessage.IsBodyHtml = true;
+                mailMessage.Subject = subject;// emailTemplate.Subject;
+                mailMessage.Body = body;// emailTemplate.MessageBody;
+                client.Send(mailMessage);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
         }
 
         //
@@ -259,7 +321,7 @@ namespace ProjectAssigned.Controllers
             {
                 return View(model);
             }
-            var user = await UserManager.FindByNameAsync(model.Email);
+            var user = db.AspNetUsers.FirstOrDefault(x => x.Email == model.Email);
             if (user == null)
             {
                 // Don't reveal that the user does not exist
@@ -476,6 +538,7 @@ namespace ProjectAssigned.Controllers
                 RedirectUri = redirectUri;
                 UserId = userId;
             }
+           
 
             public string LoginProvider { get; set; }
             public string RedirectUri { get; set; }

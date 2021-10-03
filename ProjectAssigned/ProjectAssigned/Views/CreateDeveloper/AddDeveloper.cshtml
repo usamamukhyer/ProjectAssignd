@@ -32,7 +32,7 @@
 
                   <div class="row">
            
-                      r<div class="col-sm-6 col-md-4">
+                      <div class="col-sm-6 col-md-4">
                         <div class="form-group">
 
                             @Html.LabelFor(model => model.Photo, "Picture")
@@ -109,14 +109,14 @@
                             <div class="col-sm-6 col-md-4">
                                 <div class="form-group">
                                     @Html.LabelFor(m => m.Email)
-                                    @Html.TextBoxFor(m => m.Email, new { @class = "form-control", @placeholder = "Email", required = "required", type = "email" })
+                                    @Html.TextBoxFor(m => m.Email, new { @class = "form-control", @placeholder = "Email",@required = "required", @type = "email" })
                                     @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
                                 </div>
                             </div>
                             <div class="col-sm-6 col-md-4">
                                 <div class="form-group">
                                     @Html.LabelFor(m => m.PhoneNumber)
-                                    @Html.TextBoxFor(m => m.PhoneNumber, new { @class = "form-control", @placeholder = "Phone", required = "required", })
+                                    @Html.TextBoxFor(m => m.PhoneNumber, new { @class = "form-control", @placeholder = "Phone", required = "required" })
                                     @Html.ValidationMessageFor(m => m.PhoneNumber, "", new { @class = "text-danger" })
                                 </div>
                             </div>
@@ -139,7 +139,7 @@
                             <div class="col-sm-6 col-md-4">
                                 <div class="form-group">
                                     @Html.LabelFor(m => m.UserName)
-                                    @Html.TextBoxFor(m => m.UserName, new { @class = "form-control", placeholder = "Username", required = "required", })
+                                    @Html.TextBoxFor(m => m.UserName, new { @class = "form-control", @placeholder = "Username", @required = "required"})
                                     @Html.ValidationMessageFor(m => m.UserName, "", new { @class = "text-danger" })
                                 </div>
                             </div>
@@ -147,13 +147,21 @@
                             <div class="col-sm-6 col-md-4">
                                 <div class="form-group">
                                     @Html.LabelFor(m => m.PasswordHash)
-                                    @Html.PasswordFor(m => m.PasswordHash, new { @class = "form-control", placeholder = "User", required = "required", })
+                                    @Html.PasswordFor(m => m.PasswordHash, new { @class = "form-control", @placeholder = "Password", @required = "required" })
                                     @Html.ValidationMessageFor(m => m.PasswordHash, "", new { @class = "text-danger" })
                                 </div>
                             </div>
 
                         </div>
-
+                <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        @Html.LabelFor(m => m.IsActive)
+                                        @Html.CheckBoxFor(m => m.IsActive, new { @class = "checkbox" })
+                                        @Html.ValidationMessageFor(m => m.IsActive, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                            </div>
                         <div class="row">
 
                             <div class="col-sm-6 col-md-12">

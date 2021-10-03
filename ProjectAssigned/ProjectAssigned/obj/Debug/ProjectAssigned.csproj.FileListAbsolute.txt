@@ -317,10 +317,12 @@ C:\Users\User\Desktop\My Office Work\My Internship Project\ProjectAssigned\Proje
 C:\Users\User\Desktop\My Office Work\My Internship Project\ProjectAssigned\ProjectAssigned\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 C:\Users\User\Desktop\My Office Work\My Internship Project\ProjectAssigned\ProjectAssigned\bin\Microsoft.Owin.Security.OAuth.xml
 C:\Users\User\Desktop\My Office Work\My Internship Project\ProjectAssigned\ProjectAssigned\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\User\Desktop\My Office Work\My Internship Project\ProjectAssigned\ProjectAssigned\obj\Debug\ProjectAssigned.csproj.AssemblyReference.cache
 C:\Users\User\Desktop\My Office Work\My Internship Project\ProjectAssigned\ProjectAssigned\obj\Debug\ProjectAssigned.Migrations.Aspnetuserswiththecustomfields.resources
+C:\Users\User\Desktop\My Office Work\My Internship Project\ProjectAssigned\ProjectAssigned\obj\Debug\ProjectAssigned.Migrations.boolvalueofisactivenotnull.resources
+C:\Users\User\Desktop\My Office Work\My Internship Project\ProjectAssigned\ProjectAssigned\obj\Debug\ProjectAssigned.Migrations.Datetimeupdate.resources
 C:\Users\User\Desktop\My Office Work\My Internship Project\ProjectAssigned\ProjectAssigned\obj\Debug\ProjectAssigned.csproj.GenerateResource.cache
 C:\Users\User\Desktop\My Office Work\My Internship Project\ProjectAssigned\ProjectAssigned\obj\Debug\ProjectAssigned.csproj.CoreCompileInputs.cache
 C:\Users\User\Desktop\My Office Work\My Internship Project\ProjectAssigned\ProjectAssigned\obj\Debug\ProjectAssigned.csproj.CopyComplete
 C:\Users\User\Desktop\My Office Work\My Internship Project\ProjectAssigned\ProjectAssigned\obj\Debug\ProjectAssigned.dll
 C:\Users\User\Desktop\My Office Work\My Internship Project\ProjectAssigned\ProjectAssigned\obj\Debug\ProjectAssigned.pdb
-C:\Users\User\Desktop\My Office Work\My Internship Project\ProjectAssigned\ProjectAssigned\obj\Debug\ProjectAssigned.csproj.AssemblyReference.cache

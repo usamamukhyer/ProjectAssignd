@@ -10,11 +10,11 @@ namespace ProjectAssigned.Models
     // You can add profile data for the user by adding more properties to your ApplicationUser class, please visit https://go.microsoft.com/fwlink/?LinkID=317594 to learn more.
     public class ApplicationUser : IdentityUser
     {
-        public string JoinDate { get;set; }
+        public System.DateTime JoinDate { get;set; }
         public string CV { get;set; }
         public string Photo { get; set; }
         public string Experience { get;set; }
-        public bool? IsActive { get; set; }
+        public bool IsActive { get; set; }
         public string LastName { get; set; }
         public string FirstName { get; set; }
         public string Address { get; set; }
@@ -52,7 +52,7 @@ namespace ProjectAssigned.Models
         public AspNetUser FetchUserProfile()
         {
             string id = System.Web.HttpContext.Current.User.Identity.GetUserId();
-            return db.AspNetUsers.FirstOrDefault(x => x.Id == id);
+            return db.AspNetUsers.FirstOrDefault(x => x.Id== id);
         }
     }
 

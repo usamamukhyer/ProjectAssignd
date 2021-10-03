@@ -12,37 +12,37 @@
     <div class="col-xl-4 col-md-12 col-md-12 d-block mx-auto">
         @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
         {
-    <div class="card mb-0">
-        <div class="card-header">
-            <h3 class="card-title">Login to your Account</h3>
-        </div>
+        <div class="card mb-0">
+            <div class="card-header">
+                <h3 class="card-title">Login to your Account</h3>
+            </div>
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            @Html.AntiForgeryToken()
+            <div class="card-body">
+                <div class="form-group">
 
-        @Html.AntiForgeryToken()
-    <div class="card-body">
-        <div class="form-group">
+                    @Html.LabelFor(m => m.UserName, new { @class = "form-label text-dark" })
+                    @Html.TextBoxFor(m => m.UserName, new { @class = "form-control", @placeholder = "UserName" })
+                    @Html.ValidationMessageFor(m => m.UserName, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Password, new { @class = "form-label text-dark" })
+                    @Html.TextBoxFor(m => m.Password, new { @class = "form-control", @placeholder = "Password" })
+                    @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group form-check">
+                    @Html.CheckBoxFor(m => m.RememberMe, new { @class = "form-check-input" })
+                    @Html.LabelFor(m => m.RememberMe, new { @class = "form-check-label small text-muted" })
+                </div>
+                <div class="form-footer mt-2">
+                    <button type="submit" class="btn btn-primary btn-round btn-block shadow-sm">Sign in</button>
+                </div>
 
-            @Html.LabelFor(m => m.UserName, new { @class = "form-label text-dark" })
-            @Html.TextBoxFor(m => m.UserName, new { @class = "form-control", @placeholder = "UserName" })
-            @Html.ValidationMessageFor(m => m.UserName, "", new { @class = "text-danger" })
-        </div>
-        <div class="form-group">
-            @Html.LabelFor(m => m.Password, new { @class = "form-label text-dark" })
-            @Html.TextBoxFor(m => m.Password, new { @class = "form-control", @placeholder = "Password" })
-            @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
-        </div>
-        <div class="form-group form-check">
-            @Html.CheckBoxFor(m => m.RememberMe, new { @class = "form-check-input" })
-            @Html.LabelFor(m => m.RememberMe, new { @class = "form-check-label small text-muted" })
-        </div>
-        <div class="form-footer mt-2">
-            <button type="submit" class="btn btn-primary btn-round btn-block shadow-sm">Sign in</button>
-        </div>
-
-        <div class="text-center  mt-3 text-dark">
-         <a href="@Url.Action(" Register","LoginModule")">Forget your password?</a>
-        </div>
-    </div>
-    </div>}
+                <div class="text-center  mt-3 text-dark">
+                    <a href="@Url.Action("ForgotPassword","Account")">Forget your password?</a>
+                </div>
+            </div>
+        </div>}
     </div>
    
 </div>

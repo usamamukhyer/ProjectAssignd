@@ -69,11 +69,10 @@
 
 
 
-                       
 
 
-                        @*{ 
-                            ProjectAssigned.Models.ProjectAssignedEntities db = new ProjectAssigned.Models.ProjectAssignedEntities();
+
+                        @{ ProjectAssigned.Models.ProjectAssignedEntities db = new ProjectAssigned.Models.ProjectAssignedEntities();
                             string Image = "";
                             string userId = (new ProjectAssigned.Models.GenericModel()).FetchUserProfile().Id;
                             var userpic = db.AspNetUsers.FirstOrDefault(x => x.Id == userId);
@@ -85,9 +84,7 @@
                             else
                             {
                                 Image = "dummy-avatar.png";
-                            }
-
-                        }*@
+                            } }
 
 
 
@@ -95,14 +92,14 @@
 
                         <div class="d-flex order-lg-2 ml-auto">
                             <div class="dropdown">
-                               
-                                  
+
+
                                 <a href="#" class="nav-link pr-0 leading-none user-img" data-toggle="dropdown">
                                     <span class="username">@User.Identity.GetUserName()</span>
-                                    <img src="~/Content/Filesdata/Images/" alt="profile-img" class="avatar avatar-md brround">
+                                    <img src="~/Content/Filesdata/Images/@Image" alt="profile-img" class="avatar avatar-md brround">
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-md-right dropdown-menu-arrow ">
-                                    <a class="dropdown-item" href="profile.html">
+                                    <a class="dropdown-item" href="@Url.Action("ResetPassword","Account")">
                                         <i class="dropdown-icon icon icon-user"></i> Change Password
                                     </a>
 
@@ -111,10 +108,9 @@
                                     </a>
                                     @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
                                     {
-                                    @Html.AntiForgeryToken()
-                                    }
+                        @Html.AntiForgeryToken()}
                                 </div>
-</div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -125,14 +121,16 @@
                 <div class="app-sidebar__user clearfix">
                     <div class="dropdown user-pro-body">
                         <div>
-                            <img src="~/Content/assets/images/faces/male/25.jpg" alt="user-img" class="avatar avatar-lg brround">
+                            <img src="~/Content/Filesdata/Images/@Image" alt="user-img" class="avatar avatar-lg brround">
                             <a href="editprofile.html" class="profile-img">
                                 <span class="fa fa-pencil" aria-hidden="true"></span>
                             </a>
                         </div>
                         <div class="user-info">
-                            <h2>Rubin Carmody</h2>
-                            <span>Web Designer</span>
+                            <h2>@userpic.FirstName  @userpic.LastName</h2>
+                            <span>
+                              @userpic.Designation
+                            </span>
                         </div>
                     </div>
                 </div>

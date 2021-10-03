@@ -17,6 +17,7 @@ using ProjectAssigned.Models;
 using System.Net;
 using System.Data.Entity;
 
+
 namespace ProjectAssigned.Controllers
 {
     
@@ -41,9 +42,12 @@ namespace ProjectAssigned.Controllers
         }
         public ActionResult DeveloperList()
         {
+            List<AspNetUser> model = new List<AspNetUser>();
+           model = db.AspNetUsers.ToList();
+
+       return View(model);
 
 
-            return View(db.AspNetUsers.ToList());
         }
         [HttpPost]
         public ActionResult AddDeveloper(AspNetUser model)
@@ -57,7 +61,7 @@ namespace ProjectAssigned.Controllers
                 {
                     if (model.Picture.ContentLength < 1000000)
                     {
-                        fileName = fileName + Guid.NewGuid().ToString() + extension;
+                        fileName = fileName + DateTime.Now.ToString("yymmssff") + extension;
                         model.Photo = fileName;
                         model.Picture.SaveAs(Path.Combine(Server.MapPath("~/Content/Filesdata/Images/"), fileName));
                     }
@@ -82,7 +86,7 @@ namespace ProjectAssigned.Controllers
                 {
                     if (model.cvfile.ContentLength < 1000)
                     {
-                        fileName = fileName + Guid.NewGuid().ToString() + extension;
+                        fileName = fileName + DateTime.Now.ToString("yymmssff") + extension;
                         model.CV = fileName;
                         model.cvfile.SaveAs(Path.Combine(Server.MapPath("~/Content/Filesdata/Cv/"), fileName));
                     }
@@ -133,6 +137,26 @@ namespace ProjectAssigned.Controllers
 
             return View(model);
         }
+
+           // Get
+        //public ActionResult EditDeveloper(int?id)
+        //{
+        //    AspNetUser model = new AspNetUser();
+        //    if(id.HasValue)
+        //    {
+        //        model=db.AspNetUsers.Where(x=>x.Id==id.ToString()).FirstOrDefault();
+
+        //    }
+           
+        //    return View(model);
+        //}
+
+        //[HttpPost]
+        //public ActionResult EditDeveloper(AspNetUser model)
+        //{
+
+        //    return View();
+        //}
 
         private void AddErrors(IdentityResult result)
         {
